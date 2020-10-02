@@ -1,0 +1,11 @@
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week3\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\netcoreapp3.1\QuanLyHocSinh.exe
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week3\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\netcoreapp3.1\QuanLyHocSinh.deps.json
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week3\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\netcoreapp3.1\QuanLyHocSinh.runtimeconfig.json
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week3\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\netcoreapp3.1\QuanLyHocSinh.runtimeconfig.dev.json
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week3\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\netcoreapp3.1\QuanLyHocSinh.dll
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week3\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\netcoreapp3.1\QuanLyHocSinh.pdb
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week3\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\netcoreapp3.1\QuanLyHocSinh.csprojAssemblyReference.cache
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week3\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\netcoreapp3.1\QuanLyHocSinh.AssemblyInfoInputs.cache
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week3\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\netcoreapp3.1\QuanLyHocSinh.AssemblyInfo.cs
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week3\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\netcoreapp3.1\QuanLyHocSinh.dll
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week3\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\netcoreapp3.1\QuanLyHocSinh.pdb
