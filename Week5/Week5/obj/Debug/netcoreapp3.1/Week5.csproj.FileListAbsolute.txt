@@ -1,0 +1,11 @@
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week5\Week5\obj\Debug\netcoreapp3.1\Week5.csprojAssemblyReference.cache
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week5\Week5\obj\Debug\netcoreapp3.1\Week5.AssemblyInfoInputs.cache
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week5\Week5\obj\Debug\netcoreapp3.1\Week5.AssemblyInfo.cs
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week5\Week5\bin\Debug\netcoreapp3.1\Week5.exe
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week5\Week5\bin\Debug\netcoreapp3.1\Week5.deps.json
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week5\Week5\bin\Debug\netcoreapp3.1\Week5.runtimeconfig.json
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week5\Week5\bin\Debug\netcoreapp3.1\Week5.runtimeconfig.dev.json
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week5\Week5\bin\Debug\netcoreapp3.1\Week5.dll
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week5\Week5\bin\Debug\netcoreapp3.1\Week5.pdb
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week5\Week5\obj\Debug\netcoreapp3.1\Week5.dll
+C:\Users\doman\OneDrive\Desktop\github Project\OOP-MI3323\Week5\Week5\obj\Debug\netcoreapp3.1\Week5.pdb
