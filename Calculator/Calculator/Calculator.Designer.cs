@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calculator));
             this.Board = new System.Windows.Forms.GroupBox();
+            this.button33 = new System.Windows.Forms.Button();
+            this.button32 = new System.Windows.Forms.Button();
+            this.button28 = new System.Windows.Forms.Button();
             this.label_alpha = new System.Windows.Forms.Label();
             this.label_ctrl = new System.Windows.Forms.Label();
             this.button31 = new System.Windows.Forms.Button();
@@ -71,9 +74,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.paintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button32 = new System.Windows.Forms.Button();
-            this.button33 = new System.Windows.Forms.Button();
             this.Board.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -128,6 +128,41 @@
             this.Board.Size = new System.Drawing.Size(444, 677);
             this.Board.TabIndex = 6;
             this.Board.TabStop = false;
+            // 
+            // button33
+            // 
+            this.button33.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button33.Location = new System.Drawing.Point(3, 52);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(42, 38);
+            this.button33.TabIndex = 46;
+            this.button33.Text = "AC";
+            this.button33.UseVisualStyleBackColor = true;
+            this.button33.Click += new System.EventHandler(this.Clear);
+            // 
+            // button32
+            // 
+            this.button32.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.button32.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button32.Location = new System.Drawing.Point(6, 130);
+            this.button32.Name = "button32";
+            this.button32.Size = new System.Drawing.Size(39, 37);
+            this.button32.TabIndex = 45;
+            this.button32.Text = "=";
+            this.button32.UseVisualStyleBackColor = true;
+            this.button32.Click += new System.EventHandler(this.PrintResult);
+            // 
+            // button28
+            // 
+            this.button28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button28.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button28.Location = new System.Drawing.Point(194, 303);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(53, 54);
+            this.button28.TabIndex = 44;
+            this.button28.Text = "^";
+            this.button28.UseVisualStyleBackColor = true;
+            this.button28.Click += new System.EventHandler(this.ButtonToScreen);
             // 
             // label_alpha
             // 
@@ -230,7 +265,7 @@
             this.ResultScreen.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.ResultScreen.Location = new System.Drawing.Point(54, 130);
             this.ResultScreen.Name = "ResultScreen";
-            this.ResultScreen.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ResultScreen.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ResultScreen.Size = new System.Drawing.Size(336, 37);
             this.ResultScreen.TabIndex = 30;
             this.ResultScreen.Text = "";
@@ -576,41 +611,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(855, 38);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // button28
-            // 
-            this.button28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button28.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button28.Location = new System.Drawing.Point(194, 303);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(53, 54);
-            this.button28.TabIndex = 44;
-            this.button28.Text = "^";
-            this.button28.UseVisualStyleBackColor = true;
-            this.button28.Click += new System.EventHandler(this.ButtonToScreen);
-            // 
-            // button32
-            // 
-            this.button32.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.button32.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button32.Location = new System.Drawing.Point(6, 130);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(39, 37);
-            this.button32.TabIndex = 45;
-            this.button32.Text = "=";
-            this.button32.UseVisualStyleBackColor = true;
-            this.button32.Click += new System.EventHandler(this.PrintResult);
-            // 
-            // button33
-            // 
-            this.button33.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button33.Location = new System.Drawing.Point(3, 52);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(42, 38);
-            this.button33.TabIndex = 46;
-            this.button33.Text = "AC";
-            this.button33.UseVisualStyleBackColor = true;
-            this.button33.Click += new System.EventHandler(this.Clear);
             // 
             // Calculator
             // 

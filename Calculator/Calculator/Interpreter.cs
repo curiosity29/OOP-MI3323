@@ -18,6 +18,8 @@ namespace Calculator
         {
             switch (s)
             {
+                case "(":
+                    return -1;
                 case "+":
                 case "-":
                     return 1;

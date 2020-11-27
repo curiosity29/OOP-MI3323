@@ -36,8 +36,9 @@ namespace Calculator
                     if (x == (int)x && y == (int)y)
                         return (int)x % (int)y;
                     else throw new InvalidOperationException("cant use % with non-integer number");
-                case "Nroot": return Math.Pow(1 / y, x);
-                default: throw new Exception("unrecognized operator");
+                case "Nroot": return Math.Pow(x, 1/y);
+                default: throw new Exception("unrecognized operato" +
+                    "r");
             }
         }
         public static bool EvalBoolOperator(bool x, bool y, string op)
