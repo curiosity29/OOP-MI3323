@@ -104,9 +104,10 @@ namespace Calculator
             {
                 ResultScreen.Text = StringEvaluater.Eval(Screen.Text, variables).ToString();
             }
-            catch(Exception)
+            catch(Exception exception)
             {
                 ResultScreen.Text = "MATH ERROR";
+                //MessageBox.Show(exception.Message);
             }
         }
 

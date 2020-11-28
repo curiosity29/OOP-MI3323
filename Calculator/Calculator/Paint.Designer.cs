@@ -37,6 +37,9 @@
             this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip4 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ssssssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel = new System.Windows.Forms.Panel();
+            this.button_hhbh = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.contextMenuStrip4.SuspendLayout();
@@ -94,11 +97,45 @@
             this.ssssssToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.ssssssToolStripMenuItem.Text = "ssssss";
             // 
+            // panel
+            // 
+            this.panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel.Location = new System.Drawing.Point(122, 72);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(934, 623);
+            this.panel.TabIndex = 4;
+            this.panel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Panel_Click);
+            // 
+            // button_hhbh
+            // 
+            this.button_hhbh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.button_hhbh.Location = new System.Drawing.Point(122, 13);
+            this.button_hhbh.Name = "button_hhbh";
+            this.button_hhbh.Size = new System.Drawing.Size(204, 53);
+            this.button_hhbh.TabIndex = 5;
+            this.button_hhbh.Text = "hình bình hành";
+            this.button_hhbh.UseVisualStyleBackColor = true;
+            this.button_hhbh.Click += new System.EventHandler(this.Draw_hbh);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.button1.Location = new System.Drawing.Point(350, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(204, 53);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "hình hộp bình hành";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Draw_hhbh);
+            // 
             // Paint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1055, 691);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_hhbh);
+            this.Controls.Add(this.panel);
             this.Name = "Paint";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Paint";
@@ -119,5 +156,8 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip3;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip4;
         private System.Windows.Forms.ToolStripMenuItem ssssssToolStripMenuItem;
+        private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.Button button_hhbh;
+        private System.Windows.Forms.Button button1;
     }
 }
