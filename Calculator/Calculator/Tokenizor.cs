@@ -27,11 +27,11 @@ namespace Calculator
         {
 
         }
-        public Tokenizor(List<string> list)
+        public Tokenizor(ICollection<string> list)
         {
             AddToken(list);
         }
-        public void AddToken(List<string> newtokens)
+        public void AddToken(ICollection<string> newtokens)
         {
             //this.tokens = this.tokens.AddRange(newtokens);
             foreach (string s in newtokens)

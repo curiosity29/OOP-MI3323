@@ -90,7 +90,7 @@ namespace Calculator
                 else
                     stack.Push(s);
             }
-            return double.Parse(stack.Pop().ToString());
+            return ReadValue(stack.Pop(),dict);
         }
 
     }
@@ -100,7 +100,7 @@ namespace Calculator
         public static double Eval(string expression, Dictionary<string, double> dict)
         {
             return Evaluator.EvalPostfix(
-                Interpreter.infixToPostfix2((new Tokenizor()).TokenizeNumber(expression))
+                Interpreter.infixToPostfix2((new Tokenizor(dict.Keys)).TokenizeNumber(expression))
                 , dict);
         }
     }

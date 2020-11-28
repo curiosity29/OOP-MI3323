@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calculator));
             this.Board = new System.Windows.Forms.GroupBox();
+            this.button_store = new System.Windows.Forms.Button();
+            this.button34 = new System.Windows.Forms.Button();
             this.button33 = new System.Windows.Forms.Button();
             this.button32 = new System.Windows.Forms.Button();
             this.button28 = new System.Windows.Forms.Button();
@@ -81,6 +83,8 @@
             // Board
             // 
             this.Board.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Board.BackgroundImage")));
+            this.Board.Controls.Add(this.button_store);
+            this.Board.Controls.Add(this.button34);
             this.Board.Controls.Add(this.button33);
             this.Board.Controls.Add(this.button32);
             this.Board.Controls.Add(this.button28);
@@ -129,6 +133,28 @@
             this.Board.TabIndex = 6;
             this.Board.TabStop = false;
             // 
+            // button_store
+            // 
+            this.button_store.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button_store.Location = new System.Drawing.Point(54, 300);
+            this.button_store.Name = "button_store";
+            this.button_store.Size = new System.Drawing.Size(53, 54);
+            this.button_store.TabIndex = 48;
+            this.button_store.Text = "store to x";
+            this.button_store.UseVisualStyleBackColor = true;
+            this.button_store.Click += new System.EventHandler(this.StoreValue);
+            // 
+            // button34
+            // 
+            this.button34.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button34.Location = new System.Drawing.Point(54, 363);
+            this.button34.Name = "button34";
+            this.button34.Size = new System.Drawing.Size(53, 54);
+            this.button34.TabIndex = 47;
+            this.button34.Text = "x";
+            this.button34.UseVisualStyleBackColor = true;
+            this.button34.Click += new System.EventHandler(this.ButtonToScreen);
+            // 
             // button33
             // 
             this.button33.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -173,7 +199,7 @@
             this.label_alpha.TabIndex = 43;
             this.label_alpha.Text = "ALPHA ON";
             this.label_alpha.Visible = false;
-            this.label_alpha.Click += new System.EventHandler(this.AlphaOn);
+            this.label_alpha.Click += new System.EventHandler(this.ToggleAlpha);
             // 
             // label_ctrl
             // 
@@ -279,7 +305,7 @@
             this.button23.TabIndex = 29;
             this.button23.Text = "Alpha";
             this.button23.UseVisualStyleBackColor = true;
-            this.button23.Click += new System.EventHandler(this.AlphaOn);
+            this.button23.Click += new System.EventHandler(this.ToggleAlpha);
             // 
             // button22
             // 
@@ -288,9 +314,9 @@
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(53, 54);
             this.button22.TabIndex = 28;
-            this.button22.Text = "Shift";
+            this.button22.Text = "Ctrl";
             this.button22.UseVisualStyleBackColor = true;
-            this.button22.Click += new System.EventHandler(this.ShiftOn);
+            this.button22.Click += new System.EventHandler(this.ToggleCtrl);
             // 
             // button21
             // 
@@ -678,6 +704,8 @@
         private System.Windows.Forms.Button button28;
         private System.Windows.Forms.Button button33;
         private System.Windows.Forms.Button button32;
+        private System.Windows.Forms.Button button_store;
+        private System.Windows.Forms.Button button34;
     }
 }
 

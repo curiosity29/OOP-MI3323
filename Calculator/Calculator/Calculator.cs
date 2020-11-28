@@ -17,9 +17,6 @@ namespace Calculator
             { "x", 0 }
         };
 
-
-
-
         /// <summary>
         /// Open Paint
         /// </summary>
@@ -84,9 +81,13 @@ namespace Calculator
 
 
         #region Special Mode
-        private void ShiftOn(object sender, EventArgs e)
+        private void ToggleCtrl(object sender, EventArgs e)
         {
             label_ctrl.Visible = !label_ctrl.Visible;
+        }
+        private void ToggleAlpha(object sender, EventArgs e)
+        {
+            label_alpha.Visible = !label_alpha.Visible;
         }
         #endregion
 
@@ -111,10 +112,6 @@ namespace Calculator
             }
         }
 
-        private void AlphaOn(object sender, EventArgs e)
-        {
-            label_alpha.Visible = !label_alpha.Visible;
-        }
 
         private void PrintResult(object sender, KeyEventArgs e)
         {
@@ -124,6 +121,12 @@ namespace Calculator
             {
                 PrintResult(sender, (EventArgs)e);
             }
+        }
+
+        private void StoreValue(object sender, EventArgs e)
+        {
+                if (ResultScreen.Text != "")
+                    variables["x"] = double.Parse(ResultScreen.Text);
         }
     }
 }
