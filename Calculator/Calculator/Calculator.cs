@@ -14,7 +14,7 @@ namespace Calculator
 
         Dictionary<string, double> variables = new Dictionary<string, double>()
         {
-            { "x", 0 }
+            { "x", 0 } , {"Ans", 0}
         };
 
         /// <summary>
@@ -92,10 +92,8 @@ namespace Calculator
         #endregion
 
         #region Navigate
-        private void Navigate_CursorToLeft(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+
+
 
         #endregion
 
@@ -103,9 +101,10 @@ namespace Calculator
         {
             try
             {
-                ResultScreen.Text = StringEvaluater.Eval(Screen.Text, variables).ToString();
+                variables["Ans"] = StringEvaluater.Eval(Screen.Text, variables);
+                ResultScreen.Text = variables["Ans"].ToString();
             }
-            catch(Exception exception)
+            catch(Exception)
             {
                 ResultScreen.Text = "MATH ERROR";
                 //MessageBox.Show(exception.Message);
@@ -128,5 +127,13 @@ namespace Calculator
                 if (ResultScreen.Text != "")
                     variables["x"] = double.Parse(ResultScreen.Text);
         }
+
+
+        private void Screen_Refocus(object sender, EventArgs e)
+        {
+            Screen.Focus();
+            Screen.SelectionStart = Screen.Text.Length;
+        }
+
     }
 }

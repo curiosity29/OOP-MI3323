@@ -7,8 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using AForge.Math;
-
+using System.Numerics;
 namespace Calculator
 {
     public partial class Paint : Form
@@ -90,7 +89,6 @@ namespace Calculator
             g.DrawLine(pen, p2, p12);
             g.DrawLine(pen, p3, p13);
             g.DrawLine(pen, p4, p14);
-
 
         }
         private static Point Add(Point p1, Point p2)

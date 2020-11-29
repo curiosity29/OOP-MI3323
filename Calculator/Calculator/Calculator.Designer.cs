@@ -40,10 +40,6 @@
             this.button31 = new System.Windows.Forms.Button();
             this.button30 = new System.Windows.Forms.Button();
             this.button29 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
             this.ResultScreen = new System.Windows.Forms.RichTextBox();
             this.button23 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
@@ -93,10 +89,6 @@
             this.Board.Controls.Add(this.button31);
             this.Board.Controls.Add(this.button30);
             this.Board.Controls.Add(this.button29);
-            this.Board.Controls.Add(this.button27);
-            this.Board.Controls.Add(this.button26);
-            this.Board.Controls.Add(this.button25);
-            this.Board.Controls.Add(this.button24);
             this.Board.Controls.Add(this.ResultScreen);
             this.Board.Controls.Add(this.button23);
             this.Board.Controls.Add(this.button22);
@@ -136,7 +128,7 @@
             // button_store
             // 
             this.button_store.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button_store.Location = new System.Drawing.Point(54, 300);
+            this.button_store.Location = new System.Drawing.Point(337, 363);
             this.button_store.Name = "button_store";
             this.button_store.Size = new System.Drawing.Size(53, 54);
             this.button_store.TabIndex = 48;
@@ -158,7 +150,7 @@
             // button33
             // 
             this.button33.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button33.Location = new System.Drawing.Point(3, 52);
+            this.button33.Location = new System.Drawing.Point(3, 79);
             this.button33.Name = "button33";
             this.button33.Size = new System.Drawing.Size(42, 38);
             this.button33.TabIndex = 46;
@@ -170,7 +162,7 @@
             // 
             this.button32.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.button32.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button32.Location = new System.Drawing.Point(6, 130);
+            this.button32.Location = new System.Drawing.Point(6, 157);
             this.button32.Name = "button32";
             this.button32.Size = new System.Drawing.Size(39, 37);
             this.button32.TabIndex = 45;
@@ -193,7 +185,7 @@
             // label_alpha
             // 
             this.label_alpha.AutoSize = true;
-            this.label_alpha.Location = new System.Drawing.Point(144, 34);
+            this.label_alpha.Location = new System.Drawing.Point(153, 34);
             this.label_alpha.Name = "label_alpha";
             this.label_alpha.Size = new System.Drawing.Size(61, 13);
             this.label_alpha.TabIndex = 43;
@@ -204,7 +196,7 @@
             // label_ctrl
             // 
             this.label_ctrl.AutoSize = true;
-            this.label_ctrl.Location = new System.Drawing.Point(144, 16);
+            this.label_ctrl.Location = new System.Drawing.Point(153, 16);
             this.label_ctrl.Name = "label_ctrl";
             this.label_ctrl.Size = new System.Drawing.Size(54, 13);
             this.label_ctrl.TabIndex = 42;
@@ -245,61 +237,20 @@
             this.button29.UseVisualStyleBackColor = true;
             this.button29.Click += new System.EventHandler(this.ButtonToScreen);
             // 
-            // button27
-            // 
-            this.button27.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button27.Location = new System.Drawing.Point(123, 240);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(53, 54);
-            this.button27.TabIndex = 35;
-            this.button27.Text = "<=";
-            this.button27.UseVisualStyleBackColor = true;
-            this.button27.Click += new System.EventHandler(this.Navigate_CursorToLeft);
-            // 
-            // button26
-            // 
-            this.button26.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button26.Location = new System.Drawing.Point(194, 240);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(53, 54);
-            this.button26.TabIndex = 34;
-            this.button26.Text = "Down";
-            this.button26.UseVisualStyleBackColor = true;
-            // 
-            // button25
-            // 
-            this.button25.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button25.Location = new System.Drawing.Point(266, 240);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(53, 54);
-            this.button25.TabIndex = 33;
-            this.button25.Text = "=>";
-            this.button25.UseVisualStyleBackColor = true;
-            // 
-            // button24
-            // 
-            this.button24.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button24.Location = new System.Drawing.Point(194, 180);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(53, 54);
-            this.button24.TabIndex = 32;
-            this.button24.Text = "Up";
-            this.button24.UseVisualStyleBackColor = true;
-            // 
             // ResultScreen
             // 
             this.ResultScreen.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.ResultScreen.Location = new System.Drawing.Point(54, 130);
+            this.ResultScreen.Location = new System.Drawing.Point(54, 157);
             this.ResultScreen.Name = "ResultScreen";
             this.ResultScreen.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ResultScreen.Size = new System.Drawing.Size(336, 37);
+            this.ResultScreen.Size = new System.Drawing.Size(336, 61);
             this.ResultScreen.TabIndex = 30;
             this.ResultScreen.Text = "";
             // 
             // button23
             // 
             this.button23.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button23.Location = new System.Drawing.Point(123, 180);
+            this.button23.Location = new System.Drawing.Point(123, 243);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(53, 54);
             this.button23.TabIndex = 29;
@@ -310,7 +261,7 @@
             // button22
             // 
             this.button22.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button22.Location = new System.Drawing.Point(54, 180);
+            this.button22.Location = new System.Drawing.Point(54, 240);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(53, 54);
             this.button22.TabIndex = 28;
@@ -321,7 +272,7 @@
             // button21
             // 
             this.button21.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button21.Location = new System.Drawing.Point(337, 180);
+            this.button21.Location = new System.Drawing.Point(337, 243);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(53, 54);
             this.button21.TabIndex = 27;
@@ -331,7 +282,7 @@
             // button20
             // 
             this.button20.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button20.Location = new System.Drawing.Point(266, 180);
+            this.button20.Location = new System.Drawing.Point(266, 240);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(53, 54);
             this.button20.TabIndex = 26;
@@ -366,7 +317,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label2.Location = new System.Drawing.Point(215, 16);
+            this.label2.Location = new System.Drawing.Point(260, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(166, 31);
             this.label2.TabIndex = 23;
@@ -377,7 +328,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label1.Location = new System.Drawing.Point(39, 16);
+            this.label1.Location = new System.Drawing.Point(8, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 31);
             this.label1.TabIndex = 22;
@@ -483,7 +434,7 @@
             this.buttonX10x.Name = "buttonX10x";
             this.buttonX10x.Size = new System.Drawing.Size(53, 54);
             this.buttonX10x.TabIndex = 12;
-            this.buttonX10x.Text = "x10^";
+            this.buttonX10x.Text = "*10^";
             this.buttonX10x.UseVisualStyleBackColor = true;
             this.buttonX10x.Click += new System.EventHandler(this.ButtonToScreen);
             // 
@@ -502,12 +453,13 @@
             // Screen
             // 
             this.Screen.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.Screen.Location = new System.Drawing.Point(54, 50);
+            this.Screen.Location = new System.Drawing.Point(54, 77);
             this.Screen.Name = "Screen";
             this.Screen.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Screen.Size = new System.Drawing.Size(336, 74);
             this.Screen.TabIndex = 10;
             this.Screen.Text = "";
+            this.Screen.TextChanged += new System.EventHandler(this.Screen_Refocus);
             this.Screen.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PrintResult);
             // 
             // button0
@@ -681,7 +633,6 @@
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button23;
@@ -693,10 +644,6 @@
         private System.Windows.Forms.Button button31;
         private System.Windows.Forms.Button button30;
         private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Label label_ctrl;
         private System.Windows.Forms.Label label_alpha;
         private System.Windows.Forms.ToolStripMenuItem paintToolStripMenuItem;
@@ -706,6 +653,7 @@
         private System.Windows.Forms.Button button32;
         private System.Windows.Forms.Button button_store;
         private System.Windows.Forms.Button button34;
+        private System.Windows.Forms.Label label2;
     }
 }
 
