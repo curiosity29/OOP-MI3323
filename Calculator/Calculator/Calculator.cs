@@ -38,6 +38,7 @@ namespace Calculator
         private void ButtonToScreen(object sender, EventArgs e)
         {
             Screen.Text += ((Button)sender).Text;
+            Screen.Text.Insert(Screen.SelectionStart, ((Button)sender).Text);
         }
 
 
@@ -134,6 +135,6 @@ namespace Calculator
             Screen.Focus();
             Screen.SelectionStart = Screen.Text.Length;
         }
-
+ 
     }
 }

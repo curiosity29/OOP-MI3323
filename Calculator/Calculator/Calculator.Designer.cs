@@ -206,7 +206,7 @@
             // button31
             // 
             this.button31.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button31.Location = new System.Drawing.Point(266, 360);
+            this.button31.Location = new System.Drawing.Point(266, 363);
             this.button31.Name = "button31";
             this.button31.Size = new System.Drawing.Size(53, 54);
             this.button31.TabIndex = 39;
@@ -218,7 +218,7 @@
             // 
             this.button30.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.button30.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button30.Location = new System.Drawing.Point(194, 360);
+            this.button30.Location = new System.Drawing.Point(194, 363);
             this.button30.Name = "button30";
             this.button30.Size = new System.Drawing.Size(53, 54);
             this.button30.TabIndex = 38;
@@ -465,7 +465,7 @@
             // button0
             // 
             this.button0.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button0.Location = new System.Drawing.Point(54, 606);
+            this.button0.Location = new System.Drawing.Point(54, 603);
             this.button0.Name = "button0";
             this.button0.Size = new System.Drawing.Size(53, 54);
             this.button0.TabIndex = 9;
