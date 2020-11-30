@@ -195,7 +195,7 @@
             this.text_b.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.text_b.Location = new System.Drawing.Point(290, 370);
             this.text_b.Name = "text_b";
-            this.text_b.Size = new System.Drawing.Size(243, 38);
+            this.text_b.Size = new System.Drawing.Size(311, 38);
             this.text_b.TabIndex = 16;
             // 
             // label10
@@ -213,7 +213,7 @@
             this.text_a.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.text_a.Location = new System.Drawing.Point(290, 297);
             this.text_a.Name = "text_a";
-            this.text_a.Size = new System.Drawing.Size(243, 38);
+            this.text_a.Size = new System.Drawing.Size(311, 38);
             this.text_a.TabIndex = 14;
             // 
             // label11

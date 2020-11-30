@@ -140,11 +140,6 @@ namespace Calculator
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var openFileDialog = new OpenFileDialog();
@@ -183,8 +178,8 @@ namespace Calculator
         {
             Vector2 v12 = new Vector2(p2.X - p1.X, p2.Y - p1.Y);
             //Vector2 v23 = new Vector2(p2.)
-            return 0;
 
+            throw new NotImplementedException();
         }
     }
 }

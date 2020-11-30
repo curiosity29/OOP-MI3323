@@ -47,7 +47,7 @@ namespace Calculator
         {
             double delta = a1 * b2 - a2 * b1;
             if (delta == 0)
-                if (c1 == c2)
+                if (c1 == a1/a2*c2)
                     throw new ArgumentException("Vô số nghiệm");
                 else
                     throw new ArgumentException("Vô nghiệm");
