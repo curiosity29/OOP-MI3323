@@ -41,7 +41,7 @@ namespace Calculator
             text_x3.Text = Formatter.ComplexNumber(result[2]);
         }
 
-        private Complex[] Solve(double v3, double v2, double v1, double v0)
+        public static Complex[] Solve(double v3, double v2, double v1, double v0)
         {
             if (v3 == 0) throw new InvalidOperationException("không phải pt bậc 3");
 

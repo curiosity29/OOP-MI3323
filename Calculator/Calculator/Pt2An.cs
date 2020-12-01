@@ -43,7 +43,7 @@ namespace Calculator
             text_b.Text = result[1].ToString();
 
         }
-        private double[] Solve(double a1, double a2, double b1, double b2, double c1, double c2)
+        public static double[] Solve(double a1, double a2, double b1, double b2, double c1, double c2)
         {
             double delta = a1 * b2 - a2 * b1;
             if (delta == 0)

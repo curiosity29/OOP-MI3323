@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Numerics;
 using System.Drawing.Imaging;
+using System.Drawing.Drawing2D;
 
 namespace Calculator
 {
@@ -22,12 +23,34 @@ namespace Calculator
         public Paint()
         {
             InitializeComponent();
-            
-            bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
-            pictureBox.Image = bitmap;
-            g = Graphics.FromImage(bitmap);
             g1 = pictureBox.CreateGraphics();
+            //pictureBox.Image = bitmap;
+            Reset();
+
         }
+        private void Reset()
+        {
+            bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
+            g = Graphics.FromImage(bitmap);
+        }
+        #region helper
+        public static Vector3 Cross(Vector3 vector1, Vector3 vector2)
+        {
+            return new Vector3(
+                vector1.Y * vector2.Z - vector1.Z * vector2.Y,
+                vector1.Z * vector2.X - vector1.X * vector2.Z,
+                vector1.X * vector2.Y - vector1.Y * vector2.X);
+        }
+
+        public static float Dot(Vector3 vector1, Vector3 vector2)
+        {
+            return vector1.X * vector2.X + vector1.Y * vector2.Y + vector1.Z * vector2.Z;
+        }
+        public double VectorLength(Vector3 v)
+        {
+            return Math.Sqrt(v.X * v.X + v.Y * v.Y + v.Z * v.Z);
+        }
+        #endregion
 
         private void Draw_hbh(object sender, EventArgs e)
         {
@@ -37,7 +60,7 @@ namespace Calculator
                     pointList[i] = pointStack.Pop();
                 Draw_hbh(pen, pointList);
             }
-            catch(Exception)
+            catch (Exception)
             {
                 MessageBox.Show("mark your point first");
             }
@@ -79,6 +102,7 @@ namespace Calculator
             {
                 MessageBox.Show("mark your point first");
             }
+
         }
         private void Draw_hhbh(Pen pen, Point[] pointList)
         {
@@ -116,6 +140,8 @@ namespace Calculator
             g.DrawLine(pen, p3, p13);
             g.DrawLine(pen, p4, p14);
             pictureBox.Image = bitmap;
+            //pictureBox.Image = buffer;
+
         }
         private static Point Add(Point p1, Point p2)
         {
@@ -131,7 +157,7 @@ namespace Calculator
         private void SaveAs(object sender, EventArgs e)
         {
             var saveFileDialog = new SaveFileDialog();
-            if(saveFileDialog.ShowDialog() == DialogResult.OK)
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 Bitmap bmp = new Bitmap(pictureBox.Width, pictureBox.Height);
                 pictureBox.DrawToBitmap(bmp, pictureBox.ClientRectangle);
@@ -143,43 +169,93 @@ namespace Calculator
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var openFileDialog = new OpenFileDialog();
-            if(openFileDialog.ShowDialog() == DialogResult.OK)
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
                 try
                 {
                     pictureBox.Image = Image.FromFile(openFileDialog.FileName);
                 }
-                catch(Exception)
+                catch (Exception)
                 {
                     MessageBox.Show("This file is not OK");
                 }
         }
-        private void Clean()
-        {
-            g.Clear(Color.White);
-            pictureBox.Image = bitmap;
-        }
+
         private void Redraw(object sender, EventArgs e)
         {
             int index = ((ComboBox)sender).SelectedIndex;
             try
             {
                 pointList[index] = pointStack.Pop();
-                Clean();
+                Reset();
                 Draw_hhbh(pen, pointList);
-                
+
             }
-            catch(Exception)
+            catch (Exception)
             {
                 MessageBox.Show("mark your point first");
             }
         }
 
-        private double Calculate_Volume(Point p1, Point p2, Point p3, Point p11)
-        {
-            Vector2 v12 = new Vector2(p2.X - p1.X, p2.Y - p1.Y);
-            //Vector2 v23 = new Vector2(p2.)
 
-            throw new NotImplementedException();
+        private Vector2 Calculte_Coordinate(Point a, Point b,
+            Point pointO, Vector2 vectorI, Vector2 vectorJ)
+        {
+            Vector2 ab = new Vector2(b.X - a.X, b.Y - a.Y);
+            var coordinate = Pt2An.Solve(vectorI.X, vectorI.Y, vectorJ.X, vectorJ.Y, ab.X, ab.Y);
+            return new Vector2((float)coordinate[0], (float)coordinate[1]);
         }
+        private double Calculate_Volume(Point p1, Point p2, Point p3, Point p11,
+            Point pointO, Vector2 vectorI, Vector2 vectorJ, Vector2 vectorK)
+        {
+            Vector2 v12 = Calculte_Coordinate(p1, p2, pointO, vectorI, vectorJ);
+            Vector2 v13 = Calculte_Coordinate(p1, p3, pointO, vectorI, vectorJ);
+            Vector2 v14 = new Vector2((p11.Y - p1.Y) / vectorK.Y);
+            return Calculate_Volume(
+                new Vector3(v12.X, v12.Y, 0),
+                new Vector3(v13.X, v13.Y, 0),
+                new Vector3(0, 0, v14.Y)
+                );
+        }
+        private double Calculate_Volume(Vector3 v1, Vector3 v2, Vector3 v3)
+        {
+            return Math.Abs(Dot(v1, Cross(v2, v3)));
+        }
+
+
+        #region hard coding
+        Point pointO = new Point(505, 376);
+        Vector2 vectorI = new Vector2(43.375f, -8.625f);
+        Vector2 vectorJ = new Vector2(24.875f, 15.125f);
+        Vector2 vectorK = new Vector2(0, -47);
+
+        private void Calculate_Volume(object sender, EventArgs e)
+        {
+            MessageBox.Show(Calculate_Volume(pointList[0], pointList[1], pointList[2], pointList[3],
+                pointO, vectorI, vectorJ, vectorK).ToString());
+        }
+
+
+
+        private void Calculate_Area(object sender, EventArgs e)
+        {
+            MessageBox.Show(Calculate_Area(pointList[0], pointList[1], pointList[2], pointList[3],
+                pointO, vectorI, vectorJ, vectorK).ToString());
+        }
+
+        private double Calculate_Area(Point p1, Point p2, Point p3, Point p11,
+            Point pointO, Vector2 vectorI, Vector2 vectorJ, Vector2 vectorK)
+        {
+            Vector2 v12 = Calculte_Coordinate(p1, p2, pointO, vectorI, vectorJ);
+            Vector2 v13 = Calculte_Coordinate(p1, p3, pointO, vectorI, vectorJ);
+            Vector2 v14 = new Vector2((p11.Y - p1.Y) / vectorK.Y);
+            Vector3 v1 = new Vector3(v12.X, v12.Y, 0);
+            Vector3 v2 = new Vector3(v13.X, v13.Y, 0);
+            Vector3 v3 = new Vector3(0, 0, v14.Y);
+            return 2 * VectorLength(Cross(v1, v2)) + 
+                2 * VectorLength(Cross(v1, v3)) + 
+                2 * VectorLength(Cross(v2, v3));
+
+        }
+        #endregion
     }
 }

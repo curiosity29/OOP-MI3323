@@ -38,7 +38,7 @@ namespace Calculator
             text_x1.Text = Formatter.ComplexNumber(result[0]);
             text_x2.Text = Formatter.ComplexNumber(result[1]);
         }
-        private Complex[] Solve(double a2, double a1, double a0)
+        public static Complex[] Solve(double a2, double a1, double a0)
         {
             if (a2 == 0) throw new InvalidOperationException("không phải pt bậc 2");
 
