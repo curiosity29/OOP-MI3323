@@ -25,7 +25,6 @@ namespace Calculator
         private void OpenPaint(object sender, EventArgs e)
         {
             (new Paint()).Show();
-            //this.Hide();
         }
 
 
@@ -40,9 +39,6 @@ namespace Calculator
             Screen.Text += ((Button)sender).Text;
             Screen.Text.Insert(Screen.SelectionStart, ((Button)sender).Text);
         }
-
-
-        // Modification
 
 
         // Edit
@@ -64,16 +60,6 @@ namespace Calculator
             Screen.Clear();
             ResultScreen.Clear();
         }
-
-
-
-        //Operator
-
-
-
-
-
-        //Other
 
         private void OpenOption(object sender, EventArgs e)
         {
@@ -128,7 +114,6 @@ namespace Calculator
                 if (ResultScreen.Text != "")
                     variables["x"] = double.Parse(ResultScreen.Text);
         }
-
 
         private void Screen_Refocus(object sender, EventArgs e)
         {

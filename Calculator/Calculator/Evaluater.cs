@@ -41,6 +41,14 @@ namespace Calculator
                     "r");
             }
         }
+        public static double EvalUnaryOperator(double x, string op)
+        {
+            switch (op)
+            {
+                case "Sqrt": return Sqrt(x);
+                default: throw new InvalidOperationException("unrecognized operator");
+            }
+        }
         public static bool EvalBoolOperator(bool x, bool y, string op)
         {
             switch (op)
@@ -51,15 +59,6 @@ namespace Calculator
                 case "->": return !x || y;
                 case "<->": return x = y;
                 case "<-": return x || !y;
-                default: throw new InvalidOperationException("unrecognized operator");
-            }
-        }
-        public static double EvalUnaryOperator(double x, string op)
-        {
-            switch (op)
-            {
-                case "Sqrt": return Sqrt(x);
-
                 default: throw new InvalidOperationException("unrecognized operator");
             }
         }
@@ -96,12 +95,12 @@ namespace Calculator
     }
     public class StringEvaluater
     {
-
         public static double Eval(string expression, Dictionary<string, double> dict)
         {
             return Evaluator.EvalPostfix(
-                Interpreter.infixToPostfix2((new Tokenizor(dict.Keys)).TokenizeNumber(expression))
-                , dict);
+                Interpreter.infixToPostfix2(
+                    (new Tokenizor(dict.Keys)).TokenizeNumber(expression)), dict
+                    );
         }
     }
 }

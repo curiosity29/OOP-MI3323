@@ -32,6 +32,8 @@ namespace Calculator
             catch (Exception)
             {
                 label_error.Text = "Math ERROR";
+                text_x1.Text = "";
+                text_x2.Text = "";
                 return;
             }
             label_error.Text = "No Problem";

@@ -24,9 +24,7 @@ namespace Calculator
         {
             InitializeComponent();
             g1 = pictureBox.CreateGraphics();
-            //pictureBox.Image = bitmap;
             Reset();
-
         }
         private void Reset()
         {
@@ -50,8 +48,11 @@ namespace Calculator
         {
             return Math.Sqrt(v.X * v.X + v.Y * v.Y + v.Z * v.Z);
         }
+        private static Point Add(Point p1, Point p2)
+        {
+            return new Point(p1.X + p2.X, p1.Y + p2.Y);
+        }
         #endregion
-
         private void Draw_hbh(object sender, EventArgs e)
         {
             try
@@ -143,10 +144,7 @@ namespace Calculator
             //pictureBox.Image = buffer;
 
         }
-        private static Point Add(Point p1, Point p2)
-        {
-            return new Point(p1.X + p2.X, p1.Y + p2.Y);
-        }
+
 
         private void PictureBox_Click(object sender, MouseEventArgs e)
         {
@@ -209,11 +207,11 @@ namespace Calculator
         {
             Vector2 v12 = Calculte_Coordinate(p1, p2, pointO, vectorI, vectorJ);
             Vector2 v13 = Calculte_Coordinate(p1, p3, pointO, vectorI, vectorJ);
-            Vector2 v14 = new Vector2((p11.Y - p1.Y) / vectorK.Y);
+            Vector2 v14 = Calculte_Coordinate(p1, p11, pointO, vectorI, vectorJ);
             return Calculate_Volume(
                 new Vector3(v12.X, v12.Y, 0),
                 new Vector3(v13.X, v13.Y, 0),
-                new Vector3(0, 0, v14.Y)
+                new Vector3(v14.X, v14.Y, (p11.Y - p1.Y) / vectorK.Y)
                 );
         }
         private double Calculate_Volume(Vector3 v1, Vector3 v2, Vector3 v3)
@@ -247,10 +245,10 @@ namespace Calculator
         {
             Vector2 v12 = Calculte_Coordinate(p1, p2, pointO, vectorI, vectorJ);
             Vector2 v13 = Calculte_Coordinate(p1, p3, pointO, vectorI, vectorJ);
-            Vector2 v14 = new Vector2((p11.Y - p1.Y) / vectorK.Y);
+            Vector2 v14 = Calculte_Coordinate(p1, p11, pointO, vectorI, vectorJ);
             Vector3 v1 = new Vector3(v12.X, v12.Y, 0);
             Vector3 v2 = new Vector3(v13.X, v13.Y, 0);
-            Vector3 v3 = new Vector3(0, 0, v14.Y);
+            Vector3 v3 = new Vector3(v14.X, v14.Y, (p11.Y - p1.Y) / vectorK.Y);
             return 2 * VectorLength(Cross(v1, v2)) + 
                 2 * VectorLength(Cross(v1, v3)) + 
                 2 * VectorLength(Cross(v2, v3));
