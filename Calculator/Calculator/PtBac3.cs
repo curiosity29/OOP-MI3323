@@ -35,7 +35,6 @@ namespace Calculator
                 return;
             }
             label_error.Text = "No Problem";
-
             text_x1.Text = Formatter.ComplexNumber(result[0]);
             text_x2.Text = Formatter.ComplexNumber(result[1]);
             text_x3.Text = Formatter.ComplexNumber(result[2]);

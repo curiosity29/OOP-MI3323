@@ -119,7 +119,7 @@
             this.Board.Controls.Add(this.button3);
             this.Board.Controls.Add(this.button2);
             this.Board.Controls.Add(this.button1);
-            this.Board.Location = new System.Drawing.Point(249, 12);
+            this.Board.Location = new System.Drawing.Point(77, 12);
             this.Board.Name = "Board";
             this.Board.Size = new System.Drawing.Size(444, 677);
             this.Board.TabIndex = 6;
@@ -586,7 +586,7 @@
             this.paintToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(855, 38);
+            this.menuStrip1.Size = new System.Drawing.Size(535, 38);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -594,7 +594,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 715);
+            this.ClientSize = new System.Drawing.Size(535, 693);
             this.Controls.Add(this.Board);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

@@ -141,8 +141,6 @@ namespace Calculator
             g.DrawLine(pen, p3, p13);
             g.DrawLine(pen, p4, p14);
             pictureBox.Image = bitmap;
-            //pictureBox.Image = buffer;
-
         }
 
 
@@ -228,7 +226,8 @@ namespace Calculator
 
         private void Calculate_Volume(object sender, EventArgs e)
         {
-            MessageBox.Show(Calculate_Volume(pointList[0], pointList[1], pointList[2], pointList[3],
+            MessageBox.Show(Calculate_Volume(
+                pointList[0], pointList[1], pointList[2], pointList[3],
                 pointO, vectorI, vectorJ, vectorK).ToString());
         }
 
@@ -236,7 +235,8 @@ namespace Calculator
 
         private void Calculate_Area(object sender, EventArgs e)
         {
-            MessageBox.Show(Calculate_Area(pointList[0], pointList[1], pointList[2], pointList[3],
+            MessageBox.Show(Calculate_Area(
+                pointList[0], pointList[1], pointList[2], pointList[3],
                 pointO, vectorI, vectorJ, vectorK).ToString());
         }
 

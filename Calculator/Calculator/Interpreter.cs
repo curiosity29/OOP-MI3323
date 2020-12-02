@@ -92,12 +92,11 @@ namespace Calculator
                 if (IsOperator(s))
                 {
                     //push all operator got more priority than s to stack then push s
-                    while (stack.Count > 0 && GetPriority(s) <= GetPriority(stack.Peek())) result.Add(stack.Pop());    // a*a+b --> meet + push(*)
+                    while (stack.Count > 0 && GetPriority(s) <= GetPriority(stack.Peek()))
+                        result.Add(stack.Pop());
                     stack.Push(s);
                 }
                 else if (s == "(") stack.Push(s);
-                //  If s is ")", pop and output from the stack   
-                // until an "(" is encountered.  
                 else if (s == ")")
                 {
                     while (stack.Peek() != "(") result.Add(stack.Pop());

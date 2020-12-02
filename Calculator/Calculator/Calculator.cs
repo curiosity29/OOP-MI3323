@@ -40,9 +40,6 @@ namespace Calculator
             Screen.Text.Insert(Screen.SelectionStart, ((Button)sender).Text);
         }
 
-
-        // Edit
-
         /// <summary>
         /// remove the last component
         /// </summary>
@@ -54,11 +51,15 @@ namespace Calculator
             if (s != "") Screen.Text = s.Remove(s.Length-1);
         }
 
-        // this should reset state, now with just screen, used for AC
         private void Clear(object sender, EventArgs e)
         {
             Screen.Clear();
             ResultScreen.Clear();
+        }
+        private void StoreValue(object sender, EventArgs e)
+        {
+                if (ResultScreen.Text != "")
+                    variables["x"] = double.Parse(ResultScreen.Text);
         }
 
         private void OpenOption(object sender, EventArgs e)
@@ -78,12 +79,6 @@ namespace Calculator
         }
         #endregion
 
-        #region Navigate
-
-
-
-        #endregion
-
         private void PrintResult(object sender, EventArgs e)
         {
             try
@@ -98,7 +93,6 @@ namespace Calculator
             }
         }
 
-
         private void PrintResult(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.ControlKey)
@@ -109,11 +103,6 @@ namespace Calculator
             }
         }
 
-        private void StoreValue(object sender, EventArgs e)
-        {
-                if (ResultScreen.Text != "")
-                    variables["x"] = double.Parse(ResultScreen.Text);
-        }
 
         private void Screen_Refocus(object sender, EventArgs e)
         {
