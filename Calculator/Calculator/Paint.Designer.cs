@@ -38,6 +38,7 @@
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comboBox_redraw = new System.Windows.Forms.ComboBox();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +52,7 @@
             this.button_hhbh.TabIndex = 5;
             this.button_hhbh.Text = "hình bình hành";
             this.button_hhbh.UseVisualStyleBackColor = true;
-            this.button_hhbh.Click += new System.EventHandler(this.Draw_hbh);
+            this.button_hhbh.Click += new System.EventHandler(this.Draw_hbh_regis);
             // 
             // button1
             // 
@@ -62,7 +63,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "hình hộp bình hành";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Draw_hhbh);
+            this.button1.Click += new System.EventHandler(this.Draw_hhbh_regis);
             // 
             // button2
             // 
@@ -134,7 +135,7 @@
             this.comboBox_redraw.Size = new System.Drawing.Size(93, 28);
             this.comboBox_redraw.TabIndex = 12;
             this.comboBox_redraw.Text = "redraw";
-            this.comboBox_redraw.SelectedIndexChanged += new System.EventHandler(this.Redraw);
+            this.comboBox_redraw.SelectedIndexChanged += new System.EventHandler(this.Redraw_regis);
             // 
             // pictureBox
             // 
@@ -148,12 +149,24 @@
             this.pictureBox.TabStop = false;
             this.pictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictureBox_Click);
             // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.button4.Location = new System.Drawing.Point(577, 13);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(190, 53);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "Clear";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Clear);
+            // 
             // Paint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1055, 691);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.comboBox_redraw);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.button3);
@@ -184,5 +197,6 @@
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.ComboBox comboBox_redraw;
         private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Button button4;
     }
 }

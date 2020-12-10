@@ -15,21 +15,25 @@ namespace Calculator
 {
     public partial class Paint : Form
     {
+        delegate void ClickHandler(object sender, MouseEventArgs e);
         Graphics g, g1;
         Pen pen = new Pen(Color.Red, 3);
         Stack<Point> pointStack = new Stack<Point>();
         Point[] pointList = new Point[4];
         Bitmap bitmap;
+        ClickHandler clickHandler;
         public Paint()
         {
             InitializeComponent();
             g1 = pictureBox.CreateGraphics();
+            clickHandler = new ClickHandler(Mark_circle);
             Reset();
         }
         private void Reset()
         {
             bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
             g = Graphics.FromImage(bitmap);
+            pictureBox.Image = bitmap;
         }
         #region helper
         public static Vector3 Cross(Vector3 vector1, Vector3 vector2)
@@ -53,17 +57,22 @@ namespace Calculator
             return new Point(p1.X + p2.X, p1.Y + p2.Y);
         }
         #endregion
+
+        #region draw
+
+        private void Draw_hbh_regis(object sender, EventArgs e)
+        {
+            clickHandler = new ClickHandler(Mark_circle);
+            pointStack.Clear();
+            clickHandler += Draw_hbh;
+        }
         private void Draw_hbh(object sender, EventArgs e)
         {
-            try
+            if (pointStack.Count > 2)
             {
                 for (int i = 2; i >= 0; i--)
                     pointList[i] = pointStack.Pop();
                 Draw_hbh(pen, pointList);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("mark your point first");
             }
         }
 
@@ -93,17 +102,18 @@ namespace Calculator
 
         private void Draw_hhbh(object sender, EventArgs e)
         {
-            try
+            if (pointStack.Count > 3)
             {
                 for (int i = 3; i >= 0; i--)
                     pointList[i] = pointStack.Pop();
                 Draw_hhbh(pen, pointList);
             }
-            catch (Exception)
-            {
-                MessageBox.Show("mark your point first");
-            }
-
+        }
+        private void Draw_hhbh_regis(object sender, EventArgs e)
+        {
+            clickHandler = new ClickHandler(Mark_circle);
+            pointStack.Clear();
+            clickHandler += Draw_hhbh;
         }
         private void Draw_hhbh(Pen pen, Point[] pointList)
         {
@@ -143,12 +153,22 @@ namespace Calculator
             pictureBox.Image = bitmap;
         }
 
+        #endregion
+
 
         private void PictureBox_Click(object sender, MouseEventArgs e)
         {
+            // draw red dot and save click location
             pointStack.Push(e.Location);
+            clickHandler(sender, e);
+        }
+
+        private void Mark_circle(object sender, MouseEventArgs e)
+        {
+            //pointStack.Push(e.Location);
             g1.DrawEllipse(pen, e.X, e.Y, 3, 3);
         }
+        #region file
 
         private void SaveAs(object sender, EventArgs e)
         {
@@ -176,9 +196,17 @@ namespace Calculator
                 }
         }
 
+        #endregion
+
+        private void Redraw_regis(object sender, EventArgs e)
+        {
+            pointStack.Clear();
+            clickHandler = new ClickHandler(Mark_circle);
+            clickHandler += Redraw;
+        }
         private void Redraw(object sender, EventArgs e)
         {
-            int index = ((ComboBox)sender).SelectedIndex;
+            int index = comboBox_redraw.SelectedIndex;
             try
             {
                 pointList[index] = pointStack.Pop();
@@ -192,6 +220,8 @@ namespace Calculator
             }
         }
 
+
+        #region calculate something
 
         private Vector2 Calculte_Coordinate(Point a, Point b,
             Point pointO, Vector2 vectorI, Vector2 vectorJ)
@@ -209,7 +239,7 @@ namespace Calculator
             return Calculate_Volume(
                 new Vector3(v12.X, v12.Y, 0),
                 new Vector3(v13.X, v13.Y, 0),
-                new Vector3(v14.X, v14.Y, (p11.Y - p1.Y) / vectorK.Y)
+                new Vector3(v14.X, 0, (p11.Y - p1.Y) / vectorK.Y)
                 );
         }
         private double Calculate_Volume(Vector3 v1, Vector3 v2, Vector3 v3)
@@ -217,6 +247,7 @@ namespace Calculator
             return Math.Abs(Dot(v1, Cross(v2, v3)));
         }
 
+        #endregion
 
         #region hard coding
         Point pointO = new Point(505, 376);
@@ -238,6 +269,11 @@ namespace Calculator
             MessageBox.Show(Calculate_Area(
                 pointList[0], pointList[1], pointList[2], pointList[3],
                 pointO, vectorI, vectorJ, vectorK).ToString());
+        }
+
+        private void Clear(object sender, EventArgs e)
+        {
+            Reset();
         }
 
         private double Calculate_Area(Point p1, Point p2, Point p3, Point p11,
