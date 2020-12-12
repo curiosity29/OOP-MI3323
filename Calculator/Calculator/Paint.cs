@@ -56,6 +56,10 @@ namespace Calculator
         {
             return new Point(p1.X + p2.X, p1.Y + p2.Y);
         }
+        private static Point Subtract(Point p1, Point p2)
+        {
+            return new Point(p1.X - p2.X, p1.Y - p2.Y);
+        }
         #endregion
 
         #region draw
@@ -81,10 +85,10 @@ namespace Calculator
             Draw_hbh(pen, pointList[0], pointList[1], pointList[2]);
         }
         /// <summary>
-        ///     p2--------p4
+        ///     p1--------p3
         ///    /         /   
         ///   /         /
-        ///  p1--------p3
+        ///  p2--------p4
         /// </summary>
         /// <param name="pen"></param>
         /// <param name="p1"></param>
@@ -115,21 +119,91 @@ namespace Calculator
             pointStack.Clear();
             clickHandler += Draw_hhbh;
         }
-        private void Draw_hhbh(Pen pen, Point[] pointList)
-        {
-            Draw_hhbh(pen, pointList[0], pointList[1], pointList[2], pointList[3]);
-        }
-
         /// <summary>
-        ///    p12-------p14
+        ///    p11-------p13
         ///    /|        /|
         ///   / |       / |
-        /// p11-------p13 |
+        /// p12-------p14 |
         ///  |  |      |  |
-        ///  |  p2-----|--p4
+        ///  |  p1-----|--p3
         ///  | /       | /   
         ///  |/        |/
-        ///  p1--------p3
+        ///  p2--------p4
+        /// </summary>
+        /// <param name="pen"></param>
+        /// <param name="pointList"></param>
+        private void Draw_hhbh(Pen pen, Point[] pointList)
+        {
+            pen.DashStyle = DashStyle.Dot;
+            pointList = Hhbh_normalize(pointList);
+            for (int i = 1; i < 4; i++)
+                g.DrawLine(pen, pointList[0], pointList[i]);
+            pen.DashStyle = DashStyle.Solid;
+
+            Point p4 = Add(pointList[1],
+                    Subtract(pointList[2], pointList[0]));
+            Point Height = Subtract(pointList[3], pointList[0]);
+            Point p12 = Add(pointList[1], Height);
+            Point p13 = Add(pointList[2], Height);
+            Point p14 = Add(p4, Height);
+
+            Draw_hbh(pen, p14, p12, p13);
+            Draw_hbh(pen, p14, p12, p4);
+            Draw_hbh(pen, p14, p13, p4);
+        }
+        //underconstruction ... 
+        private Point[] Hhbh_normalize(Point[] pointList)
+        {
+            Point Height = Subtract(pointList[3], pointList[0]);
+            float y0 = pointList[0].Y;
+            Point p4 = Add(pointList[1],
+                    Subtract(pointList[2], pointList[0]));
+            if (pointList[1].Y > y0)
+            {
+                if (pointList[2].Y > y0)
+                    return pointList;   //take p1
+                else
+                {   //take p3
+                    Swap(ref pointList[0], ref pointList[2]);
+                    pointList[1] = p4;
+                    pointList[3] = Add(pointList[0], Height);
+                }
+            }
+            else if (pointList[2].Y > y0)
+            {   //take p2
+                Swap(ref pointList[0], ref pointList[1]);
+                pointList[2] = p4;
+                pointList[3] = Add(pointList[0], Height);
+            }
+            else
+            {   //take p4
+                pointList[0] = p4;
+                pointList[3] = Add(pointList[0], Height);
+            }
+            if (Height.Y > 0)
+            {
+                Swap(ref pointList[0], ref pointList[3]);
+                pointList[1] = Add(pointList[1], Height);
+                pointList[2] = Add(pointList[2], Height);
+            }
+            return pointList;
+        }
+        private void Swap(ref Point a, ref Point b)
+        {
+            Point temp = a;
+            a = b;
+            b = temp;
+        }
+        /// <summary>
+        ///    p11-------p13
+        ///    /|        /|
+        ///   / |       / |
+        /// p12-------p14 |
+        ///  |  |      |  |
+        ///  |  p1-----|--p3
+        ///  | /       | /   
+        ///  |/        |/
+        ///  p2--------p4
         ///  </summary>
         /// <param name="pen"></param>
         /// <param name="p1"></param>
@@ -162,10 +236,8 @@ namespace Calculator
             pointStack.Push(e.Location);
             clickHandler(sender, e);
         }
-
         private void Mark_circle(object sender, MouseEventArgs e)
         {
-            //pointStack.Push(e.Location);
             g1.DrawEllipse(pen, e.X, e.Y, 3, 3);
         }
         #region file
@@ -285,8 +357,8 @@ namespace Calculator
             Vector3 v1 = new Vector3(v12.X, v12.Y, 0);
             Vector3 v2 = new Vector3(v13.X, v13.Y, 0);
             Vector3 v3 = new Vector3(v14.X, v14.Y, (p11.Y - p1.Y) / vectorK.Y);
-            return 2 * VectorLength(Cross(v1, v2)) + 
-                2 * VectorLength(Cross(v1, v3)) + 
+            return 2 * VectorLength(Cross(v1, v2)) +
+                2 * VectorLength(Cross(v1, v3)) +
                 2 * VectorLength(Cross(v2, v3));
 
         }
