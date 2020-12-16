@@ -17,7 +17,7 @@ namespace Calculator
         };                      //token
         public static List<char> numberList = new List<char>()
         {
-            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'
         };
         public static List<string> ignoredList = new List<string>()
         {
