@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace RestaurantSimulator
 {
-    public class Noodle : Dish
+    public class Carrot : IComponent
     {
-
+        public string status;
+        public void Accept()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

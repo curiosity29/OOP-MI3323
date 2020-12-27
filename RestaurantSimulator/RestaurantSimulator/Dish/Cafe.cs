@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace RestaurantSimulator
 {
-    public abstract class Dish
+    public class Cafe : Dish
     {
-        public string name;
-        public Recipe recipe;
-        public AddOn addOn;
-        public long price;
+
     }
 }

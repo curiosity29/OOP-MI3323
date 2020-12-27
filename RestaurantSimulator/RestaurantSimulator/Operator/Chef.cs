@@ -24,5 +24,9 @@ namespace RestaurantSimulator
         {
             throw new NotImplementedException();
         }
+        public Recipe Make_Recipe(Dish dish)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -10,10 +10,5 @@ namespace RestaurantSimulator
     {
         public List<IComponent> component_List;
 
-        public void AđdSupply(List<IComponent> list)
-        {
-
-        }
-
     }
 }
