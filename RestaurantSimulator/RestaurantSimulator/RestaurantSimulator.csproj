@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Component\Bowl.cs" />
     <Compile Include="Component\AddOn.cs" />
     <Compile Include="Component\Carrot.cs" />
     <Compile Include="Dish\Cafe.cs" />
@@ -69,6 +70,9 @@
     <Compile Include="Method\Recipe.cs" />
     <Compile Include="Container\Refrigerator.cs" />
     <Compile Include="Method\WashVisitor.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

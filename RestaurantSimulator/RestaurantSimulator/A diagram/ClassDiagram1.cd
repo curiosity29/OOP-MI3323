@@ -25,7 +25,7 @@
   <Class Name="RestaurantSimulator.Dish">
     <Position X="0.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>BAABAAAAAAAAQAAAAABAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAABAAAAAAAAwAAAAABAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Dish\Dish.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -94,6 +94,14 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Dish\NoodleDish.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="RestaurantSimulator.A_diagram.Bowl" Collapsed="true">
+    <Position X="2.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Component\Bowl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Interface Name="RestaurantSimulator.IComponent" Collapsed="true">
     <Position X="2.75" Y="3.25" Width="1.5" />

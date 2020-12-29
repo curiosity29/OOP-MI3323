@@ -12,6 +12,6 @@ namespace RestaurantSimulator
         public Recipe recipe;
         public AddOn addOn;
         public long price;
-        public IComponent container;
+        public IComponent tool;
     }
 }
