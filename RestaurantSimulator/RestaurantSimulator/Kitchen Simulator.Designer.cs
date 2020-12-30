@@ -48,9 +48,9 @@ namespace RestaurantSimulator
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.groupBox1.Location = new System.Drawing.Point(12, 31);
+            this.groupBox1.Location = new System.Drawing.Point(71, 29);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(502, 341);
+            this.groupBox1.Size = new System.Drawing.Size(586, 432);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kitchen";
@@ -66,43 +66,43 @@ namespace RestaurantSimulator
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(185, 37);
+            this.textBox1.Location = new System.Drawing.Point(185, 40);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(252, 38);
+            this.textBox1.Size = new System.Drawing.Size(334, 38);
             this.textBox1.TabIndex = 6;
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(45, 227);
+            this.button8.Location = new System.Drawing.Point(94, 242);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(136, 85);
+            this.button8.Size = new System.Drawing.Size(134, 100);
             this.button8.TabIndex = 5;
             this.button8.Text = "Take Available";
             this.button8.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(295, 227);
+            this.button6.Location = new System.Drawing.Point(344, 242);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(142, 85);
+            this.button6.Size = new System.Drawing.Size(140, 100);
             this.button6.TabIndex = 4;
             this.button6.Text = "Serve";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(45, 111);
+            this.button3.Location = new System.Drawing.Point(94, 126);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(136, 85);
+            this.button3.Size = new System.Drawing.Size(134, 100);
             this.button3.TabIndex = 2;
             this.button3.Text = "Make Dish";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(295, 111);
+            this.button1.Location = new System.Drawing.Point(344, 126);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 85);
+            this.button1.Size = new System.Drawing.Size(140, 100);
             this.button1.TabIndex = 0;
             this.button1.Text = "Edit Recipes";
             this.button1.UseVisualStyleBackColor = true;
@@ -112,7 +112,7 @@ namespace RestaurantSimulator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1068, 473);
+            this.ClientSize = new System.Drawing.Size(718, 473);
             this.Controls.Add(this.groupBox1);
             this.Name = "Kitchen_Simulator";
             this.Text = "Kitchen_Simulator";
