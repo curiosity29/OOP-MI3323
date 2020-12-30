@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace RestaurantSimulator
 {
-    public partial class Form_Recipe : Form
+    public partial class Form_Manager : Form
     {
-        public Form_Recipe()
+        public Form_Manager()
         {
             InitializeComponent();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -29,10 +29,6 @@ namespace RestaurantSimulator
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -40,51 +36,8 @@ namespace RestaurantSimulator
             this.button6 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.button7);
-            this.groupBox4.Controls.Add(this.button2);
-            this.groupBox4.Controls.Add(this.button5);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.groupBox4.Location = new System.Drawing.Point(520, 31);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.groupBox4.Size = new System.Drawing.Size(502, 341);
-            this.groupBox4.TabIndex = 7;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Manager";
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(179, 227);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(173, 85);
-            this.button7.TabIndex = 5;
-            this.button7.Text = "Adapt";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(37, 111);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(173, 85);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Refrigerator";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(279, 111);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(173, 85);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Add Supply";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -160,11 +113,9 @@ namespace RestaurantSimulator
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1068, 473);
-            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Name = "Kitchen_Simulator";
             this.Text = "Kitchen_Simulator";
-            this.groupBox4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -172,11 +123,6 @@ namespace RestaurantSimulator
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;

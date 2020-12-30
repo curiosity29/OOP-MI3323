@@ -54,6 +54,12 @@
     <Compile Include="Dish\Cafe.cs" />
     <Compile Include="Dish\NoodleDish.cs" />
     <Compile Include="Component\Fish.cs" />
+    <Compile Include="Form_Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Manager.Designer.cs">
+      <DependentUpon>Form_Manager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Recipe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Manager.resx">
+      <DependentUpon>Form_Manager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Recipe.resx">
       <DependentUpon>Form_Recipe.cs</DependentUpon>
