@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantSimulator.diagram
+namespace RestaurantSimulator
 {
-    public class Potato : IComponent
+    public class Potato : Component
     {
 
-        public void Accept()
+        public override void Accept()
         {
             throw new NotImplementedException();
         }

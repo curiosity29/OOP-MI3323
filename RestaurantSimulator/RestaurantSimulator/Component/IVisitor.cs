@@ -8,6 +8,6 @@ namespace RestaurantSimulator
 {
     interface IVisitor
     {
-        void Visit(IComponent component);
+        void Visit(Component component);
     }
 }

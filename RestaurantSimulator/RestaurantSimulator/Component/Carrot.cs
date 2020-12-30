@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace RestaurantSimulator
 {
-    public class Carrot : IComponent
+    public class Carrot : Component
     {
-        public string status;
-        public void Accept()
+
+        public override void Accept()
         {
             throw new NotImplementedException();
         }

@@ -8,7 +8,7 @@ namespace RestaurantSimulator
 {
     class WashVisitor : IVisitor
     {
-        public void Visit(IComponent component)
+        public void Visit(Component component)
         {
             throw new NotImplementedException();
         }

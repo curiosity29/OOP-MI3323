@@ -8,7 +8,7 @@ namespace RestaurantSimulator
 {
     public class Recipe
     {
-        public List<IComponent> component_List;
+        public List<Component> component_List;
         public Dish MakeDish()
         {
             throw new NotImplementedException();

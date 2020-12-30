@@ -9,7 +9,7 @@ namespace RestaurantSimulator.Method
     public class ChopVisitor : IVisitor
     {
 
-        public void Visit(IComponent component)
+        public void Visit(Component component)
         {
             throw new NotImplementedException();
         }

@@ -8,8 +8,8 @@ namespace RestaurantSimulator
 {
     public class Manager
     {
-        public Refrigerator refrigerator;
-        public void AđdSupply(ICollection<IComponent> list)
+        public Form_Refrigerator refrigerator;
+        public void AđdSupply(ICollection<Component> list)
         {
             throw new NotImplementedException();
         }

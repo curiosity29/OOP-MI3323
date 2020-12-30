@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace RestaurantSimulator.A_diagram
 {
-    public class Bowl : IComponent
+    public class Bowl : Component
     {
-        public void Accept()
+
+        public override void Accept()
         {
             throw new NotImplementedException();
         }

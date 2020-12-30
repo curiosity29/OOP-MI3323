@@ -15,6 +15,7 @@ namespace RestaurantSimulator
         public Form1()
         {
             InitializeComponent();
+            (new Kitchen_Simulator()).Show();
         }
 
 
