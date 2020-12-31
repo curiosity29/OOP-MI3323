@@ -49,12 +49,11 @@ namespace RestaurantSimulator
             try
             {
                 var selectedProp = dataGridView1.SelectedRows[0].DataBoundItem as Component;
-                richTextBox1.Text = selectedProp.ToString();    
+   
 
             }
             catch(Exception ex)
             {
-                richTextBox1.Text = "Error: " + ex.Message;
             }
         }
 

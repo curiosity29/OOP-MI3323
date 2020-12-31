@@ -8,7 +8,7 @@ namespace RestaurantSimulator
 {
     class FlyFoodFactory
     {
-        private Dictionary<Recipe, Dish> dict;
+        private Dictionary<Type, Dish> dict;
 
         public Dish GetDish(Recipe recipe)
         {
