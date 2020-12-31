@@ -12,9 +12,12 @@ namespace RestaurantSimulator
 {
     public partial class Form_Recipe : Form
     {
+
         public Form_Recipe()
         {
             InitializeComponent();
+            Graphics g = this.CreateGraphics();
+            g.DrawEllipse(new Pen(Color.Red), 100, 100, 100, 100);
         }
 
         private void button4_Click(object sender, EventArgs e)

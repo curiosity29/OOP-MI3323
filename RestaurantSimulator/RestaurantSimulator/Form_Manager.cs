@@ -16,5 +16,10 @@ namespace RestaurantSimulator
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new Form_Refrigerator().Show();
+        }
     }
 }
