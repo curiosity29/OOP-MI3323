@@ -139,5 +139,8 @@
   <ItemGroup>
     <None Include="Resources\CorgiBoy.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="PHANCONG.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
