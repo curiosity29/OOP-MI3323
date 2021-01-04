@@ -8,6 +8,7 @@ namespace RestaurantSimulator
 {
     public class Addon
     {
-
+        string name;
+        public double prize;
     }
 }

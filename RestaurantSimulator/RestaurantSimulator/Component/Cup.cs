@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantSimulator.Component
+namespace RestaurantSimulator
 {
-    class Cup
+    public class Cup : Component
     {
+        public override void Accept()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

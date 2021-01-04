@@ -8,5 +8,9 @@ namespace RestaurantSimulator
 {
     public class NoodleDish : Dish
     {
+        public NoodleDish(string baseName, Component tool) : base(baseName, tool)
+        {
+
+        }
     }
 }

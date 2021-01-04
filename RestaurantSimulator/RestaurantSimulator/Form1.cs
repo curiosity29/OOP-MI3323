@@ -14,7 +14,7 @@ namespace RestaurantSimulator
 {
     public partial class Form1 : Form
     {
-        List<CheckedListBox> Menu_List;
+        Dictionary<CheckedListBox, string> Menu_List;
         const string filename = "Data Dish.txt";
         public Form1()
         {
@@ -50,22 +50,27 @@ namespace RestaurantSimulator
         private List<string> GetOrder()
         {
             List<string> order = new List<string>();
-            foreach(CheckedListBox list in Menu_List)
+
+            foreach (CheckedListBox list in Menu_List.Keys)
             {
-                foreach(object obj in list.CheckedItems)
+                foreach (object obj in list.CheckedItems)
                 {
-                    order.Add(obj.ToString());
+                    
                 }
+
             }
+
             return order;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             new Kitchen_Simulator().Show();
-            Menu_List = new List<CheckedListBox>()
+            Menu_List = new Dictionary<CheckedListBox, string>()
             {
-                Menu_Noodle, Menu_Cafe, Menu_Fish
+                { Menu_Noodle, "Mì" },
+                { Menu_Cafe, "Cà phê" },
+                { Menu_Fish, "Cá" }
             };
         }
     }

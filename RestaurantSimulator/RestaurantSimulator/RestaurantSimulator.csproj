@@ -47,13 +47,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Component\Cup.cs" />
+    <Compile Include="Component\Plate.cs" />
     <Compile Include="Container\Refrigerator.cs" />
-    <Compile Include="Dish\FishDish.cs" />
+    <Compile Include="Menu\FishDish.cs" />
     <Compile Include="Component\Bowl.cs" />
-    <Compile Include="Component\AddOn.cs" />
+    <Compile Include="Menu\Addon.cs" />
     <Compile Include="Component\Carrot.cs" />
-    <Compile Include="Dish\Cafe.cs" />
-    <Compile Include="Dish\NoodleDish.cs" />
+    <Compile Include="Menu\Cafe.cs" />
+    <Compile Include="Menu\MenuFactory.cs" />
+    <Compile Include="Menu\NoodleDish.cs" />
     <Compile Include="Component\Fish.cs" />
     <Compile Include="Form_Manager.cs">
       <SubType>Form</SubType>
@@ -77,8 +80,8 @@
     <Compile Include="Method\FryVisitor.cs" />
     <Compile Include="Operator\Chef.cs" />
     <Compile Include="Component\Potato.cs" />
-    <Compile Include="Dish\Dish.cs" />
-    <Compile Include="Dish\FlyFoodFactory.cs" />
+    <Compile Include="Menu\Dish.cs" />
+    <Compile Include="Menu\FlyFoodFactory.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,7 +144,7 @@
     <None Include="Resources\CorgiBoy.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Dish\data.txt" />
+    <Content Include="Menu\Data Dish.txt" />
     <Content Include="PHANCONG.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
