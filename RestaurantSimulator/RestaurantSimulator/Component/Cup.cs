@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantSimulator
+namespace RestaurantSimulator.Component
 {
-    public interface IVisitor
+    class Cup
     {
-        void Visit(Component component);
     }
 }

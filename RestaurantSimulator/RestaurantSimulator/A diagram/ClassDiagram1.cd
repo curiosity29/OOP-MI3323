@@ -32,7 +32,7 @@
     <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Dish\FlyFoodFactory.cs</FileName>
+      <FileName>Menu\FlyFoodFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RestaurantSimulator.Manager">
@@ -52,7 +52,7 @@
   <Class Name="RestaurantSimulator.Form_Refrigerator">
     <Position X="12.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACEAAAAAAACAAAACAAgAAAAAAAAQAAAAAII=</HashCode>
+      <HashCode>AAAAAAABACEAAAAAAACAAAACAAgAAAAAAAAAAAAAAII=</HashCode>
       <FileName>Form_Refrigerator.cs</FileName>
       <NewMemberFileName>Container\Refrigerator.cs</NewMemberFileName>
     </TypeIdentifier>
@@ -84,14 +84,14 @@
     <Position X="3" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Dish\Cafe.cs</FileName>
+      <FileName>Menu\Cafe.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RestaurantSimulator.NoodleDish" Collapsed="true">
     <Position X="3" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Dish\NoodleDish.cs</FileName>
+      <FileName>Menu\NoodleDish.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RestaurantSimulator.A_diagram.Bowl" Collapsed="true">
@@ -120,7 +120,7 @@
     <Position X="5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Dish\FishDish.cs</FileName>
+      <FileName>Menu\FishDish.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RestaurantSimulator.Component" Collapsed="true">

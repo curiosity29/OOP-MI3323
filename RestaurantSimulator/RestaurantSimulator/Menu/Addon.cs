@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantSimulator
 {
-    public class AddOn
+    public class Addon
     {
 
     }

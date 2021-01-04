@@ -8,23 +8,38 @@ namespace RestaurantSimulator
 {
     public class Chef
     {
-        public Chef chef;
+        private static Chef chef;
         string dataBase = "data.txt";
-        List<Recipe> recipe_List;
+        Dictionary<string, Recipe> recipe_dict;
+        Dictionary<string, Addon> dict;
         private Chef()
         {
             // get data
         }
         //singleton
-        Chef THeChef
+        public static Chef THeChef
         {
             get => chef;
         }
-        public Dish Cook(string DishName)
+        public Dish MakeDish(string name)
         {
-            throw new NotImplementedException();
+            Recipe recipe;
+            if (dict.ContainsKey(name))
+            {
+                recipe = recipe_dict[name];
+                //take components, could be different from recipe since manager could have adapted
+                List<Component> component_List = Manager.TheManager.GetComponents(recipe.component_List);
+
+            }
+            else
+            {
+                recipe = Make_Recipe(name);
+                recipe_dict.Add(name, recipe);
+            }
+            return recipe.Cook();
         }
-        public Recipe Make_Recipe(Dish dish)
+        //extentsion for completely new Dish, not yet
+        public Recipe Make_Recipe(string name)
         {
             throw new NotImplementedException();
         }

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace RestaurantSimulator
 {
-    public interface IVisitor
+    public class MenuFactory
     {
-        void Visit(Component component);
+
     }
 }
