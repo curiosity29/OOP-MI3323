@@ -1,7 +1,7 @@
 ﻿
 namespace RestaurantSimulator
 {
-    partial class Kitchen_Simulator
+    partial class Form_Kitchen
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace RestaurantSimulator
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.text_holding = new System.Windows.Forms.TextBox();
             this.button8 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -42,7 +42,7 @@ namespace RestaurantSimulator
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.text_holding);
             this.groupBox1.Controls.Add(this.button8);
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.button3);
@@ -64,12 +64,12 @@ namespace RestaurantSimulator
             this.label3.TabIndex = 5;
             this.label3.Text = "Holding:";
             // 
-            // textBox1
+            // text_holding
             // 
-            this.textBox1.Location = new System.Drawing.Point(185, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(334, 38);
-            this.textBox1.TabIndex = 6;
+            this.text_holding.Location = new System.Drawing.Point(185, 40);
+            this.text_holding.Name = "text_holding";
+            this.text_holding.Size = new System.Drawing.Size(334, 38);
+            this.text_holding.TabIndex = 6;
             // 
             // button8
             // 
@@ -88,6 +88,7 @@ namespace RestaurantSimulator
             this.button6.TabIndex = 4;
             this.button6.Text = "Serve";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Serve);
             // 
             // button3
             // 
@@ -97,6 +98,7 @@ namespace RestaurantSimulator
             this.button3.TabIndex = 2;
             this.button3.Text = "Make Dish";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.MakeDish);
             // 
             // button1
             // 
@@ -108,13 +110,13 @@ namespace RestaurantSimulator
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Kitchen_Simulator
+            // Form_Kitchen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(718, 473);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Kitchen_Simulator";
+            this.Name = "Form_Kitchen";
             this.Text = "Kitchen_Simulator";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -125,7 +127,7 @@ namespace RestaurantSimulator
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox text_holding;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button3;
