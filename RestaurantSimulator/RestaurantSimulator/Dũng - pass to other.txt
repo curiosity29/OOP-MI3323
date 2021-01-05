@@ -1,0 +1,2 @@
+﻿ném cho kitchen:
+	order: từ điển dạng: nhóm (như Mì) - danh sách các món cần làm

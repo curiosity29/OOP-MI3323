@@ -15,26 +15,24 @@ namespace RestaurantSimulator
         Form_Customer form_customer;
         RichTextBox text_table;
         RichTextBox text_bill;
-        public Form_Kitchen(Form_Customer form_customer, RichTextBox text_table, RichTextBox text_bill)
+        Dictionary<string, List<string>> order;
+        public Form_Kitchen(Form_Customer form_customer, RichTextBox text_table, RichTextBox text_bill, Dictionary<string, List<string>> order)
         {
+            InitializeComponent();
             this.form_customer = form_customer;
             this.text_table = text_table;
             this.text_bill = text_bill;
+            this.order = order;
         }
         
-        public Form_Kitchen()
-        {
-            InitializeComponent();
-        }
+        //public Form_Kitchen()
+        //{
+        //
+        //}
 
-        private void button1_Click(object sender, EventArgs e)
+        private void EditRecipe(object sender, EventArgs e)
         {
-            (new Form_Kitchen()).Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            new Form_Refrigerator().Show();
+            new Form_Recipe().Show();
         }
 
         private void Serve(object sender, EventArgs e)
@@ -45,7 +43,7 @@ namespace RestaurantSimulator
 
         private void MakeDish(object sender, EventArgs e)
         {
-
+            new Form_MakeDish().Show();
         }
     }
 }

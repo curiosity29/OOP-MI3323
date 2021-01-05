@@ -11,7 +11,7 @@ namespace RestaurantSimulator
         private static Chef chef;
         string dataBase = "data.txt";
         Dictionary<string, Recipe> recipe_dict;
-        Dictionary<string, Addon> dict;
+        Dictionary<string, DishPart> dict;
         private Chef()
         {
             // get data

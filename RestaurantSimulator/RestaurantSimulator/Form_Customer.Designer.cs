@@ -172,6 +172,7 @@
             this.button5.TabIndex = 20;
             this.button5.Text = "Reset";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Reset);
             // 
             // Menu_Fish
             // 
@@ -182,7 +183,7 @@
             "Xào bò",
             "Xào gà",
             "Sốt bò hầm"});
-            this.Menu_Fish.Location = new System.Drawing.Point(415, 37);
+            this.Menu_Fish.Location = new System.Drawing.Point(403, 37);
             this.Menu_Fish.Name = "Menu_Fish";
             this.Menu_Fish.Size = new System.Drawing.Size(165, 114);
             this.Menu_Fish.TabIndex = 19;
@@ -214,7 +215,7 @@
             this.listview.Location = new System.Drawing.Point(602, 37);
             this.listview.Margin = new System.Windows.Forms.Padding(2);
             this.listview.Name = "listview";
-            this.listview.Size = new System.Drawing.Size(681, 360);
+            this.listview.Size = new System.Drawing.Size(597, 360);
             this.listview.TabIndex = 17;
             this.listview.UseCompatibleStateImageBehavior = false;
             this.listview.View = System.Windows.Forms.View.Details;
@@ -222,26 +223,26 @@
             // columnHeader0
             // 
             this.columnHeader0.Text = "STT";
-            this.columnHeader0.Width = 126;
+            this.columnHeader0.Width = 88;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Món ăn";
-            this.columnHeader4.Width = 142;
+            this.columnHeader4.Width = 165;
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Số lượng";
-            this.columnHeader1.Width = 138;
+            this.columnHeader1.Width = 97;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Giá";
-            this.columnHeader2.Width = 155;
+            this.columnHeader2.Width = 116;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Ghi chú";
+            this.columnHeader5.Text = "Đựng";
             this.columnHeader5.Width = 159;
             // 
             // button1
@@ -253,7 +254,7 @@
             this.button1.TabIndex = 16;
             this.button1.Text = "Order";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Order);
+            this.button1.Click += new System.EventHandler(this.Open_Kitchen);
             // 
             // label7
             // 
@@ -272,6 +273,7 @@
             this.button3.TabIndex = 12;
             this.button3.Text = "Add";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.AddOrder);
             // 
             // button2
             // 
@@ -293,7 +295,7 @@
             "Đen nâu",
             "Đen",
             "Cốt dừa"});
-            this.Menu_Cafe.Location = new System.Drawing.Point(242, 37);
+            this.Menu_Cafe.Location = new System.Drawing.Point(253, 37);
             this.Menu_Cafe.Name = "Menu_Cafe";
             this.Menu_Cafe.Size = new System.Drawing.Size(98, 114);
             this.Menu_Cafe.TabIndex = 9;
@@ -302,11 +304,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.Location = new System.Drawing.Point(195, 43);
+            this.label5.Location = new System.Drawing.Point(187, 43);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 20);
+            this.label5.Size = new System.Drawing.Size(60, 20);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Cafe";
+            this.label5.Text = "Cà phê";
             // 
             // label3
             // 
@@ -341,7 +343,7 @@
             this.Menu_Noodle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.Menu_Noodle.FormattingEnabled = true;
             this.Menu_Noodle.Items.AddRange(new object[] {
-            "Ý",
+            "tôm",
             "Xào bò",
             "Xào gà",
             "Sốt bò hầm"});
@@ -360,7 +362,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "Form_Customer";
             this.Text = "Restaurant Simulator";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Form_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);

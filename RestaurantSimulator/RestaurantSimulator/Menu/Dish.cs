@@ -8,15 +8,14 @@ namespace RestaurantSimulator
 {
     public abstract class Dish
     {
-        protected string baseName;
-        public string addonName;
-        public string FullName { get => baseName + " " + addonName; }
-        public Addon addon;
-        public long price;
-        protected Component tool;
-        public Dish(string baseName, Component tool)
+        public DishPart baseDish;
+        public DishPart addon;
+        public string FullName { get => baseDish.name + " " + addon.name; }
+        public long Price { get => (long)(0.95 * (baseDish.price + addon.price)); }
+        public Component tool;
+        public Dish(DishPart baseDish, Component tool)
         {
-            this.baseName = baseName;
+            this.baseDish = baseDish;
             this.tool = tool;
         }
     }

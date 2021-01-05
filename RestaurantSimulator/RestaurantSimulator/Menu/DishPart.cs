@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace RestaurantSimulator
 {
-    public class Addon
+    public class DishPart
     {
-        string name;
-        public double prize;
+        public string name;
+        public double price;
     }
 }

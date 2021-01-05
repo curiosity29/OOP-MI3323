@@ -6,26 +6,44 @@ using System.Threading.Tasks;
 
 namespace RestaurantSimulator
 {
-    class FlyFoodFactory
+    public class FlyFoodFactory
     {
-        private Dictionary<string, Dish> dict;
-        public Dish GetDish(string baseName)
+        public static Dictionary<string, long> price_dict = new Dictionary<string, long>();
+
+        private static Dictionary<string, Dish> dict = new Dictionary<string, Dish>();
+
+        public static Dish GetDish(string baseName)
         {
             if (dict.ContainsKey(baseName)) return dict[baseName];
             Dish dish;
-            KeyValuePair<string, Dish> pair;
-            switch(baseName)
+            DishPart baseDish;
+            switch (baseName)
             {
                 case "Mì":
-                    dish = new NoodleDish("Mì", new Bowl());
+                    baseDish = new DishPart 
+                    { 
+                        name = "Mì", 
+                        price = price_dict["Mì"] 
+                    };
+                    dish = new NoodleDish(baseDish, new Bowl());
                     dict.Add("Mì", dish);
                     break;
                 case "Cà phê":
-                    dish = new Cafe("Cà phê", new Cup());
+                    baseDish = new DishPart
+                    {
+                        name = "Cà phê",
+                        price = price_dict["Cà phê"]
+                    };
+                    dish = new NoodleDish(baseDish, new Bowl());
                     dict.Add("Cà phê", dish);
                     break;
                 case "Cá":
-                    dish = new Cafe("Cá", new Plate());
+                    baseDish = new DishPart
+                    {
+                        name = "Cá",
+                        price = price_dict["Cá"]
+                    };
+                    dish = new NoodleDish(baseDish, new Bowl());
                     dict.Add("Cá", dish);
                     break;
                 default:

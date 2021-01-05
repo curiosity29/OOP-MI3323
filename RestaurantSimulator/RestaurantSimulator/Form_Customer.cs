@@ -14,63 +14,76 @@ namespace RestaurantSimulator
 {
     public partial class Form_Customer : Form
     {
+        //(control - typename) for each type
         Dictionary<CheckedListBox, string> Menu_List;
+        // (typename - list of that type) for each type
+        Dictionary<string, List<string>> order = new Dictionary<string, List<string>>();
         const string filename = "Data Dish.txt";
-        const string prize_file = "Prize.txt";
-        Dictionary<string, long> prize_dict = new Dictionary<string, long>()
-        {
-            //{ "Mì Xào gà", 100 }
-        }
-        ;
+        const string price_file = "Price.txt";
+        public Dictionary<string, long> price_dict = new Dictionary<string, long>();
+        int index = 0;
         public Form_Customer()
         {
             InitializeComponent();
 
         }
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form_Load(object sender, EventArgs e)
         {
-            new Form_Kitchen(this, this.text_table, this.text_bill).Show();
             Menu_List = new Dictionary<CheckedListBox, string>()
             {
                 { Menu_Noodle, "Mì" },
                 { Menu_Cafe, "Cà phê" },
                 { Menu_Fish, "Cá" }
             };
-            LoadMenu(prize_file);
+            ReadJson(price_file, ref price_dict);
+            FlyFoodFactory.price_dict = price_dict;
         }
 
-        public void LoadMenu(string file_prize)
+        public void ReadJson<T>(string file, ref T obj)
         {
-            string json = File.ReadAllText(prize_file);
-            prize_dict = JsonConvert.DeserializeObject<Dictionary<string, long>>(json);
-            //File.WriteAllText(prize_file, JsonConvert.SerializeObject(prize_dict));
+            string json = File.ReadAllText(file);
+            obj = JsonConvert.DeserializeObject<T>(json);
         }
-        private void Order(object sender, EventArgs e)
+        private void WriteJson<T>(string filename, T obj)
         {
-            List<string> order = GetOrder();
-            string jsonString = "";
-            int index = 0;
+            string jsonString = JsonConvert.SerializeObject(obj, Formatting.Indented);
+            File.WriteAllText(filename, jsonString);
+        }
+        private void AddOrder(object sender, EventArgs e)
+        {
+            GetOrder();
             int quantity = GetQuantity();
             Menu_Item item;
             Bill bill = new Bill();
+            Dish dish;
             //try
             //{
-                foreach (object obj in order)
+                foreach (string basename in order.Keys)
                 {
-                    item = new Menu_Item()
+                    dish = FlyFoodFactory.GetDish(basename);
+                    foreach(string addonName in order[basename])
                     {
-                        index = ++index,
-                        dish = obj.ToString(),
-                        quantity = quantity,
-                        prize = prize_dict[obj.ToString()],
-                        note = "nothing"
-                    };
-                    bill.Add(item);
+                        // modify flyweight
+                        dish.addon = new DishPart()
+                        {
+                            name = addonName,
+                            price = price_dict[addonName]
+                        };
+                        
+                        item = new Menu_Item()
+                        {
+                            index = ++index,
+                            name = dish.FullName,
+                            price = dish.Price,
+                            quantity = quantity,
+                            tool = dish.tool.Name
+                        };
+                        bill.Add(item);
+                    }
                 }
 
                 AddToList(bill);
-                jsonString = JsonConvert.SerializeObject(bill);
-                WriteMenuToFile(jsonString);
+                WriteJson(filename, bill);
                 //MessageBox.Show(jsonString);
             //}
             //catch(Exception ex)
@@ -79,16 +92,17 @@ namespace RestaurantSimulator
             //}
         }
 
+
         private void AddToList(Bill bill)
         {
             ListViewItem lsItem;
             foreach(Menu_Item item in bill.item_list)
             {
                 lsItem = new ListViewItem(item.index.ToString());
-                lsItem.SubItems.Add(item.dish);
+                lsItem.SubItems.Add(item.name);
                 lsItem.SubItems.Add(item.quantity.ToString());
-                lsItem.SubItems.Add(item.prize.ToString());
-                lsItem.SubItems.Add(item.note);
+                lsItem.SubItems.Add(item.price.ToString());
+                lsItem.SubItems.Add(item.tool);
 
                 listview.Items.Add(lsItem);
             }
@@ -100,36 +114,32 @@ namespace RestaurantSimulator
         }
 
 
-        private List<string> GetOrder()
+        private void GetOrder()
         {
-            List<string> order = new List<string>();
-
             foreach (CheckedListBox list in Menu_List.Keys)
             {
+                order[Menu_List[list]] = new List<string>();
                 foreach (object obj in list.CheckedItems)
                 {
-                    order.Add(Menu_List[list] + " " + obj.ToString());
+                    order[Menu_List[list]].Add(obj.ToString());
                 }
-
-            }
-
-            return order;
-        }
-        private void WriteMenuToFile(string jsonString)
-        {
-            try
-            {
-                File.WriteAllText(filename, jsonString);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
         }
 
         private void Listview_remove(object sender, EventArgs e)
         {
             listview.Items.Remove(listview.SelectedItems[0]);
+        }
+
+        private void Reset(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Form_Customer().Show();
+        }
+
+        private void Open_Kitchen(object sender, EventArgs e)
+        {
+            new Form_Kitchen(this, this.text_table, this.text_bill, order).Show();
         }
     }
 }

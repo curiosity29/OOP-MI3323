@@ -8,7 +8,7 @@ namespace RestaurantSimulator
 {
     public class Cafe : Dish
     {
-        public Cafe(string baseName, Component tool) : base(baseName, tool)
+        public Cafe(DishPart baseDish, Component tool) : base(baseDish, tool)
         {
 
         }

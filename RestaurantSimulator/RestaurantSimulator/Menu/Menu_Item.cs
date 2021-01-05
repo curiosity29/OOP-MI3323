@@ -3,10 +3,10 @@
     public class Menu_Item
     {
         public int index;
-        public string dish;
+        public string name;
         public int quantity;
-        public long prize;
-        public string note;
+        public long price;
+        public string tool;
 
     }
 }
