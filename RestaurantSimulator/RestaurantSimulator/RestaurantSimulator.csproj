@@ -59,6 +59,7 @@
     <Compile Include="Form_MakeDish.Designer.cs">
       <DependentUpon>Form_MakeDish.cs</DependentUpon>
     </Compile>
+    <Compile Include="Json.cs" />
     <Compile Include="Menu\FishDish.cs" />
     <Compile Include="Component\Bowl.cs" />
     <Compile Include="Menu\DishPart.cs" />

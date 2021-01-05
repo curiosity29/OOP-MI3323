@@ -8,13 +8,15 @@ namespace RestaurantSimulator
 {
     public class Chef
     {
-        private static Chef chef;
-        string dataBase = "data.txt";
+        private static Chef chef = new Chef();
+        string file_recipe = "Recipe.txt";
+        string file_dishName = "DishName.txt";
         Dictionary<string, Recipe> recipe_dict;
         Dictionary<string, DishPart> dict;
         private Chef()
         {
-            // get data
+            Json<Dictionary<string, Recipe>>.Read(file_recipe, ref recipe_dict);
+            Json<Dictionary<string, DishPart>>.Read(file_dishName, ref dict);
         }
         //singleton
         public static Chef THeChef

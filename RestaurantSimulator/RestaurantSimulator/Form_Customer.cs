@@ -35,20 +35,11 @@ namespace RestaurantSimulator
                 { Menu_Cafe, "Cà phê" },
                 { Menu_Fish, "Cá" }
             };
-            ReadJson(price_file, ref price_dict);
+            Json<Dictionary<string,long>>.Read(price_file, ref price_dict);
             FlyFoodFactory.price_dict = price_dict;
         }
 
-        public void ReadJson<T>(string file, ref T obj)
-        {
-            string json = File.ReadAllText(file);
-            obj = JsonConvert.DeserializeObject<T>(json);
-        }
-        private void WriteJson<T>(string filename, T obj)
-        {
-            string jsonString = JsonConvert.SerializeObject(obj, Formatting.Indented);
-            File.WriteAllText(filename, jsonString);
-        }
+        
         private void AddOrder(object sender, EventArgs e)
         {
             GetOrder();
@@ -83,7 +74,7 @@ namespace RestaurantSimulator
                 }
 
                 AddToList(bill);
-                WriteJson(filename, bill);
+                Json<Bill>.Write(filename, bill);
                 //MessageBox.Show(jsonString);
             //}
             //catch(Exception ex)
