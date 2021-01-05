@@ -18,8 +18,8 @@ namespace RestaurantSimulator
         Dictionary<CheckedListBox, string> Menu_List;
         // (typename - list of that type) for each type
         Dictionary<string, List<string>> order = new Dictionary<string, List<string>>();
-        const string filename = "Data Dish.txt";
-        const string price_file = "Price.txt";
+        const string filename = "..\\..\\DataSource\\Data Dish.txt";
+        const string price_file = "..\\..\\DataSource\\Price.txt";
         public Dictionary<string, long> price_dict = new Dictionary<string, long>();
         int index = 0;
         public Form_Customer()
@@ -131,6 +131,7 @@ namespace RestaurantSimulator
         private void Open_Kitchen(object sender, EventArgs e)
         {
             new Form_Kitchen(this, this.text_table, this.text_bill, order).Show();
+            Json<Dictionary<string, List<string>>>.Write("..\\..\\DataSource\\order.txt", order);
         }
     }
 }

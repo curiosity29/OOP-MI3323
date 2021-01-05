@@ -343,7 +343,7 @@
             this.Menu_Noodle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.Menu_Noodle.FormattingEnabled = true;
             this.Menu_Noodle.Items.AddRange(new object[] {
-            "tôm",
+            "Tôm",
             "Xào bò",
             "Xào gà",
             "Sốt bò hầm"});
