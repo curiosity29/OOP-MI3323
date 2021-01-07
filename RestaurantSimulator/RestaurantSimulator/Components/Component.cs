@@ -14,7 +14,6 @@ namespace RestaurantSimulator
 
         public abstract string Accept(IVisitor visitor);
         public int Quantity { get; set; }
-
     }
     
 }

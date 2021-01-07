@@ -26,12 +26,17 @@ namespace RestaurantSimulator
 
         Bill bill = new Bill();
         int index = 0;
+<<<<<<< Updated upstream
 
         List<Component> component ;
+=======
+      
+>>>>>>> Stashed changes
         Menu_Item item_all;
         public Form_Customer()
         {
             InitializeComponent();
+<<<<<<< Updated upstream
             
             component = new List<Component>();
             string[] component_name = { "Tôm","Gà","Bò","Cá","Dừa","Sữa","Chocolate","Cacao","Khoai môn","Chân châu"};
@@ -43,6 +48,14 @@ namespace RestaurantSimulator
             //    a.Quantity = component_quantity[i];
             //    component.Add(a);
             //}
+=======
+            Chef chef = Chef.THeChef;
+            Manager manager = Manager.TheManager;
+            //component = new List<Component>();
+            //string[] component_name = { "Tôm","Gà","Bò","Cá","Dừa","Sữa","Chocolate","Cacao","Khoai môn","Chân châu"};
+            //int[] component_quantity = { 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50 };
+            //Bubble_tea bubble_tea 
+>>>>>>> Stashed changes
             //string output = JsonConvert.SerializeObject(component, Formatting.Indented);
             //File.WriteAllText("D:\\component.json", output);
         }
