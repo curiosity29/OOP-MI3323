@@ -1,0 +1,25 @@
+{
+  "item_list": [
+    {
+      "index": 4,
+      "name": "Mì Sốt bò hầm",
+      "quantity": 1,
+      "price": 76,
+      "tool": null
+    },
+    {
+      "index": 5,
+      "name": "Cà phê Cốt dừa",
+      "quantity": 1,
+      "price": 57,
+      "tool": null
+    },
+    {
+      "index": 6,
+      "name": "Cá Nướng mật ong",
+      "quantity": 1,
+      "price": 104,
+      "tool": null
+    }
+  ]
+}
