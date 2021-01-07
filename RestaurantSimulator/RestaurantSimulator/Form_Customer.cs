@@ -25,18 +25,16 @@ namespace RestaurantSimulator
         public Dictionary<string, long> price_dict = new Dictionary<string, long>();
 
         Bill bill = new Bill();
-        int index = 0;
-<<<<<<< Updated upstream
 
         List<Component> component ;
-=======
+
       
->>>>>>> Stashed changes
+
         Menu_Item item_all;
         public Form_Customer()
         {
             InitializeComponent();
-<<<<<<< Updated upstream
+
             
             component = new List<Component>();
             string[] component_name = { "Tôm","Gà","Bò","Cá","Dừa","Sữa","Chocolate","Cacao","Khoai môn","Chân châu"};
@@ -48,14 +46,13 @@ namespace RestaurantSimulator
             //    a.Quantity = component_quantity[i];
             //    component.Add(a);
             //}
-=======
-            Chef chef = Chef.THeChef;
-            Manager manager = Manager.TheManager;
+            //Chef chef = Chef.THeChef;
+            //Manager manager = Manager.TheManager;
             //component = new List<Component>();
             //string[] component_name = { "Tôm","Gà","Bò","Cá","Dừa","Sữa","Chocolate","Cacao","Khoai môn","Chân châu"};
             //int[] component_quantity = { 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50 };
             //Bubble_tea bubble_tea 
->>>>>>> Stashed changes
+
             //string output = JsonConvert.SerializeObject(component, Formatting.Indented);
             //File.WriteAllText("D:\\component.json", output);
         }
@@ -95,7 +92,6 @@ namespace RestaurantSimulator
                         
                         item = new Menu_Item()
                         {
-                            index = ++index,
                             name = dish.FullName,
                             price = dish.Price,
                             quantity = quantity,
@@ -105,7 +101,7 @@ namespace RestaurantSimulator
                     }
                 }
 
-                AddToList(bill);
+                ResetList(bill);
                 Json<Bill>.Write(menu_file, bill);
             Json<Bill>.Write(menu_file, bill);
                 //MessageBox.Show(jsonString);
@@ -117,12 +113,15 @@ namespace RestaurantSimulator
         }
 
 
-        private void AddToList(Bill bill)
+        private void ResetList(Bill bill)
         {
+            listview.Items.Clear();
+            int index = 0;
             ListViewItem lsItem;
             foreach(Menu_Item item in bill.item_list)
             {
-                lsItem = new ListViewItem(item.index.ToString());
+                index++;
+                lsItem = new ListViewItem(index.ToString());
                 lsItem.SubItems.Add(item.name);
                 lsItem.SubItems.Add(item.quantity.ToString());
                 lsItem.SubItems.Add(item.price.ToString());
@@ -154,7 +153,8 @@ namespace RestaurantSimulator
         {
             var item = listview.SelectedItems[0];
             item.Remove();
-            bill.item_list.RemoveAt(item.Index) ;
+            bill.item_list.RemoveAt(int.Parse(item.Text)-1);
+            ResetList(bill);
         }
 
         private void Reset(object sender, EventArgs e)

@@ -3,7 +3,6 @@ namespace RestaurantSimulator
 {
     public class Menu_Item
     {
-        public int index { get; set; }
         public string name { get; set; }
         public int quantity { get; set; }
         public long price { get; set; }

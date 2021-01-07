@@ -1,31 +1,27 @@
 {
   "item_list": [
     {
-      "index": 1,
-      "name": "Mì Sốt bò hầm",
+      "name": "Mì Xào bò",
       "quantity": 1,
-      "price": 76,
+      "price": 71,
       "tool": null
     },
     {
-      "index": 2,
-      "name": "Cà phê Đen đá",
+      "name": "Mì Xào gà",
       "quantity": 1,
-      "price": 52,
+      "price": 71,
       "tool": null
     },
     {
-      "index": 3,
-      "name": "Mì Sốt bò hầm",
+      "name": "Mì Xào bò",
       "quantity": 1,
-      "price": 76,
+      "price": 71,
       "tool": null
     },
     {
-      "index": 4,
-      "name": "Cà phê Đen đá",
+      "name": "Mì Xào gà",
       "quantity": 1,
-      "price": 52,
+      "price": 71,
       "tool": null
     }
   ]
