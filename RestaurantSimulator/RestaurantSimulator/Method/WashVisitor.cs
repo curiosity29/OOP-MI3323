@@ -28,5 +28,29 @@ namespace RestaurantSimulator
         {
             return "Rửa sạch mì bằng nước lạnh";
         }
+        public string Visit(Coconut coconut)
+        {
+            return "Chặt lấy nước";
+        }
+        public string Visit(Chicken chicken)
+        {
+            return "Chặt thành từng khúc";
+        }
+        public string Visit(Milk milk)
+        {
+            throw new Exception();
+        }
+        public string Visit(Shrimp shrimp)
+        {
+            return "Bóc vỏ";
+        }
+        public string Visit(Taro taro)
+        {
+            return "Chặt từng khúc";
+        }
+        public string Visit(Bubble_tea bubble_Tea)
+        {
+            throw new Exception();
+        }
     }
 }
