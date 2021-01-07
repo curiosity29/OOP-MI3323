@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace RestaurantSimulator
 {
-    public class Bowl : Component
+    public class Carrot : Component
     {
 
-<<<<<<< Updated upstream
+
         public override string Accept(IVisitor visitor)
         {
-            throw new NotImplementedException();
+            return visitor.Visit(this);
         }
-=======
-       
->>>>>>> Stashed changes
+        public override string ToString()
+        {
+            return "Carrot";
+        }
     }
 }

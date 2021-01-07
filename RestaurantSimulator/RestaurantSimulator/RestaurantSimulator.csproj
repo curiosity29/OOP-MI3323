@@ -50,10 +50,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Component\Coffee.cs" />
-    <Compile Include="Component\Cup.cs" />
-    <Compile Include="Component\Noodle.cs" />
-    <Compile Include="Component\Plate.cs" />
+    <Compile Include="Components\Bubble_tea.cs" />
+    <Compile Include="Components\Chicken.cs" />
+    <Compile Include="Components\Coconut.cs" />
+    <Compile Include="Components\Fish.cs" />
+    <Compile Include="Components\Milk.cs" />
+    <Compile Include="Components\Shrimp.cs" />
+    <Compile Include="Components\Coffee.cs" />
+    <Compile Include="Components\Cup.cs" />
+    <Compile Include="Components\Noodle.cs" />
+    <Compile Include="Components\Plate.cs" />
+    <Compile Include="Components\Taro.cs" />
     <Compile Include="Container\Refrigerator.cs" />
     <Compile Include="Form_MakeDish.cs">
       <SubType>Form</SubType>
@@ -63,9 +70,9 @@
     </Compile>
     <Compile Include="Json.cs" />
     <Compile Include="Menu\FishDish.cs" />
-    <Compile Include="Component\Bowl.cs" />
+    <Compile Include="Components\Bowl.cs" />
     <Compile Include="Menu\DishPart.cs" />
-    <Compile Include="Component\Carrot.cs" />
+    <Compile Include="Components\Carrot.cs" />
     <Compile Include="Menu\Cafe.cs" />
     <Compile Include="Menu\Bill.cs" />
     <Compile Include="Menu\Menu_Item.cs" />
@@ -91,7 +98,7 @@
     <Compile Include="Method\ChopVisitor.cs" />
     <Compile Include="Method\FryVisitor.cs" />
     <Compile Include="Operator\Chef.cs" />
-    <Compile Include="Component\Potato.cs" />
+    <Compile Include="Components\Potato.cs" />
     <Compile Include="Menu\Dish.cs" />
     <Compile Include="Menu\FlyFoodFactory.cs" />
     <Compile Include="Form_Customer.cs">
@@ -100,8 +107,8 @@
     <Compile Include="Form_Customer.Designer.cs">
       <DependentUpon>Form_Customer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Component\Component.cs" />
-    <Compile Include="Component\IVisitor.cs" />
+    <Compile Include="Components\Component.cs" />
+    <Compile Include="Components\IVisitor.cs" />
     <Compile Include="Operator\Manager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
