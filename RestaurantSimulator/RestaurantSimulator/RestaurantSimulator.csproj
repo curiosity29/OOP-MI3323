@@ -50,7 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Component\Coffee.cs" />
     <Compile Include="Component\Cup.cs" />
+    <Compile Include="Component\Noodle.cs" />
     <Compile Include="Component\Plate.cs" />
     <Compile Include="Container\Refrigerator.cs" />
     <Compile Include="Form_MakeDish.cs">

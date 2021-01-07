@@ -1,17 +1,24 @@
 {
   "item_list": [
     {
-      "index": 3,
-      "name": "Mì Xào gà",
-      "quantity": 1,
+      "index": 1,
+      "name": "Mì Xào bò",
+      "quantity": 2,
       "price": 71,
       "tool": null
     },
     {
-      "index": 4,
-      "name": "Cà phê Đen nâu",
-      "quantity": 1,
+      "index": 2,
+      "name": "Cà phê Đen đá",
+      "quantity": 2,
       "price": 52,
+      "tool": null
+    },
+    {
+      "index": 3,
+      "name": "Cá Xào bò",
+      "quantity": 2,
+      "price": 85,
       "tool": null
     }
   ]

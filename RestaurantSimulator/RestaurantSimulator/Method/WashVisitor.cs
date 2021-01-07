@@ -8,9 +8,25 @@ namespace RestaurantSimulator
 {
     class WashVisitor : IVisitor
     {
-        public void Visit(Component component)
+        public string Visit(Fish fish)
         {
-            throw new NotImplementedException();
+            return "Rửa sạch bằng nước ấm";
+        }
+        public string Visit(Coffee coffee)
+        {
+            return "Can't do";
+        }
+        public string Visit(Carrot carrot)
+        {
+            return "Rửa sạch bằng nước ấm";
+        }
+        public string Visit(Potato potato)
+        {
+            return "Rửa sạch bằng nước ấm";
+        }
+        public string Visit(Noodle noodle)
+        {
+            return "Rửa sạch mì bằng nước lạnh";
         }
     }
 }

@@ -8,7 +8,7 @@ namespace RestaurantSimulator
 {
     public class Cup : Component
     {
-        public override void Accept()
+        public override string Accept(IVisitor visitor)
         {
             throw new NotImplementedException();
         }

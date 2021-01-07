@@ -9,9 +9,13 @@ namespace RestaurantSimulator
     public class Carrot : Component
     {
 
-        public override void Accept()
+        public override string Accept(IVisitor visitor)
         {
-            throw new NotImplementedException();
+            return visitor.Visit(this);
+        }
+        public override string ToString()
+        {
+            return "Carrot";
         }
     }
 }

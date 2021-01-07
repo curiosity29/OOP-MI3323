@@ -13,7 +13,7 @@ namespace RestaurantSimulator
         public string FullName { get => baseDish.name + " " + addon.name; }
         public long Price { get => (long)(0.95 * (baseDish.price + addon.price)); }
         public Component tool;
-        public Dish(DishPart baseDish, Component tool)
+        public Dish(DishPart baseDish, Bowl tool)
         {
             this.baseDish = baseDish;
             this.tool = tool;

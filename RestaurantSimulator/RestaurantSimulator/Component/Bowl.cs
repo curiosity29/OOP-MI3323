@@ -9,7 +9,7 @@ namespace RestaurantSimulator
     public class Bowl : Component
     {
 
-        public override void Accept()
+        public override string Accept(IVisitor visitor)
         {
             throw new NotImplementedException();
         }

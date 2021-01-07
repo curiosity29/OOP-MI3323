@@ -9,8 +9,9 @@ namespace RestaurantSimulator
 
     public abstract class Component
     {
+        public List<IVisitor> visitors = new List<IVisitor>();
         public string Name { get; set; }
         public string Status { get; set; }
-        public abstract void Accept();
+        public abstract string Accept(IVisitor visitor);
     }
 }

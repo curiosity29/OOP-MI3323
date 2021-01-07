@@ -9,9 +9,25 @@ namespace RestaurantSimulator.Method
     public class ChopVisitor : IVisitor
     {
 
-        public void Visit(Component component)
+        public string Visit(Fish fish)
         {
-            throw new NotImplementedException();
+            return "Chặt cá, bỏ ra, bỏ nội tạng";
+        }
+        public string Visit(Coffee coffee)
+        {
+            return "Xay cà phê";
+        }
+        public string Visit(Carrot carrot)
+        {
+            return "Chặt cà rốt lát thành từng miếng";
+        }
+        public string Visit(Potato potato)
+        {
+            return "Thái lát thành từng miếng";
+        }
+        public string Visit(Noodle noodle)
+        {
+            return "Cắt đôi";
         }
     }
 }
