@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace RestaurantSimulator
 {
-    public class Carrot 
+    public class Carrot : Component
     {
 
-<<<<<<< Updated upstream
+
         public override string Accept(IVisitor visitor)
         {
             return visitor.Visit(this);
@@ -18,8 +18,6 @@ namespace RestaurantSimulator
         {
             return "Carrot";
         }
-=======
-      
->>>>>>> Stashed changes
+
     }
 }

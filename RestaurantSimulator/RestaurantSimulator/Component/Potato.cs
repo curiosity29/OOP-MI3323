@@ -8,7 +8,7 @@ namespace RestaurantSimulator
 {
     public class Potato : Component
     {
-<<<<<<< Updated upstream
+
         public override string Accept(IVisitor visitor)
         {
             return visitor.Visit(this);
@@ -17,9 +17,5 @@ namespace RestaurantSimulator
         {
             return "Potato";
         }
-=======
-
-        
->>>>>>> Stashed changes
     }
 }
