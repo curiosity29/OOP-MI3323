@@ -36,15 +36,15 @@ namespace RestaurantSimulator
             component = new List<Component>();
             string[] component_name = { "Tôm","Gà","Bò","Cá","Dừa","Sữa","Chocolate","Cacao","Khoai môn","Chân châu"};
             int[] component_quantity = { 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50 };
-            for(int i = 0; i < component_name.Count(); i++)
-            {
-                Component a = new Component();
-                a.Name = component_name[i];
-                a.Quantity = component_quantity[i];
-                component.Add(a);
-            }
-            string output = JsonConvert.SerializeObject(component, Formatting.Indented);
-            File.WriteAllText("D:\\component.json", output);
+            //for(int i = 0; i < component_name.Count(); i++)
+            //{
+            //    Component a = new Component();
+            //    a.Name = component_name[i];
+            //    a.Quantity = component_quantity[i];
+            //    component.Add(a);
+            //}
+            //string output = JsonConvert.SerializeObject(component, Formatting.Indented);
+            //File.WriteAllText("D:\\component.json", output);
         }
         private void Form_Load(object sender, EventArgs e)
         {
@@ -140,9 +140,8 @@ namespace RestaurantSimulator
         private void Listview_remove(object sender, EventArgs e)
         {
             var item = listview.SelectedItems[0];
-
-            listview.Items.Remove(item);
-            bill.item_list.RemoveAt(item.Index);
+            item.Remove();
+            bill.item_list.RemoveAt(item.Index) ;
         }
 
         private void Reset(object sender, EventArgs e)
