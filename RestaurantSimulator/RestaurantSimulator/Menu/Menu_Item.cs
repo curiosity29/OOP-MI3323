@@ -1,12 +1,17 @@
-﻿namespace RestaurantSimulator
+﻿using System.Collections.Generic;
+namespace RestaurantSimulator
 {
     public class Menu_Item
     {
-        public int index;
-        public string name;
-        public int quantity;
-        public long price;
-        public string tool;
+        public int index { get; set; }
+        public string name { get; set; }
+        public int quantity { get; set; }
+        public long price { get; set; }
+        public string tool { get; set; }
 
+    }
+   public class Response
+    {
+        public List<Menu_Item> response_data { get; set; }
     }
 }

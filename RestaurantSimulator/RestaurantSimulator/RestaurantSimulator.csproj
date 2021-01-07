@@ -70,7 +70,6 @@
     <Compile Include="Menu\Bill.cs" />
     <Compile Include="Menu\Menu_Item.cs" />
     <Compile Include="Menu\NoodleDish.cs" />
-    <Compile Include="Component\Fish.cs" />
     <Compile Include="Form_Manager.cs">
       <SubType>Form</SubType>
     </Compile>

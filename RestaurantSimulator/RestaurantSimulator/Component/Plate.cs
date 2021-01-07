@@ -9,9 +9,13 @@ namespace RestaurantSimulator
     public class Plate : Component
     {
 
+<<<<<<< Updated upstream
         public override string Accept(IVisitor visitor)
         {
             throw new NotImplementedException();
         }
+=======
+        
+>>>>>>> Stashed changes
     }
 }

@@ -23,21 +23,21 @@ namespace RestaurantSimulator
             refrigerator = new Refrigerator();
             refrigerator.list_component = new List<Component>()
             {
-                new Carrot()
-                {
-                    Name = "cà rốt",
-                    Status = "OK"
-                }
-                , new Fish()
-                {
-                    Name = "Cá",
-                    Status = "Tươi"
-                }
-                , new Potato()
-                {
-                    Name = "Củ khoai",
-                    Status = "Mọc mầm"
-                }
+                //new Carrot()
+                //{
+                //    Name = "cà rốt",
+                //    Status = "OK"
+                //}
+                //, new Fish()
+                //{
+                //    Name = "Cá",
+                //    Status = "Tươi"
+                //}
+                //, new Potato()
+                //{
+                //    Name = "Củ khoai",
+                //    Status = "Mọc mầm"
+                //}
             };
             dataGridView1.DataSource = refrigerator.list_component;
             

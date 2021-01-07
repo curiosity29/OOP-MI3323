@@ -19,13 +19,28 @@ namespace RestaurantSimulator
         // (typename - list of that type) for each type
         Dictionary<string, List<string>> order = new Dictionary<string, List<string>>();
         const string filename = "..\\..\\DataSource\\Data Dish.txt";
+        const string filename1 = "D:\\Data Dish.json";
         const string price_file = "..\\..\\DataSource\\Price.txt";
         public Dictionary<string, long> price_dict = new Dictionary<string, long>();
         int index = 0;
+        List<Component> component ;
+        Menu_Item item_all;
         public Form_Customer()
         {
             InitializeComponent();
-
+            
+            component = new List<Component>();
+            string[] component_name = { "Tôm","Gà","Bò","Cá","Dừa","Sữa","Chocolate","Cacao","Khoai môn","Chân châu"};
+            int[] component_quantity = { 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50 };
+            for(int i = 0; i < component_name.Count(); i++)
+            {
+                Component a = new Component();
+                a.Name = component_name[i];
+                a.Quantity = component_quantity[i];
+                component.Add(a);
+            }
+            string output = JsonConvert.SerializeObject(component, Formatting.Indented);
+            File.WriteAllText("D:\\component.json", output);
         }
         private void Form_Load(object sender, EventArgs e)
         {
@@ -37,6 +52,7 @@ namespace RestaurantSimulator
             };
             Json<Dictionary<string,long>>.Read(price_file, ref price_dict);
             FlyFoodFactory.price_dict = price_dict;
+        
         }
 
         
@@ -75,6 +91,7 @@ namespace RestaurantSimulator
 
                 AddToList(bill);
                 Json<Bill>.Write(filename, bill);
+            Json<Bill>.Write(filename1, bill);
                 //MessageBox.Show(jsonString);
             //}
             //catch(Exception ex)
@@ -131,7 +148,15 @@ namespace RestaurantSimulator
         private void Open_Kitchen(object sender, EventArgs e)
         {
             new Form_Kitchen(this, this.text_table, this.text_bill, order).Show();
-            Json<Dictionary<string, List<string>>>.Write("..\\..\\DataSource\\order.txt", order);
+            Json<Dictionary<string, List<string>>>.Write("D:\\order.txt", order);
+            string jsonstring = File.ReadAllText(filename1);
+            var a = JsonConvert.DeserializeObject<Bill>(jsonstring);
+            text_table.Text += (a.item_list)[0].name;
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
