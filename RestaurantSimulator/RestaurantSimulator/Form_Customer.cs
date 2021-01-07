@@ -14,15 +14,19 @@ namespace RestaurantSimulator
 {
     public partial class Form_Customer : Form
     {
+        const string menu_file = "..\\..\\DataSource\\Menu.json";
+        const string price_file = "..\\..\\DataSource\\Price.json";
+        const string order_file = "..\\..\\DataSource\\Order.json";
+
         //(control - typename) for each type
         Dictionary<CheckedListBox, string> Menu_List;
         // (typename - list of that type) for each type
         Dictionary<string, List<string>> order = new Dictionary<string, List<string>>();
-        const string filename = "..\\..\\DataSource\\Data Dish.txt";
-        const string filename1 = "D:\\Data Dish.json";
-        const string price_file = "..\\..\\DataSource\\Price.txt";
         public Dictionary<string, long> price_dict = new Dictionary<string, long>();
+
+        Bill bill = new Bill();
         int index = 0;
+
         List<Component> component ;
         Menu_Item item_all;
         public Form_Customer()
@@ -32,13 +36,13 @@ namespace RestaurantSimulator
             component = new List<Component>();
             string[] component_name = { "Tôm","Gà","Bò","Cá","Dừa","Sữa","Chocolate","Cacao","Khoai môn","Chân châu"};
             int[] component_quantity = { 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50 };
-            //for(int i = 0; i < component_name.Count(); i++)
-            //{
-            //    Component a = new Component();
-            //    a.Name = component_name[i];
-            //    a.Quantity = component_quantity[i];
-            //    component.Add(a);
-            //}
+            for(int i = 0; i < component_name.Count(); i++)
+            {
+                Component a = new Component();
+                a.Name = component_name[i];
+                a.Quantity = component_quantity[i];
+                component.Add(a);
+            }
             string output = JsonConvert.SerializeObject(component, Formatting.Indented);
             File.WriteAllText("D:\\component.json", output);
         }
@@ -61,7 +65,6 @@ namespace RestaurantSimulator
             GetOrder();
             int quantity = GetQuantity();
             Menu_Item item;
-            Bill bill = new Bill();
             Dish dish;
             //try
             //{
@@ -90,8 +93,8 @@ namespace RestaurantSimulator
                 }
 
                 AddToList(bill);
-                Json<Bill>.Write(filename, bill);
-            Json<Bill>.Write(filename1, bill);
+                Json<Bill>.Write(menu_file, bill);
+            Json<Bill>.Write(menu_file, bill);
                 //MessageBox.Show(jsonString);
             //}
             //catch(Exception ex)
@@ -136,7 +139,10 @@ namespace RestaurantSimulator
 
         private void Listview_remove(object sender, EventArgs e)
         {
-            listview.Items.Remove(listview.SelectedItems[0]);
+            var item = listview.SelectedItems[0];
+
+            listview.Items.Remove(item);
+            bill.item_list.RemoveAt(item.Index);
         }
 
         private void Reset(object sender, EventArgs e)
@@ -145,18 +151,20 @@ namespace RestaurantSimulator
             new Form_Customer().Show();
         }
 
-        private void Open_Kitchen(object sender, EventArgs e)
-        {
-            new Form_Kitchen(this, this.text_table, this.text_bill, order).Show();
-            Json<Dictionary<string, List<string>>>.Write("D:\\order.txt", order);
-            string jsonstring = File.ReadAllText(filename1);
-            var a = JsonConvert.DeserializeObject<Bill>(jsonstring);
-            text_table.Text += (a.item_list)[0].name;
-        }
-
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void Order(object sender, EventArgs e)
+        {
+            new Form_Kitchen(this, this.text_table, this.text_bill, order).Show();
+
+            Json<Dictionary<string, List<string>>>.Write(order_file, order);
+            string jsonstring = File.ReadAllText(menu_file);
+
+            var a = JsonConvert.DeserializeObject<Bill>(jsonstring);
+            text_table.Text += (a.item_list)[0].name;
         }
     }
 }
