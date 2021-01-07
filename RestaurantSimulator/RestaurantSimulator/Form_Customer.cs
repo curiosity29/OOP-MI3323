@@ -62,7 +62,8 @@ namespace RestaurantSimulator
             {
                 { Menu_Noodle, "Mì" },
                 { Menu_Cafe, "Cà phê" },
-                { Menu_Fish, "Cá" }
+                { Menu_Milktea, "Trà sữa" },
+                { Menu_Rice, "Cơm" },
             };
             Json<Dictionary<string,long>>.Read(price_file, ref price_dict);
             FlyFoodFactory.price_dict = price_dict;
@@ -163,10 +164,6 @@ namespace RestaurantSimulator
             new Form_Customer().Show();
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void Order(object sender, EventArgs e)
         {

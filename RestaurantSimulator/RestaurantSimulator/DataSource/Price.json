@@ -1,9 +1,10 @@
 {
 	"Mì":35,
-	"Tôm":30,
+	"tôm":30,
 	"Xào bò":40,
 	"Xào gà":40,
 	"Sốt bò hầm":45,
+	"Bò sốt vang":35,
 	"Bạc sỉu":35,
 	"Cà phê":30,
 	"Đen đá":25,
@@ -12,5 +13,16 @@
 	"Cốt dừa":30,
 	"Cá":50,
 	"Nướng mật ong":60,
-	"Cá Sốt bò hầm":75
+	"Cơm":20,
+	"Sốt Cà Ri":20,
+	"Cá kho tộ":45,
+	"Sườn chua ngọt":55,
+	"Gà sốt Tareyaki":60,
+	"Thịt kho tàu":30,
+	"Trà sữa":20,
+	"Bạc hà":10,
+	"Khoai môn tím":5,
+	"Chân châu":5,
+	"Chocolate":10,
+	"Cacao":10
 }

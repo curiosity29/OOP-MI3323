@@ -34,12 +34,12 @@
             this.text_bill = new System.Windows.Forms.RichTextBox();
             this.text_table = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.Menu_Rice = new System.Windows.Forms.CheckedListBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.button5 = new System.Windows.Forms.Button();
-            this.Menu_Fish = new System.Windows.Forms.CheckedListBox();
+            this.Menu_Milktea = new System.Windows.Forms.CheckedListBox();
             this.label6 = new System.Windows.Forms.Label();
             this.listview = new System.Windows.Forms.ListView();
             this.columnHeader0 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -116,12 +116,12 @@
             // groupBox2
             // 
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.groupBox2.Controls.Add(this.checkedListBox1);
+            this.groupBox2.Controls.Add(this.Menu_Rice);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.numericUpDown1);
             this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.Menu_Fish);
+            this.groupBox2.Controls.Add(this.Menu_Milktea);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.listview);
             this.groupBox2.Controls.Add(this.button1);
@@ -142,22 +142,21 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Menu";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // checkedListBox1
+            // Menu_Rice
             // 
-            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.Menu_Rice.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.Menu_Rice.FormattingEnabled = true;
+            this.Menu_Rice.Items.AddRange(new object[] {
             "Sốt Cà Ri",
             "Cá kho tộ",
             "Sườn chua ngọt",
             "Gà sốt Tareyaki",
             "Thịt kho tàu"});
-            this.checkedListBox1.Location = new System.Drawing.Point(232, 37);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(140, 114);
-            this.checkedListBox1.TabIndex = 24;
+            this.Menu_Rice.Location = new System.Drawing.Point(232, 37);
+            this.Menu_Rice.Name = "Menu_Rice";
+            this.Menu_Rice.Size = new System.Drawing.Size(140, 114);
+            this.Menu_Rice.TabIndex = 24;
             // 
             // label8
             // 
@@ -204,20 +203,20 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.Reset);
             // 
-            // Menu_Fish
+            // Menu_Milktea
             // 
-            this.Menu_Fish.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.Menu_Fish.FormattingEnabled = true;
-            this.Menu_Fish.Items.AddRange(new object[] {
+            this.Menu_Milktea.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.Menu_Milktea.FormattingEnabled = true;
+            this.Menu_Milktea.Items.AddRange(new object[] {
             "Bạc hà",
             "Khoai môn tím",
             "Chân châu",
             "Chocolate",
             "Cacao"});
-            this.Menu_Fish.Location = new System.Drawing.Point(446, 184);
-            this.Menu_Fish.Name = "Menu_Fish";
-            this.Menu_Fish.Size = new System.Drawing.Size(128, 114);
-            this.Menu_Fish.TabIndex = 19;
+            this.Menu_Milktea.Location = new System.Drawing.Point(446, 184);
+            this.Menu_Milktea.Name = "Menu_Milktea";
+            this.Menu_Milktea.Size = new System.Drawing.Size(128, 114);
+            this.Menu_Milktea.TabIndex = 19;
             // 
             // label6
             // 
@@ -244,7 +243,7 @@
             this.listview.HideSelection = false;
             this.listview.LabelEdit = true;
             this.listview.Location = new System.Drawing.Point(602, 37);
-            this.listview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listview.Margin = new System.Windows.Forms.Padding(2);
             this.listview.Name = "listview";
             this.listview.Size = new System.Drawing.Size(597, 360);
             this.listview.TabIndex = 17;
@@ -423,7 +422,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.CheckedListBox Menu_Noodle;
-        private System.Windows.Forms.CheckedListBox Menu_Fish;
+        private System.Windows.Forms.CheckedListBox Menu_Milktea;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox1;
@@ -433,7 +432,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox Menu_Rice;
         private System.Windows.Forms.Label label8;
     }
 }

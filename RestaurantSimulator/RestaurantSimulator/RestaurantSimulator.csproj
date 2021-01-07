@@ -69,7 +69,7 @@
       <DependentUpon>Form_MakeDish.cs</DependentUpon>
     </Compile>
     <Compile Include="Json.cs" />
-    <Compile Include="Menu\FishDish.cs" />
+    <Compile Include="Menu\MilkTea.cs" />
     <Compile Include="Components\Bowl.cs" />
     <Compile Include="Menu\DishPart.cs" />
     <Compile Include="Components\Carrot.cs" />
@@ -95,6 +95,7 @@
     <Compile Include="Form_Kitchen.Designer.cs">
       <DependentUpon>Form_Kitchen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu\RiceDish.cs" />
     <Compile Include="Method\ChopVisitor.cs" />
     <Compile Include="Method\FryVisitor.cs" />
     <Compile Include="Operator\Chef.cs" />

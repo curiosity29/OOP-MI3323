@@ -1,25 +1,25 @@
 {
   "item_list": [
     {
-      "name": "Mì Xào bò",
-      "quantity": 1,
-      "price": 71,
-      "tool": null
-    },
-    {
       "name": "Mì Xào gà",
       "quantity": 1,
       "price": 71,
       "tool": null
     },
     {
-      "name": "Mì Xào bò",
+      "name": "Cà phê Đen nâu",
       "quantity": 1,
-      "price": 71,
+      "price": 52,
       "tool": null
     },
     {
-      "name": "Mì Xào gà",
+      "name": "Trà sữa Chân châu",
+      "quantity": 1,
+      "price": 23,
+      "tool": null
+    },
+    {
+      "name": "Cơm Sườn chua ngọt",
       "quantity": 1,
       "price": 71,
       "tool": null

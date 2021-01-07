@@ -34,17 +34,26 @@ namespace RestaurantSimulator
                         name = "Cà phê",
                         price = price_dict["Cà phê"]
                     };
-                    dish = new NoodleDish(baseDish, new Bowl());
+                    dish = new Cafe(baseDish, new Bowl());
                     dict.Add("Cà phê", dish);
                     break;
-                case "Cá":
+                case "Trà sữa":
                     baseDish = new DishPart
                     {
-                        name = "Cá",
-                        price = price_dict["Cá"]
+                        name = "Trà sữa",
+                        price = price_dict["Trà sữa"]
                     };
-                    dish = new NoodleDish(baseDish, new Bowl());
-                    dict.Add("Cá", dish);
+                    dish = new MilkTea(baseDish, new Bowl());
+                    dict.Add("Trà sữa", dish);
+                    break;
+                case "Cơm":
+                    baseDish = new DishPart
+                    {
+                        name = "Cơm",
+                        price = price_dict["Cơm"]
+                    };
+                    dish = new RiceDish(baseDish, new Bowl());
+                    dict.Add("Cơm", dish);
                     break;
                 default:
                     throw new ArgumentException("Error: unrecognized dish type");
