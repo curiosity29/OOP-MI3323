@@ -8,6 +8,15 @@ namespace RestaurantSimulator
 {
     public interface IVisitor
     {
+
+        string Visit(Bubble_tea bubble_tea);
+        string Visit(Taro taro);
+        string Visit(Milk milk);
+        string Visit(Coconut coconut);
+        string Visit(Chicken chicken);
+        string Visit(Fish fish);
+        string Visit(Shrimp shrimp);
+
         string Visit(Coffee coffee);
         string Visit(Carrot carrot);
         string Visit(Potato potato);
