@@ -55,18 +55,26 @@
     <Compile Include="Components\Coconut.cs" />
     <Compile Include="Components\Fish.cs" />
     <Compile Include="Components\Milk.cs" />
+    <Compile Include="Components\Rice.cs" />
     <Compile Include="Components\Shrimp.cs" />
     <Compile Include="Components\Coffee.cs" />
     <Compile Include="Components\Cup.cs" />
     <Compile Include="Components\Noodle.cs" />
     <Compile Include="Components\Plate.cs" />
     <Compile Include="Components\Taro.cs" />
+    <Compile Include="Components\Tea.cs" />
     <Compile Include="Container\Refrigerator.cs" />
     <Compile Include="Form\Form_MakeDish.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\Form_MakeDish.Designer.cs">
       <DependentUpon>Form_MakeDish.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form_Recipe_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_Recipe_2.Designer.cs">
+      <DependentUpon>Form_Recipe_2.cs</DependentUpon>
     </Compile>
     <Compile Include="Json.cs" />
     <Compile Include="Menu\MilkTea.cs" />
@@ -94,6 +102,7 @@
       <DependentUpon>Form_Kitchen.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu\RiceDish.cs" />
+    <Compile Include="Method\BoilVisitor.cs" />
     <Compile Include="Method\ChopVisitor.cs" />
     <Compile Include="Method\FryVisitor.cs" />
     <Compile Include="Operator\Chef.cs" />
@@ -131,6 +140,9 @@
     <EmbeddedResource Include="Form\Form_Kitchen.resx">
       <DependentUpon>Form_Kitchen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form_Recipe_2.resx">
+      <DependentUpon>Form_Recipe_2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -145,6 +157,9 @@
       <DependentUpon>Form_Refrigerator.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="A diagram\ClassDiagram1.cd" />
+    <None Include="DataSource\Menu.json" />
+    <None Include="DataSource\Order.json" />
+    <None Include="DataSource\Price.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -165,6 +180,7 @@
   <ItemGroup>
     <Content Include="DataSource\Data Dish.txt" />
     <Content Include="Dũng - pass to other.txt" />
+    <Content Include="Menu\Data Dish.txt" />
     <Content Include="PHANCONG.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
