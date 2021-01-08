@@ -105,7 +105,7 @@ namespace RestaurantSimulator
                     lsItem.SubItems.Add((dish.Price*quantity).ToString());
                     lsItem.SubItems.Add(dish.tool.Name);
                     listview.Items.Add(lsItem);
-                }
+                    }
                 }
 
                 //ResetList(bill);

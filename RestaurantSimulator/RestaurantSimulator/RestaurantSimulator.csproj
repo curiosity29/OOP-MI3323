@@ -62,10 +62,10 @@
     <Compile Include="Components\Plate.cs" />
     <Compile Include="Components\Taro.cs" />
     <Compile Include="Container\Refrigerator.cs" />
-    <Compile Include="Form_MakeDish.cs">
+    <Compile Include="Form\Form_MakeDish.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_MakeDish.Designer.cs">
+    <Compile Include="Form\Form_MakeDish.Designer.cs">
       <DependentUpon>Form_MakeDish.cs</DependentUpon>
     </Compile>
     <Compile Include="Json.cs" />
@@ -75,22 +75,22 @@
     <Compile Include="Components\Carrot.cs" />
     <Compile Include="Menu\Cafe.cs" />
     <Compile Include="Menu\NoodleDish.cs" />
-    <Compile Include="Form_Manager.cs">
+    <Compile Include="Form\Form_Manager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Manager.Designer.cs">
+    <Compile Include="Form\Form_Manager.Designer.cs">
       <DependentUpon>Form_Manager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Recipe.cs">
+    <Compile Include="Form\Form_Recipe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Recipe.Designer.cs">
+    <Compile Include="Form\Form_Recipe.Designer.cs">
       <DependentUpon>Form_Recipe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Kitchen.cs">
+    <Compile Include="Form\Form_Kitchen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Kitchen.Designer.cs">
+    <Compile Include="Form\Form_Kitchen.Designer.cs">
       <DependentUpon>Form_Kitchen.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu\RiceDish.cs" />
@@ -100,10 +100,10 @@
     <Compile Include="Components\Potato.cs" />
     <Compile Include="Menu\Dish.cs" />
     <Compile Include="Menu\FlyFoodFactory.cs" />
-    <Compile Include="Form_Customer.cs">
+    <Compile Include="Form\Form_Customer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Customer.Designer.cs">
+    <Compile Include="Form\Form_Customer.Designer.cs">
       <DependentUpon>Form_Customer.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\Component.cs" />
@@ -113,22 +113,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Method\Recipe.cs" />
     <Compile Include="Method\WashVisitor.cs" />
-    <Compile Include="Form_Refrigerator.cs">
+    <Compile Include="Form\Form_Refrigerator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Refrigerator.Designer.cs">
+    <Compile Include="Form\Form_Refrigerator.Designer.cs">
       <DependentUpon>Form_Refrigerator.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form_Customer.resx">
+    <EmbeddedResource Include="Form\Form_Customer.resx">
       <DependentUpon>Form_Customer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Manager.resx">
+    <EmbeddedResource Include="Form\Form_Manager.resx">
       <DependentUpon>Form_Manager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Recipe.resx">
+    <EmbeddedResource Include="Form\Form_Recipe.resx">
       <DependentUpon>Form_Recipe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Kitchen.resx">
+    <EmbeddedResource Include="Form\Form_Kitchen.resx">
       <DependentUpon>Form_Kitchen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -141,7 +141,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Form_Refrigerator.resx">
+    <EmbeddedResource Include="Form\Form_Refrigerator.resx">
       <DependentUpon>Form_Refrigerator.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="A diagram\ClassDiagram1.cd" />
