@@ -102,7 +102,7 @@ namespace RestaurantSimulator
                     lsItem.SubItems.Add(dish.baseDish.name);
                     lsItem.SubItems.Add(dish.addon.name);
                     lsItem.SubItems.Add(quantity.ToString());
-                    lsItem.SubItems.Add(dish.Price.ToString());
+                    lsItem.SubItems.Add((dish.Price*quantity).ToString());
                     lsItem.SubItems.Add(dish.tool.Name);
                     listview.Items.Add(lsItem);
                 }
@@ -170,6 +170,7 @@ namespace RestaurantSimulator
             new Form_Kitchen(this, this.text_table, this.text_bill, order).Show();
 
             Json<Dictionary<string, List<string>>>.Write(order_file, order);
+
             string jsonstring = File.ReadAllText(menu_file);
 
             //var a = JsonConvert.DeserializeObject<>(jsonstring);

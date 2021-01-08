@@ -43,6 +43,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.listview = new System.Windows.Forms.ListView();
             this.columnHeader0 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -57,7 +58,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.Menu_Noodle = new System.Windows.Forms.CheckedListBox();
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -234,11 +234,11 @@
             this.listview.AllowColumnReorder = true;
             this.listview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader0,
-            this.columnHeader3,
             this.columnHeader4,
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader5});
+            this.columnHeader5,
+            this.columnHeader3});
             this.listview.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.listview.FullRowSelect = true;
             this.listview.GridLines = true;
@@ -257,27 +257,28 @@
             this.columnHeader0.Text = "STT";
             this.columnHeader0.Width = 88;
             // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Ghi chú";
+            this.columnHeader3.Width = 108;
+            // 
             // columnHeader4
             // 
-            this.columnHeader4.DisplayIndex = 1;
             this.columnHeader4.Text = "Loại";
             this.columnHeader4.Width = 99;
             // 
             // columnHeader1
             // 
-            this.columnHeader1.DisplayIndex = 2;
             this.columnHeader1.Text = "Thêm";
             this.columnHeader1.Width = 106;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.DisplayIndex = 3;
             this.columnHeader2.Text = "Số lượng";
             this.columnHeader2.Width = 116;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.DisplayIndex = 4;
             this.columnHeader5.Text = "Giá";
             this.columnHeader5.Width = 163;
             // 
@@ -331,7 +332,7 @@
             "Đen nâu",
             "Đen",
             "Cốt dừa"});
-            this.Menu_Cafe.Location = new System.Drawing.Point(458, 37);
+            this.Menu_Cafe.Location = new System.Drawing.Point(461, 37);
             this.Menu_Cafe.Name = "Menu_Cafe";
             this.Menu_Cafe.Size = new System.Drawing.Size(98, 114);
             this.Menu_Cafe.TabIndex = 9;
@@ -388,12 +389,6 @@
             this.Menu_Noodle.Name = "Menu_Noodle";
             this.Menu_Noodle.Size = new System.Drawing.Size(131, 114);
             this.Menu_Noodle.TabIndex = 0;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.DisplayIndex = 5;
-            this.columnHeader3.Text = "Ghi chú";
-            this.columnHeader3.Width = 108;
             // 
             // Form_Customer
             // 
