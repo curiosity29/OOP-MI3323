@@ -18,6 +18,7 @@ namespace RestaurantSimulator
         const string price_file = "..\\..\\DataSource\\Price.json";
         const string order_file = "..\\..\\DataSource\\Order.json";
 
+        #region init
         //(control - typename) for each type
         Dictionary<CheckedListBox, string> Menu_List;
         // (typename - list of that type) for each type
@@ -28,8 +29,6 @@ namespace RestaurantSimulator
         public Form_Customer()
         {
             InitializeComponent();
-
-            
             component = new List<Component>();
             string[] component_name = { "Tôm","Gà","Bò","Cá","Dừa","Sữa","Chocolate","Cacao","Khoai môn","Chân châu"};
             int[] component_quantity = { 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50 };
@@ -68,10 +67,11 @@ namespace RestaurantSimulator
             };
             Json<Dictionary<string,long>>.Read(price_file, ref price_dict);
             FlyFoodFactory.price_dict = price_dict;
-
         }
 
-        
+        #endregion
+
+
         private void AddOrder(object sender, EventArgs e)
         {
             var ordering = GetOrdering();
