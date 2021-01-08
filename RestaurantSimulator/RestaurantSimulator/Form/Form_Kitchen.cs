@@ -45,5 +45,10 @@ namespace RestaurantSimulator
         {
             new Form_MakeDish().Show();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            new Form_Recipe_2().Show();
+        }
     }
 }

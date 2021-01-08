@@ -8,6 +8,18 @@ namespace RestaurantSimulator
 {
     class FryVisitor : IVisitor
     {
+        private int type;
+        public FryVisitor()
+        {
+            type = 2;
+        }
+        public int Type
+        {
+            get
+            {
+                return type;
+            }
+        }
 
         public string Visit(Fish fish)
         {
@@ -31,11 +43,11 @@ namespace RestaurantSimulator
         }
         public string Visit(Coconut coconut)
         {
-            return "Chặt lấy nước";
+            return "Chiên rừa thành bột";
         }
         public string Visit(Chicken chicken)
         {
-            return "Chặt thành từng khúc";
+            return "Chiên đều trong dầu";
         }
         public string Visit(Milk milk)
         {
@@ -47,11 +59,19 @@ namespace RestaurantSimulator
         }
         public string Visit(Taro taro)
         {
-            return "Chặt từng khúc";
+            return "Chiên giòn tan";
         }
         public string Visit(Bubble_tea bubble_Tea)
         {
             throw new Exception();
+        }
+        public string Visit(Tea tea)
+        {
+            throw new Exception();
+        }
+        public string Visit(Rice rice)
+        {
+            return "Rang cơm";
         }
     }
 }

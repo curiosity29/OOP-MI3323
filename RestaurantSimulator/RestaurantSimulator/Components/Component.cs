@@ -10,7 +10,7 @@ namespace RestaurantSimulator
     public abstract class Component
     {
         public List<IVisitor> visitors = new List<IVisitor>();
-        public string Name { get; set; }
+        public virtual string Name { get; }
 
         public abstract string Accept(IVisitor visitor);
         public int Quantity { get; set; }

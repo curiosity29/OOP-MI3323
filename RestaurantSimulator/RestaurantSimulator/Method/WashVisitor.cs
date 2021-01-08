@@ -8,6 +8,18 @@ namespace RestaurantSimulator
 {
     class WashVisitor : IVisitor
     {
+        private int type;
+        public WashVisitor()
+        {
+            type = 3;
+        }
+        public int Type
+        {
+            get
+            {
+                return type;
+            }
+        }
         public string Visit(Fish fish)
         {
             return "Rửa sạch bằng nước ấm";
@@ -34,7 +46,7 @@ namespace RestaurantSimulator
         }
         public string Visit(Chicken chicken)
         {
-            return "Chặt thành từng khúc";
+            return "Rửa sạch lông";
         }
         public string Visit(Milk milk)
         {
@@ -51,6 +63,14 @@ namespace RestaurantSimulator
         public string Visit(Bubble_tea bubble_Tea)
         {
             throw new Exception();
+        }
+        public string Visit(Rice rice)
+        {
+            return "Vo gạo";
+        }
+        public string Visit(Tea tea)
+        {
+            return "Rưa qua lân nước";
         }
     }
 }

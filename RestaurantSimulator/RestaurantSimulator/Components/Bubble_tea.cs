@@ -8,13 +8,13 @@ namespace RestaurantSimulator
 {
     public class Bubble_tea:Component
     {
+        public override string Name
+        {
+            get { return "Bubble_tea"; }
+        }
         public override string Accept(IVisitor visitor)
         {
             return visitor.Visit(this);
-        }
-        public override string ToString()
-        {
-            return "Noodle";
         }
     }
 }

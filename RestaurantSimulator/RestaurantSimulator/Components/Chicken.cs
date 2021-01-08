@@ -8,13 +8,13 @@ namespace RestaurantSimulator
 {
     public class Chicken:Component
     {
+        public override string Name
+        {
+            get { return "Chicken"; }
+        }
         public override string Accept(IVisitor visitor)
         {
             return visitor.Visit(this);
-        }
-        public override string ToString()
-        {
-            return "Chicken";
         }
     }
 }

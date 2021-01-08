@@ -39,13 +39,15 @@ namespace RestaurantSimulator
             this.button1 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.listboxComponent = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.button12 = new System.Windows.Forms.Button();
+            this.show_component = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // button4
@@ -92,9 +94,11 @@ namespace RestaurantSimulator
             this.button5.TabIndex = 9;
             this.button5.Text = "Finish";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button10
             // 
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.Location = new System.Drawing.Point(1114, 277);
             this.button10.Margin = new System.Windows.Forms.Padding(4);
             this.button10.Name = "button10";
@@ -167,48 +171,6 @@ namespace RestaurantSimulator
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button_click);
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(697, 214);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 80);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Grill";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button_click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(569, 302);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 80);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Add Oil";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button_click);
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(441, 302);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(120, 80);
-            this.button7.TabIndex = 22;
-            this.button7.Text = "Add Coconut";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button_click);
-            // 
             // button9
             // 
             this.button9.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -219,7 +181,7 @@ namespace RestaurantSimulator
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(120, 80);
             this.button9.TabIndex = 21;
-            this.button9.Text = "Add milk";
+            this.button9.Text = "Add";
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button_click);
             // 
@@ -255,27 +217,82 @@ namespace RestaurantSimulator
             this.listboxComponent.ItemHeight = 25;
             this.listboxComponent.Items.AddRange(new object[] {
             "Fish",
-            "Noodle",
-            "Coffee",
             "Carrot",
-            "Potato"});
-            this.listboxComponent.Location = new System.Drawing.Point(225, 86);
+            "Potato",
+            "Milk",
+            "Bubble tea",
+            "Chicken",
+            "Taro",
+            "Cocconut"});
+            this.listboxComponent.Location = new System.Drawing.Point(229, 84);
             this.listboxComponent.Name = "listboxComponent";
             this.listboxComponent.Size = new System.Drawing.Size(140, 54);
             this.listboxComponent.TabIndex = 26;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.label4.Location = new System.Drawing.Point(496, 84);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(105, 31);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "Volume";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(620, 86);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(213, 30);
+            this.numericUpDown1.TabIndex = 28;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // button12
+            // 
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.Location = new System.Drawing.Point(957, 86);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(142, 38);
+            this.button12.TabIndex = 29;
+            this.button12.Text = "Lấy ra";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // show_component
+            // 
+            this.show_component.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.show_component.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.show_component.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.show_component.Location = new System.Drawing.Point(185, 159);
+            this.show_component.Name = "show_component";
+            this.show_component.Size = new System.Drawing.Size(632, 38);
+            this.show_component.TabIndex = 30;
             // 
             // Form_Recipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1435, 836);
+            this.Controls.Add(this.show_component);
+            this.Controls.Add(this.button12);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.listboxComponent);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button11);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button7);
             this.Controls.Add(this.button9);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button1);
@@ -289,6 +306,7 @@ namespace RestaurantSimulator
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_Recipe";
             this.Text = "Edit Recipe";
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,12 +323,13 @@ namespace RestaurantSimulator
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox listboxComponent;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Label show_component;
     }
 }

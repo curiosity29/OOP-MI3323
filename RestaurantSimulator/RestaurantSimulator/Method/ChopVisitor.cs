@@ -4,10 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantSimulator.Method
+namespace RestaurantSimulator
 {
     public class ChopVisitor : IVisitor
     {
+        private int type;
+        public ChopVisitor()
+        {
+            type = 1;
+        }
+        public int Type
+        {
+            get
+            {
+                return type;
+            }
+        }
 
         public string Visit(Fish fish)
         {
@@ -50,6 +62,14 @@ namespace RestaurantSimulator.Method
             return "Chặt từng khúc";
         }
         public string Visit(Bubble_tea bubble_Tea)
+        {
+            throw new Exception();
+        }
+        public string Visit(Tea tea)
+        {
+            throw new Exception();
+        }
+        public string Visit(Rice rice)
         {
             throw new Exception();
         }
