@@ -134,11 +134,11 @@ namespace Calculator
         /// <param name="pointList"></param>
         private void Draw_hhbh(Pen pen, Point[] pointList)
         {
-            pen.DashStyle = DashStyle.Dot;
+            //pen.DashStyle = DashStyle.Dash;
             pointList = Hhbh_normalize(pointList);
             for (int i = 1; i < 4; i++)
                 g.DrawLine(pen, pointList[0], pointList[i]);
-            pen.DashStyle = DashStyle.Solid;
+            //pen.DashStyle = DashStyle.Dash;
 
             Point p4 = Add(pointList[1],
                     Subtract(pointList[2], pointList[0]));
@@ -346,6 +346,12 @@ namespace Calculator
         private void Clear(object sender, EventArgs e)
         {
             Reset();
+        }
+
+        private void ShowPoint(object sender, MouseEventArgs e)
+        {
+            textBox_X.Text = e.X.ToString();
+            textBox_Y.Text = e.Y.ToString();
         }
 
         private double Calculate_Area(Point p1, Point p2, Point p3, Point p11,

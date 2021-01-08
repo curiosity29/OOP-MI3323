@@ -39,6 +39,10 @@
             this.comboBox_redraw = new System.Windows.Forms.ComboBox();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.textBox_X = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox_Y = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -148,6 +152,7 @@
             this.pictureBox.TabIndex = 11;
             this.pictureBox.TabStop = false;
             this.pictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictureBox_Click);
+            this.pictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ShowPoint);
             // 
             // button4
             // 
@@ -160,12 +165,54 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Clear);
             // 
+            // textBox_X
+            // 
+            this.textBox_X.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.textBox_X.Location = new System.Drawing.Point(45, 387);
+            this.textBox_X.Name = "textBox_X";
+            this.textBox_X.Size = new System.Drawing.Size(71, 32);
+            this.textBox_X.TabIndex = 14;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label1.Location = new System.Drawing.Point(12, 394);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 20);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "X";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label2.Location = new System.Drawing.Point(12, 432);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(20, 20);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Y";
+            // 
+            // textBox_Y
+            // 
+            this.textBox_Y.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.textBox_Y.Location = new System.Drawing.Point(45, 425);
+            this.textBox_Y.Name = "textBox_Y";
+            this.textBox_Y.Size = new System.Drawing.Size(71, 32);
+            this.textBox_Y.TabIndex = 16;
+            // 
             // Paint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1055, 691);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox_Y);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox_X);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.comboBox_redraw);
             this.Controls.Add(this.pictureBox);
@@ -198,5 +245,9 @@
         private System.Windows.Forms.ComboBox comboBox_redraw;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textBox_X;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox_Y;
     }
 }
