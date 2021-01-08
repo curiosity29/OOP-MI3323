@@ -43,11 +43,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.listview = new System.Windows.Forms.ListView();
             this.columnHeader0 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -56,7 +56,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.Menu_Noodle = new System.Windows.Forms.CheckedListBox();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -133,7 +132,6 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.Menu_Noodle);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.groupBox2.Location = new System.Drawing.Point(51, 11);
@@ -257,11 +255,6 @@
             this.columnHeader0.Text = "STT";
             this.columnHeader0.Width = 88;
             // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Ghi chú";
-            this.columnHeader3.Width = 108;
-            // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Loại";
@@ -281,6 +274,11 @@
             // 
             this.columnHeader5.Text = "Giá";
             this.columnHeader5.Width = 163;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Ghi chú";
+            this.columnHeader3.Width = 108;
             // 
             // button1
             // 
@@ -366,15 +364,6 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Other";
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(270, 266);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(69, 31);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Modify";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // Menu_Noodle
             // 
             this.Menu_Noodle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
@@ -427,7 +416,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.CheckedListBox Menu_Noodle;
         private System.Windows.Forms.CheckedListBox Menu_Milktea;
         private System.Windows.Forms.Label label6;
