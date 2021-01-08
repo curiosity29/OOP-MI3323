@@ -24,13 +24,7 @@ namespace RestaurantSimulator
         Dictionary<string, List<string>> order = new Dictionary<string, List<string>>();
         public Dictionary<string, long> price_dict = new Dictionary<string, long>();
 
-        Bill bill = new Bill();
-
         List<Component> component ;
-
-      
-
-        Menu_Item item_all;
         public Form_Customer()
         {
             InitializeComponent();
@@ -65,24 +59,31 @@ namespace RestaurantSimulator
                 { Menu_Milktea, "Trà sữa" },
                 { Menu_Rice, "Cơm" },
             };
+            order = new Dictionary<string, List<string>>()
+            {
+                {"Mì", new List<string>() },
+                {"Cà phê", new List<string>() },
+                {"Trà sữa", new List<string>() },
+                {"Cơm", new List<string>() }
+            };
             Json<Dictionary<string,long>>.Read(price_file, ref price_dict);
             FlyFoodFactory.price_dict = price_dict;
-        
+
         }
 
         
         private void AddOrder(object sender, EventArgs e)
         {
-            GetOrder();
+            var ordering = GetOrdering();
             int quantity = GetQuantity();
-            Menu_Item item;
+            int index;
             Dish dish;
             //try
             //{
-                foreach (string basename in order.Keys)
+                foreach (string basename in ordering.Keys)
                 {
                     dish = FlyFoodFactory.GetDish(basename);
-                    foreach(string addonName in order[basename])
+                    foreach(string addonName in ordering[basename])
                     {
                         // modify flyweight
                         dish.addon = new DishPart()
@@ -91,20 +92,25 @@ namespace RestaurantSimulator
                             price = price_dict[addonName]
                         };
                         
-                        item = new Menu_Item()
-                        {
-                            name = dish.FullName,
-                            price = dish.Price,
-                            quantity = quantity,
-                            tool = dish.tool.Name
-                        };
-                        bill.Add(item);
-                    }
+                        order[basename].Add(addonName);
+
+                        ListViewItem lsItem;
+
+                    index = listview.Items.Count;
+                    index++;
+                    lsItem = new ListViewItem(index.ToString());
+                    lsItem.SubItems.Add(dish.baseDish.name);
+                    lsItem.SubItems.Add(dish.addon.name);
+                    lsItem.SubItems.Add(quantity.ToString());
+                    lsItem.SubItems.Add(dish.Price.ToString());
+                    lsItem.SubItems.Add(dish.tool.Name);
+                    listview.Items.Add(lsItem);
+                }
                 }
 
-                ResetList(bill);
-                Json<Bill>.Write(menu_file, bill);
-            Json<Bill>.Write(menu_file, bill);
+                //ResetList(bill);
+
+
                 //MessageBox.Show(jsonString);
             //}
             //catch(Exception ex)
@@ -114,21 +120,13 @@ namespace RestaurantSimulator
         }
 
 
-        private void ResetList(Bill bill)
+        private void ResetListIndex()
         {
-            listview.Items.Clear();
             int index = 0;
-            ListViewItem lsItem;
-            foreach(Menu_Item item in bill.item_list)
+            foreach(ListViewItem lsItem in listview.Items)
             {
                 index++;
-                lsItem = new ListViewItem(index.ToString());
-                lsItem.SubItems.Add(item.name);
-                lsItem.SubItems.Add(item.quantity.ToString());
-                lsItem.SubItems.Add(item.price.ToString());
-                lsItem.SubItems.Add(item.tool);
-
-                listview.Items.Add(lsItem);
+                lsItem.Text = index.ToString();
             }
         }
 
@@ -138,24 +136,26 @@ namespace RestaurantSimulator
         }
 
 
-        private void GetOrder()
+        private Dictionary<string, List<string>> GetOrdering()
         {
+            Dictionary<string, List<string>> ordering = new Dictionary<string, List<string>>();
             foreach (CheckedListBox list in Menu_List.Keys)
             {
-                order[Menu_List[list]] = new List<string>();
+                ordering[Menu_List[list]] = new List<string>();
                 foreach (object obj in list.CheckedItems)
                 {
-                    order[Menu_List[list]].Add(obj.ToString());
+                    ordering[Menu_List[list]].Add(obj.ToString());
                 }
             }
+            return ordering;
         }
 
         private void Listview_remove(object sender, EventArgs e)
         {
             var item = listview.SelectedItems[0];
             item.Remove();
-            bill.item_list.RemoveAt(int.Parse(item.Text)-1);
-            ResetList(bill);
+            ResetListIndex();
+            order[item.SubItems[1].Text].Remove(item.SubItems[2].Text);
         }
 
         private void Reset(object sender, EventArgs e)
@@ -172,8 +172,8 @@ namespace RestaurantSimulator
             Json<Dictionary<string, List<string>>>.Write(order_file, order);
             string jsonstring = File.ReadAllText(menu_file);
 
-            var a = JsonConvert.DeserializeObject<Bill>(jsonstring);
-            text_table.Text += (a.item_list)[0].name;
+            //var a = JsonConvert.DeserializeObject<>(jsonstring);
+            //text_table.Text += (a.item_list)[0].name;
         }
     }
 }

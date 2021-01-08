@@ -18,8 +18,6 @@ namespace RestaurantSimulator
         public Form_Recipe()
         {
             InitializeComponent();
-            Graphics g = this.CreateGraphics();
-            g.DrawEllipse(new Pen(Color.Red), 100, 100, 100, 100);
             Current_Component = "";
             listboxComponent.SelectedIndex = 0;
         }

@@ -57,6 +57,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.Menu_Noodle = new System.Windows.Forms.CheckedListBox();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -233,6 +234,7 @@
             this.listview.AllowColumnReorder = true;
             this.listview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader0,
+            this.columnHeader3,
             this.columnHeader4,
             this.columnHeader1,
             this.columnHeader2,
@@ -245,7 +247,7 @@
             this.listview.Location = new System.Drawing.Point(602, 37);
             this.listview.Margin = new System.Windows.Forms.Padding(2);
             this.listview.Name = "listview";
-            this.listview.Size = new System.Drawing.Size(597, 360);
+            this.listview.Size = new System.Drawing.Size(706, 360);
             this.listview.TabIndex = 17;
             this.listview.UseCompatibleStateImageBehavior = false;
             this.listview.View = System.Windows.Forms.View.Details;
@@ -257,23 +259,27 @@
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Món ăn";
-            this.columnHeader4.Width = 165;
+            this.columnHeader4.DisplayIndex = 1;
+            this.columnHeader4.Text = "Loại";
+            this.columnHeader4.Width = 99;
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Số lượng";
-            this.columnHeader1.Width = 97;
+            this.columnHeader1.DisplayIndex = 2;
+            this.columnHeader1.Text = "Thêm";
+            this.columnHeader1.Width = 106;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Giá";
+            this.columnHeader2.DisplayIndex = 3;
+            this.columnHeader2.Text = "Số lượng";
             this.columnHeader2.Width = 116;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Đựng";
-            this.columnHeader5.Width = 159;
+            this.columnHeader5.DisplayIndex = 4;
+            this.columnHeader5.Text = "Giá";
+            this.columnHeader5.Width = 163;
             // 
             // button1
             // 
@@ -383,6 +389,12 @@
             this.Menu_Noodle.Size = new System.Drawing.Size(131, 114);
             this.Menu_Noodle.TabIndex = 0;
             // 
+            // columnHeader3
+            // 
+            this.columnHeader3.DisplayIndex = 5;
+            this.columnHeader3.Text = "Ghi chú";
+            this.columnHeader3.Width = 108;
+            // 
             // Form_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,6 +446,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.CheckedListBox Menu_Rice;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }
 

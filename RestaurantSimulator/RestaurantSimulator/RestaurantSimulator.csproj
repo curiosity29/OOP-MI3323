@@ -74,8 +74,6 @@
     <Compile Include="Menu\DishPart.cs" />
     <Compile Include="Components\Carrot.cs" />
     <Compile Include="Menu\Cafe.cs" />
-    <Compile Include="Menu\Bill.cs" />
-    <Compile Include="Menu\Menu_Item.cs" />
     <Compile Include="Menu\NoodleDish.cs" />
     <Compile Include="Form_Manager.cs">
       <SubType>Form</SubType>
