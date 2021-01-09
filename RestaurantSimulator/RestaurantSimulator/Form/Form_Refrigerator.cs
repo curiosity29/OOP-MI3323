@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace RestaurantSimulator
 {
@@ -21,24 +23,28 @@ namespace RestaurantSimulator
         private void Form_Refrigerator_Load(object sender, EventArgs e)
         {
             refrigerator = new Refrigerator();
-            refrigerator.list_component = new List<Component>()
-            {
-                //new Carrot()
-                //{
-                //    Name = "cà rốt",
-                //    Status = "OK"
-                //}
-                //, new Fish()
-                //{
-                //    Name = "Cá",
-                //    Status = "Tươi"
-                //}
-                //, new Potato()
-                //{
-                //    Name = "Củ khoai",
-                //    Status = "Mọc mầm"
-                //}
-            };
+            refrigerator.list_component = new List<component_refrigerator>();
+            //{
+            //    new component_refrigerator()
+            //    {
+            //        Name = "cà rốt",
+            //        quantity = 50,
+            //    }
+            //    , new component_refrigerator()
+            //    {
+            //        Name = "cà chua",
+            //        quantity = 50,
+            //    }
+            //    , new component_refrigerator()
+            //    {
+            //        Name = "khoai tây",
+            //        quantity = 50,
+            //    }
+            //};
+            string json = File.ReadAllText("D:\\read_re_re.json");
+            refrigerator.list_component = JsonConvert.DeserializeObject<List<component_refrigerator>>(json);
+            //string jsonString = JsonConvert.SerializeObject(refrigerator.list_component, Formatting.Indented);
+            //File.WriteAllText("D:\\read_re_re.json", jsonString);
             dataGridView1.DataSource = refrigerator.list_component;
             
             
@@ -60,6 +66,25 @@ namespace RestaurantSimulator
         private void listView2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            refrigerator.list_component = (List < component_refrigerator > )dataGridView1.DataSource;
+            string jsonString = JsonConvert.SerializeObject(refrigerator.list_component, Formatting.Indented);
+            File.WriteAllText("D:\\read_re_re.json", jsonString);
+            dataGridView1.ReadOnly = true;
+            this.Close();
+        }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+            dataGridView1.ReadOnly = false;
         }
     }
 }

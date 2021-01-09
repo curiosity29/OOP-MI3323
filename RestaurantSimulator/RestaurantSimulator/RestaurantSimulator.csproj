@@ -63,6 +63,7 @@
     <Compile Include="Components\Plate.cs" />
     <Compile Include="Components\Taro.cs" />
     <Compile Include="Components\Tea.cs" />
+    <Compile Include="Container\component_refrigerator.cs" />
     <Compile Include="Container\Refrigerator.cs" />
     <Compile Include="Form\Form_MakeDish.cs">
       <SubType>Form</SubType>

@@ -8,6 +8,6 @@ namespace RestaurantSimulator
 {
     public class Refrigerator
     {
-        public List<Component> list_component;
+        public List<component_refrigerator> list_component;
     }
 }

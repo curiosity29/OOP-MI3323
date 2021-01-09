@@ -157,17 +157,74 @@ namespace RestaurantSimulator
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Write_recpies_to_json(@"D:\Test2.json", recipes1);
-            Write_recpies_to_json(@"D:\Test.json", recipes2);
-            Write_recpies_to_json(@"D:\T2.json", recipes1[listbox1.SelectedIndex]);
-            Write_recpies_to_json(@"D:\T.json", recipes2[listbox1.SelectedIndex]);
-            this.Close();
+            try
+            {
+                Write_recpies_to_json(@"D:\Test2.json", recipes1);
+                Write_recpies_to_json(@"D:\Test.json", recipes2);
+                Write_recpies_to_json(@"D:\T2.json", recipes1[listbox1.SelectedIndex]);
+                Write_recpies_to_json(@"D:\T.json", recipes2[listbox2.SelectedIndex]);
+                Recipe recipe1 = recipes1[listbox1.SelectedIndex];
+                Recipe recipe2 = recipes2[listbox2.SelectedIndex];
+                //Refrigerator refrigerator = new Refrigerator();
+                string json = File.ReadAllText("D:\\read_re_re.json");
+                List<component_refrigerator> component_refrigerator = JsonConvert.DeserializeObject<List<component_refrigerator>>(json);
+                int i;
+                foreach (component_refrigerator a in component_refrigerator)
+                {
+                    if (a.Name == recipe1.component_List[0].Name)
+                    {
+                        i = a.quantity - recipe1.component_List[0].Quantity;
+                        if (i <= 0)
+                        {
+                            if (MessageBox.Show("Out-of-stock " + a.Name + "Do you want to adapt " + a.Name + "?", "INFORM",
+                                MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            {
+
+                            }
+                            else
+                            {
+
+                            }
+                        }
+                        else
+                        {
+                            a.quantity = i;
+                        }
+                    }
+                    else if (a.Name == recipe2.component_List[0].Name)
+                    {
+                        i = a.quantity - recipe2.component_List[0].Quantity;
+                        if (i <= 0)
+                        {
+                            MessageBox.Show("Out-of-stock " + a.Name, "INFORM");
+                        }
+                        else
+                        {
+                            a.quantity = i;
+                        }
+                    }
+                }
+                string jsonString = JsonConvert.SerializeObject(component_refrigerator, Formatting.Indented);
+                File.WriteAllText("D:\\read_re_re.json", jsonString);
+                MessageBox.Show("The dish has cooked", "INFORM");
+                this.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Choose item to cook");
+            }
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            recipes2.RemoveAt(listbox1.SelectedIndex);
-            listbox2.Items.RemoveAt(listbox1.SelectedIndex);
+            recipes2.RemoveAt(listbox2.SelectedIndex);
+            listbox2.Items.RemoveAt(listbox2.SelectedIndex);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new Form_Refrigerator().Show();
         }
     }
 }
