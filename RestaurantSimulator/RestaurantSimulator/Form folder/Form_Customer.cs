@@ -200,7 +200,7 @@ namespace RestaurantSimulator
 
         private void Modify_Item(object sender, EventArgs e)
         {
-            //listview.SelectedItems
+            new Form_ModifyItem(listview.SelectedItems[0]).Show();
         }
     }
 }

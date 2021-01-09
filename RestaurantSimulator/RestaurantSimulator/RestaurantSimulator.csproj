@@ -65,11 +65,21 @@
     <Compile Include="Components\Tea.cs" />
     <Compile Include="Container\component_refrigerator.cs" />
     <Compile Include="Container\Refrigerator.cs" />
-    <Compile Include="Form folder\Form_MakeDish.cs" />
+    <Compile Include="Form folder\Form_MakeDish.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form folder\Form_MakeDish.Designer.cs">
       <DependentUpon>Form_MakeDish.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form folder\Form_Recipe_2.cs" />
+    <Compile Include="Form folder\Form_ModifyItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form folder\Form_ModifyItem.Designer.cs">
+      <DependentUpon>Form_ModifyItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form folder\Form_Recipe_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form folder\Form_Recipe_2.Designer.cs">
       <DependentUpon>Form_Recipe_2.cs</DependentUpon>
     </Compile>
@@ -80,15 +90,21 @@
     <Compile Include="Components\Carrot.cs" />
     <Compile Include="Menu\Cafe.cs" />
     <Compile Include="Menu\NoodleDish.cs" />
-    <Compile Include="Form folder\Form_Manager.cs" />
+    <Compile Include="Form folder\Form_Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form folder\Form_Manager.Designer.cs">
       <DependentUpon>Form_Manager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form folder\Form_Recipe.cs" />
+    <Compile Include="Form folder\Form_Recipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form folder\Form_Recipe.Designer.cs">
       <DependentUpon>Form_Recipe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form folder\Form_Kitchen.cs" />
+    <Compile Include="Form folder\Form_Kitchen.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form folder\Form_Kitchen.Designer.cs">
       <DependentUpon>Form_Kitchen.cs</DependentUpon>
     </Compile>
@@ -100,7 +116,9 @@
     <Compile Include="Components\Potato.cs" />
     <Compile Include="Menu\Dish.cs" />
     <Compile Include="Menu\FlyFoodFactory.cs" />
-    <Compile Include="Form folder\Form_Customer.cs" />
+    <Compile Include="Form folder\Form_Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form folder\Form_Customer.Designer.cs">
       <DependentUpon>Form_Customer.cs</DependentUpon>
     </Compile>
@@ -111,7 +129,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Method\Recipe.cs" />
     <Compile Include="Method\WashVisitor.cs" />
-    <Compile Include="Form folder\Form_Refrigerator.cs" />
+    <Compile Include="Form folder\Form_Refrigerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form folder\Form_Refrigerator.Designer.cs">
       <DependentUpon>Form_Refrigerator.cs</DependentUpon>
     </Compile>
@@ -123,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form folder\Form_Manager.resx">
       <DependentUpon>Form_Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form folder\Form_ModifyItem.resx">
+      <DependentUpon>Form_ModifyItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form folder\Form_Recipe.resx">
       <DependentUpon>Form_Recipe.cs</DependentUpon>
