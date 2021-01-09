@@ -159,48 +159,51 @@ namespace RestaurantSimulator
         {
             try
             {
-                Write_recpies_to_json(@"D:\Test2.json", recipes1);
-                Write_recpies_to_json(@"D:\Test.json", recipes2);
-                Write_recpies_to_json(@"D:\T2.json", recipes1[listbox1.SelectedIndex]);
-                Write_recpies_to_json(@"D:\T.json", recipes2[listbox2.SelectedIndex]);
                 Recipe recipe1 = recipes1[listbox1.SelectedIndex];
                 Recipe recipe2 = recipes2[listbox2.SelectedIndex];
                 //Refrigerator refrigerator = new Refrigerator();
                 string json = File.ReadAllText("D:\\read_re_re.json");
                 List<component_refrigerator> component_refrigerator = JsonConvert.DeserializeObject<List<component_refrigerator>>(json);
                 int i;
+                int j;
                 foreach (component_refrigerator a in component_refrigerator)
                 {
-                    if (a.Name == recipe1.component_List[0].Name)
+                    for (j = 0; j < recipe1.component_List.Count; j++)
                     {
-                        i = a.quantity - recipe1.component_List[0].Quantity;
-                        if (i <= 0)
+                        if (a.Name == recipe1.component_List[0].Name)
                         {
-                            if (MessageBox.Show("Out-of-stock " + a.Name + "Do you want to adapt " + a.Name + "?", "INFORM",
-                                MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            i = a.quantity - recipe1.component_List[0].Quantity;
+                            if (i <= 0)
                             {
+                                if (MessageBox.Show("Out-of-stock " + a.Name + "Do you want to adapt " + a.Name + "?", "INFORM",
+                                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                {
 
+                                }
+                                else
+                                {
+
+                                }
                             }
                             else
                             {
-
+                                a.quantity = i;
                             }
                         }
-                        else
-                        {
-                            a.quantity = i;
-                        }
                     }
-                    else if (a.Name == recipe2.component_List[0].Name)
+                    for (j = 0; j < recipe2.component_List.Count; j++)
                     {
-                        i = a.quantity - recipe2.component_List[0].Quantity;
-                        if (i <= 0)
+                        if (a.Name == recipe2.component_List[0].Name)
                         {
-                            MessageBox.Show("Out-of-stock " + a.Name, "INFORM");
-                        }
-                        else
-                        {
-                            a.quantity = i;
+                            i = a.quantity - recipe2.component_List[0].Quantity;
+                            if (i <= 0)
+                            {
+                                MessageBox.Show("Out-of-stock " + a.Name, "INFORM");
+                            }
+                            else
+                            {
+                                a.quantity = i;
+                            }
                         }
                     }
                 }
@@ -225,6 +228,13 @@ namespace RestaurantSimulator
         private void button4_Click(object sender, EventArgs e)
         {
             new Form_Refrigerator().Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Write_recpies_to_json(@"D:\Test2.json", recipes1);
+            Write_recpies_to_json(@"D:\Test.json", recipes2);
+          
         }
     }
 }
