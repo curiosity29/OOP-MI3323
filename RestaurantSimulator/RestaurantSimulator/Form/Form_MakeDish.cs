@@ -151,7 +151,8 @@ namespace RestaurantSimulator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            recipes1.RemoveAt(listbox1.SelectedIndex);
+            listbox1.Items.RemoveAt(listbox1.SelectedIndex);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -161,6 +162,12 @@ namespace RestaurantSimulator
             Write_recpies_to_json(@"D:\T2.json", recipes1[listbox1.SelectedIndex]);
             Write_recpies_to_json(@"D:\T.json", recipes2[listbox1.SelectedIndex]);
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            recipes2.RemoveAt(listbox1.SelectedIndex);
+            listbox2.Items.RemoveAt(listbox1.SelectedIndex);
         }
     }
 }
