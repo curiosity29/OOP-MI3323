@@ -14,6 +14,7 @@ namespace RestaurantSimulator
 {
     public partial class Form_MakeDish : Form
     {
+        public bool OK = false;
         List<Recipe> recipes1;
         List<Recipe> recipes2;
         public Form_MakeDish()
@@ -210,6 +211,7 @@ namespace RestaurantSimulator
                 string jsonString = JsonConvert.SerializeObject(component_refrigerator, Formatting.Indented);
                 File.WriteAllText("D:\\read_re_re.json", jsonString);
                 MessageBox.Show("The dish has cooked", "INFORM");
+                OK = true;
                 this.Close();
             }
             catch (Exception)
