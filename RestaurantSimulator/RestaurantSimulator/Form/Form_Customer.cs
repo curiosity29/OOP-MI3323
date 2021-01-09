@@ -174,8 +174,14 @@ namespace RestaurantSimulator
         private void Order(object sender, EventArgs e)
         {
             Json<Dictionary<string, List<string>>>.Write(order_file, order);
+            try
+            {
+                new Form_Kitchen(this, this.text_table, this.text_bill, order).Show();
+            }
+            catch
+            {
 
-            new Form_Kitchen(this, this.text_table, this.text_bill, order).Show();
+            }
 
             string jsonstring = File.ReadAllText(menu_file);
 

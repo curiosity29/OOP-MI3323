@@ -1,38 +1,6 @@
 {
-  "Mì": [
-    "Xào gà",
-    "Xào gà",
-    "Xào gà",
-    "Xào gà",
-    "Xào gà",
-    "Xào gà",
-    "Xào gà",
-    "Xào gà"
-  ],
-  "Cà phê": [
-    "Đen nâu",
-    "Đen nâu",
-    "Đen nâu",
-    "Đen nâu"
-  ],
-  "Trà sữa": [
-    "Bạc hà",
-    "Bạc hà",
-    "Bạc hà",
-    "Bạc hà",
-    "Bạc hà",
-    "Bạc hà",
-    "Bạc hà",
-    "Bạc hà"
-  ],
-  "Cơm": [
-    "Cá kho tộ",
-    "Cá kho tộ",
-    "Cá kho tộ",
-    "Cá kho tộ",
-    "Cá kho tộ",
-    "Cá kho tộ",
-    "Cá kho tộ",
-    "Cá kho tộ"
-  ]
+  "Mì": [],
+  "Cà phê": [],
+  "Trà sữa": [],
+  "Cơm": []
 }

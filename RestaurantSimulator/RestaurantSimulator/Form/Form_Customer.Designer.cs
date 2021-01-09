@@ -57,6 +57,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Menu_Noodle = new System.Windows.Forms.CheckedListBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -116,6 +119,9 @@
             // groupBox2
             // 
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.richTextBox1);
             this.groupBox2.Controls.Add(this.Menu_Rice);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.textBox1);
@@ -194,7 +200,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button5.Location = new System.Drawing.Point(68, 323);
+            this.button5.Location = new System.Drawing.Point(287, 184);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(88, 49);
             this.button5.TabIndex = 20;
@@ -283,7 +289,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button1.Location = new System.Drawing.Point(219, 323);
+            this.button1.Location = new System.Drawing.Point(486, 314);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 49);
             this.button1.TabIndex = 16;
@@ -312,7 +318,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(154, 266);
+            this.button2.Location = new System.Drawing.Point(146, 267);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 31);
             this.button2.TabIndex = 11;
@@ -379,6 +385,34 @@
             this.Menu_Noodle.Size = new System.Drawing.Size(131, 114);
             this.Menu_Noodle.TabIndex = 0;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(106, 314);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(349, 49);
+            this.richTextBox1.TabIndex = 25;
+            this.richTextBox1.Text = "";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.label9.Location = new System.Drawing.Point(13, 324);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(87, 26);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Ghi chú";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.label10.Location = new System.Drawing.Point(13, 386);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 26);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "Sửa";
+            // 
             // Form_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -430,6 +464,9 @@
         private System.Windows.Forms.CheckedListBox Menu_Rice;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 
