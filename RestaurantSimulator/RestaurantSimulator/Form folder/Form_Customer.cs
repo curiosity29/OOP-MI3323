@@ -76,6 +76,7 @@ namespace RestaurantSimulator
         {
             var ordering = GetOrdering();
             int quantity = GetQuantity();
+            string note = GetNote();
             int index;
             Dish dish;
             try
@@ -105,7 +106,7 @@ namespace RestaurantSimulator
                         lsItem.SubItems.Add(dish.addon.name);
                         lsItem.SubItems.Add(quantity.ToString());
                         lsItem.SubItems.Add((dish.Price*quantity).ToString());
-                        lsItem.SubItems.Add(dish.tool.Name);
+                        lsItem.SubItems.Add(note);
                         listview.Items.Add(lsItem);
                     }
                 }
@@ -121,6 +122,10 @@ namespace RestaurantSimulator
             }
         }
 
+        private string GetNote()
+        {
+            return richTextBox_note.Text;
+        }
 
         private void ResetListIndex()
         {
@@ -173,7 +178,10 @@ namespace RestaurantSimulator
 
         private void Order(object sender, EventArgs e)
         {
+            //lưu file order
             Json<Dictionary<string, List<string>>>.Write(order_file, order);
+
+            //bật bếp
             try
             {
                 new Form_Kitchen(this, this.text_table, this.text_bill, order).Show();
@@ -183,10 +191,16 @@ namespace RestaurantSimulator
 
             }
 
-            string jsonstring = File.ReadAllText(menu_file);
+
+            //string jsonstring = File.ReadAllText(menu_file);
 
             //var a = JsonConvert.DeserializeObject<>(jsonstring);
             //text_table.Text += (a.item_list)[0].name;
+        }
+
+        private void Modify_Item(object sender, EventArgs e)
+        {
+            //listview.SelectedItems
         }
     }
 }

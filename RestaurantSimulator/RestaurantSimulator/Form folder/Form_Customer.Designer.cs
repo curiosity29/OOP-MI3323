@@ -57,9 +57,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Menu_Noodle = new System.Windows.Forms.CheckedListBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox_note = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -119,9 +119,9 @@
             // groupBox2
             // 
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.richTextBox1);
+            this.groupBox2.Controls.Add(this.richTextBox_note);
             this.groupBox2.Controls.Add(this.Menu_Rice);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.textBox1);
@@ -289,11 +289,11 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button1.Location = new System.Drawing.Point(486, 314);
+            this.button1.Location = new System.Drawing.Point(399, 324);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 49);
+            this.button1.Size = new System.Drawing.Size(175, 49);
             this.button1.TabIndex = 16;
-            this.button1.Text = "Order";
+            this.button1.Text = "Finish Order";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Order);
             // 
@@ -385,33 +385,33 @@
             this.Menu_Noodle.Size = new System.Drawing.Size(131, 114);
             this.Menu_Noodle.TabIndex = 0;
             // 
-            // richTextBox1
+            // richTextBox_note
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(106, 314);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(349, 49);
-            this.richTextBox1.TabIndex = 25;
-            this.richTextBox1.Text = "";
+            this.richTextBox_note.Location = new System.Drawing.Point(6, 357);
+            this.richTextBox_note.Name = "richTextBox_note";
+            this.richTextBox_note.Size = new System.Drawing.Size(349, 49);
+            this.richTextBox_note.TabIndex = 25;
+            this.richTextBox_note.Text = "";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.label9.Location = new System.Drawing.Point(13, 324);
+            this.label9.Location = new System.Drawing.Point(9, 325);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 26);
             this.label9.TabIndex = 26;
             this.label9.Text = "Ghi chú";
             // 
-            // label10
+            // button4
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.label10.Location = new System.Drawing.Point(13, 386);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(51, 26);
-            this.label10.TabIndex = 27;
-            this.label10.Text = "Sửa";
+            this.button4.Location = new System.Drawing.Point(287, 267);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(88, 31);
+            this.button4.TabIndex = 27;
+            this.button4.Text = "Modify";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Modify_Item);
             // 
             // Form_Customer
             // 
@@ -464,9 +464,9 @@
         private System.Windows.Forms.CheckedListBox Menu_Rice;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBox_note;
+        private System.Windows.Forms.Button button4;
     }
 }
 
