@@ -78,8 +78,8 @@ namespace RestaurantSimulator
             int quantity = GetQuantity();
             int index;
             Dish dish;
-            //try
-            //{
+            try
+            {
                 foreach (string basename in ordering.Keys)
                 {
                     dish = FlyFoodFactory.GetDish(basename);
@@ -91,20 +91,22 @@ namespace RestaurantSimulator
                             name = addonName,
                             price = price_dict[addonName]
                         };
-                        
-                        order[basename].Add(addonName);
+                        for(int i=0;i<quantity;i++)
+                        {
+                            order[basename].Add(addonName);
+                        }
 
                         ListViewItem lsItem;
 
-                    index = listview.Items.Count;
-                    index++;
-                    lsItem = new ListViewItem(index.ToString());
-                    lsItem.SubItems.Add(dish.baseDish.name);
-                    lsItem.SubItems.Add(dish.addon.name);
-                    lsItem.SubItems.Add(quantity.ToString());
-                    lsItem.SubItems.Add((dish.Price*quantity).ToString());
-                    lsItem.SubItems.Add(dish.tool.Name);
-                    listview.Items.Add(lsItem);
+                        index = listview.Items.Count;
+                        index++;
+                        lsItem = new ListViewItem(index.ToString());
+                        lsItem.SubItems.Add(dish.baseDish.name);
+                        lsItem.SubItems.Add(dish.addon.name);
+                        lsItem.SubItems.Add(quantity.ToString());
+                        lsItem.SubItems.Add((dish.Price*quantity).ToString());
+                        lsItem.SubItems.Add(dish.tool.Name);
+                        listview.Items.Add(lsItem);
                     }
                 }
 
@@ -112,11 +114,11 @@ namespace RestaurantSimulator
 
 
                 //MessageBox.Show(jsonString);
-            //}
-            //catch(Exception ex)
-            //{
-            //    MessageBox.Show("Error, but not crashed :D, and the error: " + ex.Message);
-            //}
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error, but not crashed :D, and the error: " + ex.Message);
+            }
         }
 
 
@@ -155,7 +157,11 @@ namespace RestaurantSimulator
             var item = listview.SelectedItems[0];
             item.Remove();
             ResetListIndex();
-            order[item.SubItems[1].Text].Remove(item.SubItems[2].Text);
+            int quantity = int.Parse(item.SubItems[3].Text);
+            for (int i = 0; i < quantity; i++)
+            {
+                order[item.SubItems[1].Text].Remove(item.SubItems[2].Text);
+            }
         }
 
         private void Reset(object sender, EventArgs e)
