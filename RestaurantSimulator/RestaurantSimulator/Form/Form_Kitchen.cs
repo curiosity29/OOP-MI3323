@@ -62,6 +62,7 @@ namespace RestaurantSimulator
             {
                 if(OK)
                 {
+                    text_table.Text += text_holding.Text + "\n";
                     text_holding.Text = Serve_next();
                 }
                 else
