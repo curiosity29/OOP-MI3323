@@ -14,6 +14,8 @@ namespace RestaurantSimulator
 {
     public partial class Form_MakeDish : Form
     {
+
+        List<component_refrigerator> component_refrigerator;
         public bool OK = false;
         List<Recipe> recipes1;
         List<Recipe> recipes2;
@@ -155,69 +157,195 @@ namespace RestaurantSimulator
             recipes1.RemoveAt(listbox1.SelectedIndex);
             listbox1.Items.RemoveAt(listbox1.SelectedIndex);
         }
+        public bool check_available(Recipe recipe, ref List<component_refrigerator> component_refrigerator)
+        {
+            int i, j;
+            int k = recipe.component_List.Count;
+            foreach (component_refrigerator a in component_refrigerator)
+            {
+                for (i = 0; i < k; i++)
+                {
+                    if (recipe.component_List[i].Name == a.Name)
+                    {
+                        j = a.quantity - recipe.component_List[i].Quantity;
+                        if (j < 0)
+                            return false;
+                    }
+                }
+            }
+            return true;
+        }
+       
+        public void available_return(Recipe recipe, ref List<component_refrigerator> component_refrigerator)
+        {
+            int i, j, k;
+            k = recipe.component_List.Count;
+            foreach (component_refrigerator a in component_refrigerator)
+            {
+                for (i = 0; i < k ; i++)
+                {
+                    if(recipe.component_List[i].Name == a.Name)
+                    {
+                        j = a.quantity - recipe.component_List[i].Quantity ;
+                        a.quantity = j;
+                    }
+                }
+            }
+        }
+        public Recipe find_index_recipe(string recipe_name, List<Recipe> list_recipe)
+        {
+            int i;
+            for (i = 0; i < list_recipe.Count; i++)
+            {
+                if (list_recipe[i].Name == recipe_name)
+                    return list_recipe[i];
+            }
+            return null;
+        }
+        public void adapt_dish(Recipe recipe1, ref List<component_refrigerator> component_refrigerator,
+            List<Recipe> recipes1, Dictionary<string, string> adapt)
+        {
+            if (check_available(recipe1, ref component_refrigerator))
+            {
+                available_return(recipe1, ref component_refrigerator);
+                string jsonString = JsonConvert.SerializeObject(component_refrigerator, Formatting.Indented);
+                File.WriteAllText("D:\\read_re_re.json", jsonString);
+                MessageBox.Show("The dish has cooked", "INFORM");
+            }
+            else
+            {
+                foreach (KeyValuePair<string, string> kvp in adapt)
+                {
+                    Recipe adapt_recipe = find_index_recipe(kvp.Value, recipes1);
+                    if (kvp.Key == recipe1.Name)
+                    {
+                        if (!check_available(adapt_recipe, ref component_refrigerator))
+                        {
+                            MessageBox.Show("Out-of-stock" + recipe1.Name);
+                        }
+                        else
+                        {
+                            if (MessageBox.Show("Out-of-stock " + " " + recipe1.Name + ". Do you want to adapt " + "by" + " " + adapt_recipe.Name
+                             + "?", "INFORM", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            {
+                                available_return(adapt_recipe, ref component_refrigerator);
+                            }
+                        }
 
+                    }
+                }
+            }
+        }
         private void button3_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
+                
+                Dictionary<string, string> adapt = new Dictionary<string, string>();
+                string json1 = File.ReadAllText("..\\..\\DataSource\\adapter.json");
+                adapt = JsonConvert.DeserializeObject<Dictionary<string, string>>(json1);
                 Recipe recipe1 = recipes1[listbox1.SelectedIndex];
                 Recipe recipe2 = recipes2[listbox2.SelectedIndex];
                 //Refrigerator refrigerator = new Refrigerator();
                 string json = File.ReadAllText("D:\\read_re_re.json");
-                List<component_refrigerator> component_refrigerator = JsonConvert.DeserializeObject<List<component_refrigerator>>(json);
+                component_refrigerator = JsonConvert.DeserializeObject<List<component_refrigerator>>(json);
                 int i;
                 int j;
-                foreach (component_refrigerator a in component_refrigerator)
-                {
-                    for (j = 0; j < recipe1.component_List.Count; j++)
-                    {
-                        if (a.Name == recipe1.component_List[0].Name)
-                        {
-                            i = a.quantity - recipe1.component_List[0].Quantity;
-                            if (i <= 0)
-                            {
-                                if (MessageBox.Show("Out-of-stock " + a.Name + "Do you want to adapt " + a.Name + "?", "INFORM",
-                                    MessageBoxButtons.YesNo) == DialogResult.Yes)
-                                {
+                adapt_dish(recipe1, ref component_refrigerator, recipes1, adapt);
+                adapt_dish(recipe2, ref component_refrigerator, recipes2, adapt);
+                //if (check_available_and_return(recipe1, ref component_refrigerator))
+                //{
+                //    string jsonString = JsonConvert.SerializeObject(component_refrigerator, Formatting.Indented);
+                //    File.WriteAllText("D:\\read_re_re.json", jsonString);
+                //    MessageBox.Show("The dish has cooked", "INFORM");
+                //}
+                //else
+                //{
+                //    foreach(KeyValuePair<string, string> kvp in adapt)
+                //    {
+                //        Recipe adapt_recipe = find_index_recipe(kvp.Value, recipes1);
+                //        if (kvp.Key == recipe1.Name)
+                //        {
+                //            if(!check_available(adapt_recipe,ref component_refrigerator))
+                //            {
+                //                MessageBox.Show("Out-of-stock" + adapt_recipe.Name);
+                //            }
+                //            else
+                //            {
+                //                if (MessageBox.Show("Out-of-stock " + recipe1.Name + "Do you want to adapt " + adapt_recipe.Name +
+                //                "by" + "?", "INFORM", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                //                {
+                //                    check_available_and_return(adapt_recipe, ref component_refrigerator);
+                //                }
+                //            }
 
-                                }
-                                else
-                                {
+                //        }
+                //    }
+                //}
+                //foreach (component_refrigerator a in component_refrigerator)
+                //{
+                //    for (j = 0; j < recipe1.component_List.Count; j++)
+                //    {
+                //        if (a.Name == recipe1.component_List[j].Name)
+                //        {
+                //            i = a.quantity - recipe1.component_List[j].Quantity;
+                //            if (i <= 0)
+                //            {
+                //                Recipe adapt_recipe = new Recipe();
+                //                foreach(KeyValuePair<string, string> kvp in adapt)
+                //                {
+                //                    if(kvp.Key == recipe1.Name)
+                //                    {
+                //                        foreach(Recipe temp in recipes1)
+                //                        {
+                //                            if(temp.Name == kvp.Value)
+                //                            {
+                //                                adapt_recipe = temp;
+                //                            }
+                //                        }
+                //                    }
+                //                }
+                //                if()
+                //                if (MessageBox.Show("Out-of-stock " + recipe1.Name + "Do you want to adapt " + a.Name + "by" + "?", "INFORM",
+                //                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+                //               
+                //                }
+                //                else
+                //                {
 
-                                }
-                            }
-                            else
-                            {
-                                a.quantity = i;
-                            }
-                        }
-                    }
-                    for (j = 0; j < recipe2.component_List.Count; j++)
-                    {
-                        if (a.Name == recipe2.component_List[0].Name)
-                        {
-                            i = a.quantity - recipe2.component_List[0].Quantity;
-                            if (i <= 0)
-                            {
-                                MessageBox.Show("Out-of-stock " + a.Name, "INFORM");
-                            }
-                            else
-                            {
-                                a.quantity = i;
-                            }
-                        }
-                    }
-                }
-                string jsonString = JsonConvert.SerializeObject(component_refrigerator, Formatting.Indented);
-                File.WriteAllText("D:\\read_re_re.json", jsonString);
-                MessageBox.Show("The dish has cooked", "INFORM");
+                //                }
+                //            }
+                //            else
+                //            {
+                //                a.quantity = i;
+                //            }
+                //        }
+                //    }
+                //    for (j = 0; j < recipe2.component_List.Count; j++)
+                //    {
+                //        if (a.Name == recipe2.component_List[0].Name)
+                //        {
+                //            i = a.quantity - recipe2.component_List[0].Quantity;
+                //            if (i <= 0)
+                //            {
+                //                MessageBox.Show("Out-of-stock " + recipe2.Name, "INFORM");
+                //            }
+                //            else
+                //            {
+                //                a.quantity = i;
+                //            }
+                //        }
+                //    }
+                //}
+                
+
                 OK = true;
                 this.Close();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Choose item to cook");
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Choose item to cook");
+            //}
            
         }
 

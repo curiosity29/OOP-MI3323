@@ -191,6 +191,7 @@
     <None Include="Resources\CorgiBoy.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSource\adapter.json" />
     <Content Include="DataSource\Data Dish.txt" />
     <Content Include="Dũng - pass to other.txt" />
     <Content Include="Menu\Data Dish.txt" />
