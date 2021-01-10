@@ -200,7 +200,22 @@ namespace RestaurantSimulator
 
         private void Modify_Item(object sender, EventArgs e)
         {
-            new Form_ModifyItem(listview.SelectedItems[0]).Show();
+            var item = listview.SelectedItems[0];
+            int quantity = int.Parse(item.SubItems[3].Text);
+            for(int i =0;i< quantity;i++)
+            {
+                order[item.SubItems[1].Text].Remove(item.SubItems[2].Text);
+            }
+
+            new Form_ModifyItem(item).Show();
+
+            
+
+            quantity = int.Parse(item.SubItems[3].Text);
+            for (int i = 0; i < quantity; i++)
+            {
+                order[item.SubItems[1].Text].Add(item.SubItems[2].Text);
+            }
         }
     }
 }

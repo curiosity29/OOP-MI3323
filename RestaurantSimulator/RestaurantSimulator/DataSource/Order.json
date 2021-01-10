@@ -1,6 +1,18 @@
 {
-  "Mì": [],
-  "Cà phê": [],
+  "Mì": [
+    "Xào bò",
+    "Xào bò",
+    "Xào bò"
+  ],
+  "Cà phê": [
+    "Đen",
+    "Đen",
+    "Đen"
+  ],
   "Trà sữa": [],
-  "Cơm": []
+  "Cơm": [
+    "Gà sốt Tareyaki",
+    "Gà sốt Tareyaki",
+    "Gà sốt Tareyaki"
+  ]
 }
