@@ -22,5 +22,6 @@ namespace RestaurantSimulator
         string Visit(Potato potato);
         string Visit(Noodle noodle);
         string Visit(Rice rice);
+        string Visit(Beef beef);
     }
 }

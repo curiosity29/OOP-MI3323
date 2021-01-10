@@ -74,5 +74,9 @@ namespace RestaurantSimulator
         {
             return "Nấu gạo vưa đủ nước";
         }
+        public string Visit(Beef beef)
+        {
+            return "Đun bò với nước sốt";
+        }
     }
 }

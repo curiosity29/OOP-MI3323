@@ -72,5 +72,9 @@ namespace RestaurantSimulator
         {
             return "Rưa qua lân nước";
         }
+        public string Visit(Beef beef)
+        {
+            return "Rửa sạch thịt bò với nước ấm";
+        }
     }
 }

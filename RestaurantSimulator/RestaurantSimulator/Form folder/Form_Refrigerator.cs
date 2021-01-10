@@ -58,8 +58,9 @@ namespace RestaurantSimulator
    
 
             }
-            catch(Exception ex)
+            catch(Exception)
             {
+
             }
         }
 

@@ -73,5 +73,9 @@ namespace RestaurantSimulator
         {
             return "Rang cơm";
         }
+        public string Visit(Beef beef)
+        {
+            return "Xào bò với dầu hào";
+        }
     }
 }

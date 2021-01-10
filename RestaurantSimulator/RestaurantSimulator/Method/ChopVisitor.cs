@@ -73,5 +73,9 @@ namespace RestaurantSimulator
         {
             throw new Exception();
         }
+        public string Visit(Beef beef)
+        {
+            return "Thái mỏng thịt bò";
+        }
     }
 }

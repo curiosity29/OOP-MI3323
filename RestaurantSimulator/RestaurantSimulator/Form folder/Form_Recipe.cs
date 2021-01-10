@@ -67,6 +67,10 @@ namespace RestaurantSimulator
                     {
                         return new Coconut();
                     }
+                case "Beef":
+                    {
+                        return new Beef();
+                    }
                 default:
                     {
                         throw new Exception();
@@ -209,6 +213,10 @@ namespace RestaurantSimulator
                             else if (c.Name == "Bubble tea")
                             {
                                 component = new Bubble_tea();
+                            }
+                            else if (c.Name == "Beef")
+                            {
+                                component = new Beef();
                             }
                             else
                             {

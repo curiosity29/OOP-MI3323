@@ -95,6 +95,10 @@ namespace RestaurantSimulator
                             {
                                 component = new Tea();
                             }
+                            else if (c.Name == "Beef")
+                            {
+                                component = new Beef();
+                            }
                             else
                             {
                                 throw new Exception();
@@ -249,11 +253,8 @@ namespace RestaurantSimulator
                 //Refrigerator refrigerator = new Refrigerator();
                 string json = File.ReadAllText("D:\\read_re_re.json");
                 component_refrigerator = JsonConvert.DeserializeObject<List<component_refrigerator>>(json);
-                int i;
-                int j;
                 adapt_dish(recipe1, ref component_refrigerator, recipes1, adapt);
-                adapt_dish(recipe2, ref component_refrigerator, recipes2, adapt);
-                
+                adapt_dish(recipe2, ref component_refrigerator, recipes2, adapt);               
                 OK = true;
                 this.Close();
             }

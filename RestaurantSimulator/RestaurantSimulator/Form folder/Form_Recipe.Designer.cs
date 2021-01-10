@@ -223,7 +223,8 @@ namespace RestaurantSimulator
             "Bubble tea",
             "Chicken",
             "Taro",
-            "Cocconut"});
+            "Cocconut",
+            "Beef"});
             this.listboxComponent.Location = new System.Drawing.Point(229, 84);
             this.listboxComponent.Name = "listboxComponent";
             this.listboxComponent.Size = new System.Drawing.Size(140, 54);
