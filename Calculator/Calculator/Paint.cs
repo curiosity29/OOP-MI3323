@@ -295,7 +295,7 @@ namespace Calculator
 
         #region calculate something
 
-        private Vector2 Calculte_Coordinate(Point a, Point b,
+        private Vector2 Normalize_Vector(Point a, Point b,
             Point pointO, Vector2 vectorI, Vector2 vectorJ)
         {
             Vector2 ab = new Vector2(b.X - a.X, b.Y - a.Y);
@@ -305,9 +305,9 @@ namespace Calculator
         private double Calculate_Volume(Point p1, Point p2, Point p3, Point p11,
             Point pointO, Vector2 vectorI, Vector2 vectorJ, Vector2 vectorK)
         {
-            Vector2 v12 = Calculte_Coordinate(p1, p2, pointO, vectorI, vectorJ);
-            Vector2 v13 = Calculte_Coordinate(p1, p3, pointO, vectorI, vectorJ);
-            Vector2 v14 = Calculte_Coordinate(p1, p11, pointO, vectorI, vectorJ);
+            Vector2 v12 = Normalize_Vector(p1, p2, pointO, vectorI, vectorJ);
+            Vector2 v13 = Normalize_Vector(p1, p3, pointO, vectorI, vectorJ);
+            Vector2 v14 = Normalize_Vector(p1, p11, pointO, vectorI, vectorJ);
             return Calculate_Volume(
                 new Vector3(v12.X, v12.Y, 0),
                 new Vector3(v13.X, v13.Y, 0),
@@ -323,9 +323,9 @@ namespace Calculator
 
         #region hard coding
         Point pointO = new Point(505, 376);
-        Vector2 vectorI = new Vector2(43.375f, -8.625f);
-        Vector2 vectorJ = new Vector2(24.875f, 15.125f);
-        Vector2 vectorK = new Vector2(0, -47);
+        Vector2 vectorI = new Vector2(347 / 8f, 69 / 8f);
+        Vector2 vectorJ = new Vector2(200 / 8f, -118 / 8f);
+        Vector2 vectorK = new Vector2(0, -235 / 5);
 
         private void Calculate_Volume(object sender, EventArgs e)
         {
@@ -350,16 +350,20 @@ namespace Calculator
 
         private void ShowPoint(object sender, MouseEventArgs e)
         {
-            textBox_X.Text = e.X.ToString();
-            textBox_Y.Text = e.Y.ToString();
+            // vector from 0 to mouse location
+            Vector2 v = Normalize_Vector(pointO, e.Location, pointO, vectorI, vectorJ);
+            textBox_X.Text = v.X.ToString();
+            textBox_Y.Text = v.Y.ToString();
+            textBox1.Text = (e.X - pointO.X).ToString();
+            textBox2.Text = (e.Y - pointO.Y).ToString();
         }
 
         private double Calculate_Area(Point p1, Point p2, Point p3, Point p11,
             Point pointO, Vector2 vectorI, Vector2 vectorJ, Vector2 vectorK)
         {
-            Vector2 v12 = Calculte_Coordinate(p1, p2, pointO, vectorI, vectorJ);
-            Vector2 v13 = Calculte_Coordinate(p1, p3, pointO, vectorI, vectorJ);
-            Vector2 v14 = Calculte_Coordinate(p1, p11, pointO, vectorI, vectorJ);
+            Vector2 v12 = Normalize_Vector(p1, p2, pointO, vectorI, vectorJ);
+            Vector2 v13 = Normalize_Vector(p1, p3, pointO, vectorI, vectorJ);
+            Vector2 v14 = Normalize_Vector(p1, p11, pointO, vectorI, vectorJ);
             Vector3 v1 = new Vector3(v12.X, v12.Y, 0);
             Vector3 v2 = new Vector3(v13.X, v13.Y, 0);
             Vector3 v3 = new Vector3(v14.X, v14.Y, (p11.Y - p1.Y) / vectorK.Y);

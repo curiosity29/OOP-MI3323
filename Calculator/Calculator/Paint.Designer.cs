@@ -40,9 +40,9 @@
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox_X = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_Y = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +50,7 @@
             // button_hhbh
             // 
             this.button_hhbh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.button_hhbh.Location = new System.Drawing.Point(122, 13);
+            this.button_hhbh.Location = new System.Drawing.Point(370, 14);
             this.button_hhbh.Name = "button_hhbh";
             this.button_hhbh.Size = new System.Drawing.Size(204, 53);
             this.button_hhbh.TabIndex = 5;
@@ -61,7 +61,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.button1.Location = new System.Drawing.Point(350, 13);
+            this.button1.Location = new System.Drawing.Point(580, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(204, 53);
             this.button1.TabIndex = 6;
@@ -157,7 +157,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.button4.Location = new System.Drawing.Point(577, 13);
+            this.button4.Location = new System.Drawing.Point(790, 14);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(190, 53);
             this.button4.TabIndex = 13;
@@ -168,28 +168,17 @@
             // textBox_X
             // 
             this.textBox_X.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.textBox_X.Location = new System.Drawing.Point(45, 387);
+            this.textBox_X.Location = new System.Drawing.Point(159, 2);
             this.textBox_X.Name = "textBox_X";
-            this.textBox_X.Size = new System.Drawing.Size(71, 32);
+            this.textBox_X.Size = new System.Drawing.Size(185, 32);
             this.textBox_X.TabIndex = 14;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(12, 394);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 20);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "X";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Location = new System.Drawing.Point(12, 432);
+            this.label2.Location = new System.Drawing.Point(118, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(20, 20);
             this.label2.TabIndex = 17;
@@ -198,10 +187,21 @@
             // textBox_Y
             // 
             this.textBox_Y.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.textBox_Y.Location = new System.Drawing.Point(45, 425);
+            this.textBox_Y.Location = new System.Drawing.Point(159, 40);
             this.textBox_Y.Name = "textBox_Y";
-            this.textBox_Y.Size = new System.Drawing.Size(71, 32);
+            this.textBox_Y.Size = new System.Drawing.Size(185, 32);
             this.textBox_Y.TabIndex = 16;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label1.Location = new System.Drawing.Point(118, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 20);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "X";
             // 
             // Paint
             // 
@@ -209,9 +209,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1055, 691);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox_Y);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_X);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.comboBox_redraw);
@@ -246,8 +246,8 @@
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox_X;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_Y;
+        private System.Windows.Forms.Label label1;
     }
 }
