@@ -193,8 +193,6 @@ namespace RestaurantSimulator
             //bật bếp
             try
             {
-                var b = 0;
-                var a = 0 / b;
                 new Form_Kitchen(this, this.text_table, this.text_bill, order).Show();
             }
             catch
