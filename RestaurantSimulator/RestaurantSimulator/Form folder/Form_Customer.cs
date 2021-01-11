@@ -94,7 +94,7 @@ namespace RestaurantSimulator
                         };
                         for(int i=0;i<quantity;i++)
                         {
-                            order[basename].Add(addonName);
+                            //order[basename].Add(addonName);
                         }
 
                         ListViewItem lsItem;
@@ -178,6 +178,13 @@ namespace RestaurantSimulator
 
         private void Order(object sender, EventArgs e)
         {
+
+            foreach(ListViewItem item in listview.Items)
+            {
+                order[item.SubItems[1].Text].Add(item.SubItems[2].Text);
+            }
+
+
             //lưu file order
             Json<Dictionary<string, List<string>>>.Write(order_file, order);
 
