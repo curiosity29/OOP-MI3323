@@ -104,6 +104,7 @@ namespace RestaurantSimulator
             // 
             // button3
             // 
+            this.button3.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(701, 334);
             this.button3.Name = "button3";

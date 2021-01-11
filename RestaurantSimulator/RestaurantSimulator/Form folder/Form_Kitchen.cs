@@ -64,6 +64,7 @@ namespace RestaurantSimulator
                 {
                     text_table.Text += text_holding.Text + "\n";
                     text_holding.Text = Serve_next();
+                    OK = false;
                 }
                 else
                 {
@@ -80,7 +81,7 @@ namespace RestaurantSimulator
         private void MakeDish(object sender, EventArgs e)
         {
             Form_MakeDish frm = new Form_MakeDish();
-            frm.Show();
+            frm.ShowDialog();
             OK = frm.OK;
         }
 

@@ -256,7 +256,6 @@ namespace RestaurantSimulator
                 adapt_dish(recipe1, ref component_refrigerator, recipes1, adapt);
                 adapt_dish(recipe2, ref component_refrigerator, recipes2, adapt);               
                 OK = true;
-                this.Close();
             }
             catch (Exception)
             {

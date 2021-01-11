@@ -87,5 +87,11 @@ namespace RestaurantSimulator
         {
             dataGridView1.ReadOnly = false;
         }
+
+        private void Remove(object sender, EventArgs e)
+        {
+            refrigerator.list_component.RemoveAt(dataGridView1.SelectedRows[0].Index);
+            dataGridView1.DataSource = refrigerator.list_component;
+        }
     }
 }
