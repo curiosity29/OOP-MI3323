@@ -38,7 +38,7 @@ namespace RestaurantSimulator
                     }
                 case "Rice":
                     {
-                        return new Carrot();
+                        return new Rice();
                     }
                 case "Coffee":
                     {
@@ -46,7 +46,7 @@ namespace RestaurantSimulator
                     }
                 case "Milk":
                     {
-                        return new Potato();
+                        return new Milk();
                     }
                 default:
                     {

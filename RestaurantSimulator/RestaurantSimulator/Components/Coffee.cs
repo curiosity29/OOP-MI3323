@@ -10,7 +10,7 @@ namespace RestaurantSimulator
     {
         public override string Name
         {
-            get { return "Coffe"; }
+            get { return "Coffee"; }
         }
         public override string Accept(IVisitor visitor)
         {

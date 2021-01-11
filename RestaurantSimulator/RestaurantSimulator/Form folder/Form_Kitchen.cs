@@ -44,7 +44,7 @@ namespace RestaurantSimulator
                 {
                     string s = order[key][0];
                     order[key].RemoveAt(0);
-                    return s;
+                    return key + " " + s;
                 }    
             }
             throw new Exception();

@@ -67,7 +67,7 @@ namespace RestaurantSimulator
             this.listbox1.ItemHeight = 25;
             this.listbox1.Location = new System.Drawing.Point(207, 79);
             this.listbox1.Name = "listbox1";
-            this.listbox1.Size = new System.Drawing.Size(149, 54);
+            this.listbox1.Size = new System.Drawing.Size(192, 54);
             this.listbox1.TabIndex = 48;
             // 
             // listbox2
@@ -75,9 +75,9 @@ namespace RestaurantSimulator
             this.listbox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listbox2.FormattingEnabled = true;
             this.listbox2.ItemHeight = 25;
-            this.listbox2.Location = new System.Drawing.Point(751, 79);
+            this.listbox2.Location = new System.Drawing.Point(701, 79);
             this.listbox2.Name = "listbox2";
-            this.listbox2.Size = new System.Drawing.Size(151, 54);
+            this.listbox2.Size = new System.Drawing.Size(201, 54);
             this.listbox2.TabIndex = 49;
             // 
             // button1
