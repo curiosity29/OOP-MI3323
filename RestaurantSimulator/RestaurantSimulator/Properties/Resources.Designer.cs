@@ -69,5 +69,15 @@ namespace RestaurantSimulator.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Not_Bug_It_Feature {
+            get {
+                object obj = ResourceManager.GetObject("Not-Bug-It-Feature", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

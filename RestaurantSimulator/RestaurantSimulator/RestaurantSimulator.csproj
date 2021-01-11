@@ -66,6 +66,12 @@
     <Compile Include="Components\Tea.cs" />
     <Compile Include="Container\component_refrigerator.cs" />
     <Compile Include="Container\Refrigerator.cs" />
+    <Compile Include="Form folder\Form_Feature.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form folder\Form_Feature.Designer.cs">
+      <DependentUpon>Form_Feature.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form folder\Form_MakeDish.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     <EmbeddedResource Include="Form folder\Form_Customer.resx">
       <DependentUpon>Form_Customer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form folder\Form_Feature.resx">
+      <DependentUpon>Form_Feature.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form folder\Form_MakeDish.resx">
       <DependentUpon>Form_MakeDish.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +201,7 @@
     <None Include="Resources\CorgiBoy.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Not-Bug-It-Feature.jpg" />
     <None Include="DataSource\adapter.json" />
     <Content Include="DataSource\Data Dish.txt" />
     <Content Include="Dũng - pass to other.txt" />
