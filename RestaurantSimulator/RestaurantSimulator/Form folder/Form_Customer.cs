@@ -92,10 +92,6 @@ namespace RestaurantSimulator
                             name = addonName,
                             price = price_dict[addonName]
                         };
-                        for(int i=0;i<quantity;i++)
-                        {
-                            //order[basename].Add(addonName);
-                        }
 
                         ListViewItem lsItem;
 
@@ -163,10 +159,6 @@ namespace RestaurantSimulator
             item.Remove();
             ResetListIndex();
             int quantity = int.Parse(item.SubItems[3].Text);
-            for (int i = 0; i < quantity; i++)
-            {
-                order[item.SubItems[1].Text].Remove(item.SubItems[2].Text);
-            }
         }
 
         private void Reset(object sender, EventArgs e)
