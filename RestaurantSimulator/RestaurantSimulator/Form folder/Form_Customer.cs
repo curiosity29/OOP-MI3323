@@ -58,6 +58,13 @@ namespace RestaurantSimulator
                 { Menu_Milktea, "Trà sữa" },
                 { Menu_Rice, "Cơm" },
             };
+            NewOrder();
+            Json<Dictionary<string,long>>.Read(price_file, ref price_dict);
+            FlyFoodFactory.price_dict = price_dict;
+        }
+        
+        private void NewOrder()
+        {
             order = new Dictionary<string, List<string>>()
             {
                 {"Mì", new List<string>() },
@@ -65,10 +72,7 @@ namespace RestaurantSimulator
                 {"Trà sữa", new List<string>() },
                 {"Cơm", new List<string>() }
             };
-            Json<Dictionary<string,long>>.Read(price_file, ref price_dict);
-            FlyFoodFactory.price_dict = price_dict;
         }
-
         #endregion
 
 
@@ -137,6 +141,12 @@ namespace RestaurantSimulator
         {
             return (int)numericUpDown1.Value;
         }
+        private void Modify_Item(object sender, EventArgs e)
+        {
+            var item = listview.SelectedItems[0];
+            new Form_ModifyItem(item).Show();
+
+        }
 
 
         private Dictionary<string, List<string>> GetOrdering()
@@ -190,6 +200,7 @@ namespace RestaurantSimulator
 
             }
 
+            NewOrder();
 
             //string jsonstring = File.ReadAllText(menu_file);
 
@@ -197,24 +208,5 @@ namespace RestaurantSimulator
             //text_table.Text += (a.item_list)[0].name;
         }
 
-        private void Modify_Item(object sender, EventArgs e)
-        {
-            var item = listview.SelectedItems[0];
-            int quantity = int.Parse(item.SubItems[3].Text);
-            for(int i =0;i< quantity;i++)
-            {
-                order[item.SubItems[1].Text].Remove(item.SubItems[2].Text);
-            }
-
-            new Form_ModifyItem(item).Show();
-
-            
-
-            quantity = int.Parse(item.SubItems[3].Text);
-            for (int i = 0; i < quantity; i++)
-            {
-                order[item.SubItems[1].Text].Add(item.SubItems[2].Text);
-            }
-        }
     }
 }
