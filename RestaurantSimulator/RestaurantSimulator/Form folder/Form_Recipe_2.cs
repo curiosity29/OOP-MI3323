@@ -131,7 +131,7 @@ namespace RestaurantSimulator
             List<Recipe> recipes = new List<Recipe>();
             try
             {
-                string raw = File.ReadAllText(@"D:\Test2.json");
+                string raw = File.ReadAllText(@"..\..\DataSource\Test2.json");
                 dynamic list = JsonConvert.DeserializeObject<dynamic>(raw);
                 if (list != null)
                 {

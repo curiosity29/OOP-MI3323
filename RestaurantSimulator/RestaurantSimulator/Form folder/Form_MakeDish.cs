@@ -146,8 +146,8 @@ namespace RestaurantSimulator
         {
             try
             {
-                recipes1 = Read_recipes_from_Json(@"D:\Test2.json");
-                recipes2 = Read_recipes_from_Json(@"D:\Test.json");
+                recipes1 = Read_recipes_from_Json(@"...\Test2.json");
+                recipes2 = Read_recipes_from_Json(@"...\Test.json");
                 foreach (Recipe r in recipes1)
                 {
                     listbox1.Items.Add(r.Name);
@@ -284,8 +284,8 @@ namespace RestaurantSimulator
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Write_recpies_to_json(@"D:\Test2.json", recipes1);
-            Write_recpies_to_json(@"D:\Test.json", recipes2);
+            Write_recpies_to_json(@"..\..\DataSource\Test2.json", recipes1);
+            Write_recpies_to_json(@"..\..\DataSource\Test.json", recipes2);
           
         }
     }
