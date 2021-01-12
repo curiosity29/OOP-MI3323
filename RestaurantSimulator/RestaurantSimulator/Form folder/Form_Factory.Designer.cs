@@ -31,7 +31,6 @@ namespace RestaurantSimulator
         {
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.add = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -39,7 +38,7 @@ namespace RestaurantSimulator
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(378, 305);
+            this.button1.Location = new System.Drawing.Point(378, 249);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 47);
@@ -51,7 +50,7 @@ namespace RestaurantSimulator
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(378, 222);
+            this.button2.Location = new System.Drawing.Point(378, 135);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 47);
@@ -59,18 +58,6 @@ namespace RestaurantSimulator
             this.button2.Text = "Remove";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Remove);
-            // 
-            // add
-            // 
-            this.add.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.add.Location = new System.Drawing.Point(378, 150);
-            this.add.Margin = new System.Windows.Forms.Padding(2);
-            this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(116, 47);
-            this.add.TabIndex = 6;
-            this.add.Text = "Add";
-            this.add.UseVisualStyleBackColor = true;
-            this.add.Click += new System.EventHandler(this.Add);
             // 
             // dataGridView1
             // 
@@ -92,10 +79,10 @@ namespace RestaurantSimulator
             this.ClientSize = new System.Drawing.Size(602, 453);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.add);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form_Factory";
             this.Text = "Form_Factory";
+            this.Load += new System.EventHandler(this.Form_Factory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -105,7 +92,6 @@ namespace RestaurantSimulator
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button add;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

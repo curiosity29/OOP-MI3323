@@ -7,20 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace RestaurantSimulator
 {
     public partial class Form_Factory : Form
     {
-
+        BindingList<Dish> list = new BindingList<Dish>();
         public Form_Factory()
         {
             InitializeComponent();
         }
 
-        private void Form_Refrigerator_Load(object sender, EventArgs e)
+        private void Form_Factory_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = FlyFoodFactory.dict.Values;
+            var dict = FlyFoodFactory.Dict;
+            foreach(KeyValuePair<string,Dish> pair in dict)
+            {
+                list.Add(pair.Value);
+            }
+            dataGridView1.DataSource = list;
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -49,7 +53,7 @@ namespace RestaurantSimulator
 
         private void Close(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
 
         private void Add(object sender, EventArgs e)
@@ -59,7 +63,11 @@ namespace RestaurantSimulator
 
         private void Remove(object sender, EventArgs e)
         {
+            var row = dataGridView1.SelectedRows[0];
+            var dish = row.DataBoundItem as Dish;
 
+            list.RemoveAt(row.Index);
+            FlyFoodFactory.Dict.Remove(dish.baseDish.name);
         }
     }
 }

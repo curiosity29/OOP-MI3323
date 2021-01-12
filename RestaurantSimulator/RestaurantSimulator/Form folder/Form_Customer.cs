@@ -22,7 +22,6 @@ namespace RestaurantSimulator
         #endregion
 
 
-
         #region init
         //(control - typename) for each type
         Dictionary<CheckedListBox, string> Menu_List;
@@ -177,6 +176,8 @@ namespace RestaurantSimulator
             {
                 foreach (string basename in ordering.Keys)
                 {
+                    if (ordering[basename].Count == 0) continue;
+
                     dish = FlyFoodFactory.GetDish(basename);
                     foreach (string addonName in ordering[basename])
                     {
