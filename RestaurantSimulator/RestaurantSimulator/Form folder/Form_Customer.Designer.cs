@@ -60,6 +60,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Menu_Noodle = new System.Windows.Forms.CheckedListBox();
+            this.button_specialMenu = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -119,6 +120,7 @@
             // groupBox2
             // 
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox2.Controls.Add(this.button_specialMenu);
             this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.richTextBox_note);
@@ -317,7 +319,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button1.Location = new System.Drawing.Point(399, 324);
+            this.button1.Location = new System.Drawing.Point(399, 315);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(175, 49);
             this.button1.TabIndex = 16;
@@ -413,6 +415,17 @@
             this.Menu_Noodle.Size = new System.Drawing.Size(131, 114);
             this.Menu_Noodle.TabIndex = 0;
             // 
+            // button_specialMenu
+            // 
+            this.button_specialMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button_specialMenu.Location = new System.Drawing.Point(399, 379);
+            this.button_specialMenu.Name = "button_specialMenu";
+            this.button_specialMenu.Size = new System.Drawing.Size(175, 49);
+            this.button_specialMenu.TabIndex = 28;
+            this.button_specialMenu.Text = "Order Special Menu!";
+            this.button_specialMenu.UseVisualStyleBackColor = true;
+            this.button_specialMenu.Click += new System.EventHandler(this.Order_Special);
+            // 
             // Form_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -467,6 +480,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RichTextBox richTextBox_note;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button_specialMenu;
     }
 }
 
