@@ -89,5 +89,10 @@ namespace RestaurantSimulator
         {
             new Form_Recipe_2().Show();
         }
+
+        private void Open_Factory(object sender, EventArgs e)
+        {
+            new Form_Factory().Show() ;
+        }
     }
 }

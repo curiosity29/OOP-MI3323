@@ -66,6 +66,12 @@
     <Compile Include="Components\Tea.cs" />
     <Compile Include="Container\component_refrigerator.cs" />
     <Compile Include="Container\Refrigerator.cs" />
+    <Compile Include="Form folder\Form_Factory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form folder\Form_Factory.Designer.cs">
+      <DependentUpon>Form_Factory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form folder\Form_Feature.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </Compile>
     <EmbeddedResource Include="Form folder\Form_Customer.resx">
       <DependentUpon>Form_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form folder\Form_Factory.resx">
+      <DependentUpon>Form_Factory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form folder\Form_Feature.resx">
       <DependentUpon>Form_Feature.cs</DependentUpon>

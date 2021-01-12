@@ -10,7 +10,7 @@ namespace RestaurantSimulator
     {
         public static Dictionary<string, long> price_dict = new Dictionary<string, long>();
 
-        private static Dictionary<string, Dish> dict = new Dictionary<string, Dish>();
+        public static readonly Dictionary<string, Dish> dict = new Dictionary<string, Dish>();
 
         public static Dish GetDish(string baseName)
         {
