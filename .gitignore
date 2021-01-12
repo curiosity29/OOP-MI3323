@@ -340,3 +340,5 @@ ASALocalRun/
 healthchecksdb
 RestaurantSimulator/RestaurantSimulator/bin/Debug/RestaurantSimulator.exe
 RestaurantSimulator/RestaurantSimulator/bin/Debug/RestaurantSimulator.pdb
+*.exe
+*.pdb

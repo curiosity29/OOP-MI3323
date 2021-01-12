@@ -28,6 +28,7 @@ namespace RestaurantSimulator
                     dish = new NoodleDish(baseDish, new Bowl());
                     dict.Add("Mì", dish);
                     break;
+
                 case "Cà phê":
                     baseDish = new DishPart
                     {
@@ -37,6 +38,7 @@ namespace RestaurantSimulator
                     dish = new Cafe(baseDish, new Bowl());
                     dict.Add("Cà phê", dish);
                     break;
+
                 case "Trà sữa":
                     baseDish = new DishPart
                     {
@@ -46,6 +48,7 @@ namespace RestaurantSimulator
                     dish = new MilkTea(baseDish, new Bowl());
                     dict.Add("Trà sữa", dish);
                     break;
+
                 case "Cơm":
                     baseDish = new DishPart
                     {
@@ -55,10 +58,11 @@ namespace RestaurantSimulator
                     dish = new RiceDish(baseDish, new Bowl());
                     dict.Add("Cơm", dish);
                     break;
+
                 default:
                     throw new ArgumentException("Error: unrecognized dish type");
             }
-            // how to make new instance with variable type?
+
             return dish;
         }
     }
