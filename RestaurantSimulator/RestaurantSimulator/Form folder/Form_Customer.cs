@@ -28,9 +28,12 @@ namespace RestaurantSimulator
         Dictionary<CheckedListBox, string> Menu_List;
         // (typename - list of that type) for each type
         Dictionary<string, List<string>> order = new Dictionary<string, List<string>>();
+        //(dishname - price)
         public Dictionary<string, long> price_dict = new Dictionary<string, long>();
 
         List<Component> component;
+
+        private Dictionary<string, List<string>> order_special;
         public Form_Customer()
         {
             InitializeComponent();
@@ -63,9 +66,14 @@ namespace RestaurantSimulator
                 { Menu_Milktea, "Trà sữa" },
                 { Menu_Rice, "Cơm" },
             };
+
             NewOrder();
+            // read menu price
             Json<Dictionary<string, long>>.Read(file_price, ref price_dict);
             FlyFoodFactory.price_dict = price_dict;
+
+            //read special order
+            Json<Dictionary<string, List<string>>>.Read(file_special, ref order_special);
         }
 
         private void NewOrder()
@@ -113,17 +121,39 @@ namespace RestaurantSimulator
         }
 
 
+        
+        private void Order_Special(object sender, EventArgs e)
+        {
+            var ordering = order_special;
+            int quantity = GetQuantity();
+            string note = GetNote();
+            int index = listview.Items.Count;
+            AddOrder(ordering, index, quantity, note);
+            Order();
+        }
+
+
+        #endregion
+
+
+        #region intersection
         private void Order(object sender, EventArgs e)
         {
+            Order();
+        }
 
+
+        #endregion
+
+        private void Order()
+        {
             foreach (ListViewItem item in listview.Items)
             {
                 order[item.SubItems[1].Text].Add(item.SubItems[2].Text);
             }
 
-
             //lưu file order
-            Json<Dictionary<string, List<string>>>.Write(file_special, order);
+            Json<Dictionary<string, List<string>>>.Write(file_order, order);
 
             //bật bếp
             try
@@ -136,24 +166,10 @@ namespace RestaurantSimulator
             }
 
             NewOrder();
-
         }
-
-        private void Order_Special(object sender, EventArgs e)
-        {
-            Dictionary<string,List<string>> order_special = GetSpecialOrder();
-        }
-
-        private Dictionary<string, List<string>> GetSpecialOrder()
-        {
-            
-        }
-
-        #endregion
-
-
 
         #region method
+
         private void AddOrder(Dictionary<string, List<string>> ordering, int index, int quantity, string note)
         {
             Dish dish;
