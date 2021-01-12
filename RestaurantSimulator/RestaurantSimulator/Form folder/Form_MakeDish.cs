@@ -144,15 +144,22 @@ namespace RestaurantSimulator
 
         private void Form_MakeDish_Load(object sender, EventArgs e)
         {
-            recipes1 = Read_recipes_from_Json(@"D:\Test2.json");
-            recipes2 = Read_recipes_from_Json(@"D:\Test.json");
-            foreach (Recipe r in recipes1)
+            try
             {
-                listbox1.Items.Add(r.Name);
+                recipes1 = Read_recipes_from_Json(@"D:\Test2.json");
+                recipes2 = Read_recipes_from_Json(@"D:\Test.json");
+                foreach (Recipe r in recipes1)
+                {
+                    listbox1.Items.Add(r.Name);
+                }
+                foreach (Recipe r in recipes2)
+                {
+                    listbox2.Items.Add(r.Name);
+                }
             }
-            foreach (Recipe r in recipes2)
+            catch
             {
-                listbox2.Items.Add(r.Name);
+                //
             }
         }
 
