@@ -8,9 +8,6 @@
           },
           {
             "Type": 2
-          },
-          {
-            "Type": 4
           }
         ],
         "Name": "Noodle",
@@ -18,5 +15,22 @@
       }
     ],
     "Name": "Mì"
+  },
+  {
+    "component_List": [
+      {
+        "visitors": [
+          {
+            "Type": 3
+          },
+          {
+            "Type": 2
+          }
+        ],
+        "Name": "Rice",
+        "Quantity": 1
+      }
+    ],
+    "Name": "Cơm"
   }
 ]

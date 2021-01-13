@@ -204,7 +204,10 @@
     <None Include="DataSource\Menu.json" />
     <None Include="DataSource\Order.json" />
     <None Include="DataSource\Price.json" />
+    <None Include="DataSource\read_re_re.json" />
     <None Include="DataSource\Special.json" />
+    <None Include="DataSource\Test.json" />
+    <None Include="DataSource\Test2.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

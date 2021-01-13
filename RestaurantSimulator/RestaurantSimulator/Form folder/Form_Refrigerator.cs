@@ -103,7 +103,12 @@ namespace RestaurantSimulator
             //    }
         }
 
-        private void button_adapter_Click(object sender, EventArgs e)
+        //private void button_adapter_Click(object sender, EventArgs e)
+        //{
+        //    new Forrm_Adapter(refrigerator.list_component).Show();
+        //}
+
+        private void button3_Click(object sender, EventArgs e)
         {
             new Forrm_Adapter(refrigerator.list_component).Show();
         }

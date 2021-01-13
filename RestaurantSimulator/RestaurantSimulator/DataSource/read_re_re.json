@@ -1,23 +1,23 @@
 [
   {
     "Name": "Fish",
-    "quantity": 1
+    "quantity": 15
   },
   {
     "Name": "Bubble_tea",
-    "quantity": 5
+    "quantity": 10
   },
   {
     "Name": "Carrot",
-    "quantity": 20
+    "quantity": 0
   },
   {
     "Name": "Chicken",
-    "quantity": 52
+    "quantity": 47
   },
   {
     "Name": "Coconut",
-    "quantity": 4
+    "quantity": 10
   },
   {
     "Name": "Coffe",
@@ -25,7 +25,7 @@
   },
   {
     "Name": "Milk",
-    "quantity": 34
+    "quantity": 30
   },
   {
     "Name": "Noodle",
@@ -33,11 +33,11 @@
   },
   {
     "Name": "Potato",
-    "quantity": 32
+    "quantity": 2
   },
   {
     "Name": "Rice",
-    "quantity": 33
+    "quantity": 14
   },
   {
     "Name": "Shrimp",

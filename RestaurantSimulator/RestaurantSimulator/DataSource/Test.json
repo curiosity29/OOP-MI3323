@@ -8,16 +8,13 @@
           },
           {
             "Type": 1
-          },
-          {
-            "Type": 2
           }
         ],
-        "Name": "Fish",
+        "Name": "Carrot",
         "Quantity": 1
       }
     ],
-    "Name": "Cá"
+    "Name": "Cà rốt"
   },
   {
     "component_List": [
@@ -28,15 +25,12 @@
           },
           {
             "Type": 1
-          },
-          {
-            "Type": 2
           }
         ],
-        "Name": "Carrot",
+        "Name": "Potato",
         "Quantity": 1
       }
     ],
-    "Name": "Carrot"
+    "Name": "Khoai tây"
   }
 ]

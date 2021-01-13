@@ -19,9 +19,14 @@ namespace RestaurantSimulator
         public bool OK = false;
         List<Recipe> recipes1;
         List<Recipe> recipes2;
+        Dictionary<string, string> adapt_component;
         public Form_MakeDish()
         {
             InitializeComponent();
+            string aaaa = File.ReadAllText("..\\..\\DataSource\\adapter_component.json");
+            adapt_component = JsonConvert.DeserializeObject<Dictionary<string, string>>(aaaa);
+            string json = File.ReadAllText("..\\..\\DataSource\\read_re_re.json");
+            component_refrigerator = JsonConvert.DeserializeObject<List<component_refrigerator>>(json);
         }
         public void Write_recpies_to_json(string filename, object recipes)
         {
@@ -220,38 +225,20 @@ namespace RestaurantSimulator
             }
             return null;
         }
-        public void adapt_dish(Recipe recipe1, ref List<component_refrigerator> component_refrigerator,
-            List<Recipe> recipes1, Dictionary<string, string> adapt)
+        public bool adapt_dish(Recipe recipe, ref List<component_refrigerator> component_refrigerator)
         {
+            Recipe recipe1 = new Recipe_adapter(adapt_component, recipe);
             if (check_available(recipe1, ref component_refrigerator))
             {
                 available_return(recipe1, ref component_refrigerator);
                 string jsonString = JsonConvert.SerializeObject(component_refrigerator, Formatting.Indented);
                 File.WriteAllText(@"..\..\DataSource\read_re_re.json", jsonString);
-                MessageBox.Show("The dish has cooked", "INFORM");
+                return true;
             }
             else
             {
-                foreach (KeyValuePair<string, string> kvp in adapt)
-                {
-                    Recipe adapt_recipe = find_index_recipe(kvp.Value, recipes1);
-                    if (kvp.Key == recipe1.Name)
-                    {
-                        if (!check_available(adapt_recipe, ref component_refrigerator))
-                        {
-                            MessageBox.Show("Out-of-stock" + recipe1.Name);
-                        }
-                        else
-                        {
-                            if (MessageBox.Show("Out-of-stock " + " " + recipe1.Name + ". Do you want to adapt " + "by" + " " + adapt_recipe.Name
-                             + "?", "INFORM", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                            {
-                                available_return(adapt_recipe, ref component_refrigerator);
-                            }
-                        }
-
-                    }
-                }
+                MessageBox.Show("Out-of-stock" + recipe1.Name, "INFORM");
+                return false;
             }
         }
         private void button3_Click(object sender, EventArgs e)
@@ -265,11 +252,18 @@ namespace RestaurantSimulator
                 Recipe recipe1 = recipes1[listbox1.SelectedIndex];
                 Recipe recipe2 = recipes2[listbox2.SelectedIndex];
                 //Refrigerator refrigerator = new Refrigerator();
-                string json = File.ReadAllText(@"..\..\DataSource\read_re_re.json");
-                component_refrigerator = JsonConvert.DeserializeObject<List<component_refrigerator>>(json);
-                adapt_dish(recipe1, ref component_refrigerator, recipes1, adapt);
-                adapt_dish(recipe2, ref component_refrigerator, recipes2, adapt);               
+                bool a1  = adapt_dish(recipe1, ref component_refrigerator);
+                bool a2 = adapt_dish(recipe2, ref component_refrigerator);
                 OK = true;
+                if(a1 && a2)
+                {
+                    MessageBox.Show("The dish has cooked","INFORM");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("The dish has not cooked", "INFORM");
+                }
             }
             catch (Exception)
             {

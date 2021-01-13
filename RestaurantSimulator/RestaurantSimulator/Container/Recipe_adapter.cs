@@ -11,8 +11,7 @@ namespace RestaurantSimulator
     public class Recipe_adapter:Recipe
     {
         public Recipe_adapter(Dictionary<string, string> a, Recipe recipe)
-        {
-            int j = 0;
+        { 
             string jsonString;
             //this.component_List = recipe.component_List;
             this.Name = recipe.Name;
