@@ -14,15 +14,11 @@ namespace RestaurantSimulator
     {
         bool OK = false;
         Form_Customer form_customer;
-        RichTextBox text_table;
-        RichTextBox text_bill;
         Dictionary<string, List<string>> order;
-        public Form_Kitchen(Form_Customer form_customer, RichTextBox text_table, RichTextBox text_bill, Dictionary<string, List<string>> order)
+        public Form_Kitchen(Form_Customer form_customer, Dictionary<string, List<string>> order)
         {
             InitializeComponent();
             this.form_customer = form_customer;
-            this.text_table = text_table;
-            this.text_bill = text_bill;
             this.order = order;
             try
             {
@@ -62,7 +58,7 @@ namespace RestaurantSimulator
             {
                 if(OK)
                 {
-                    text_table.Text += text_holding.Text + "\n";
+                    form_customer.Serve(text_holding.Text + "\n");
                     text_holding.Text = Serve_next();
                     OK = false;
                 }
@@ -75,7 +71,9 @@ namespace RestaurantSimulator
             {
                 MessageBox.Show("Đề nghị có món để đầu bếp còn làm");
                 this.Close();
+                form_customer.Show();
             }
+            
         }
 
         private void MakeDish(object sender, EventArgs e)

@@ -30,31 +30,10 @@ namespace RestaurantSimulator
         //(dishname - price)
         public Dictionary<string, long> price_dict = new Dictionary<string, long>();
 
-        List<Component> component;
-
         private Dictionary<string, List<string>> order_special;
         public Form_Customer()
         {
             InitializeComponent();
-            component = new List<Component>();
-            string[] component_name = { "Tôm", "Gà", "Bò", "Cá", "Dừa", "Sữa", "Chocolate", "Cacao", "Khoai môn", "Chân châu" };
-            int[] component_quantity = { 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50 };
-            //for(int i = 0; i < component_name.Count(); i++)
-            //{
-            //    Component a = new Component();
-            //    a.Name = component_name[i];
-            //    a.Quantity = component_quantity[i];
-            //    component.Add(a);
-            //}
-            //Chef chef = Chef.THeChef;
-            //Manager manager = Manager.TheManager;
-            //component = new List<Component>();
-            //string[] component_name = { "Tôm","Gà","Bò","Cá","Dừa","Sữa","Chocolate","Cacao","Khoai môn","Chân châu"};
-            //int[] component_quantity = { 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50 };
-            //Bubble_tea bubble_tea 
-
-            //string output = JsonConvert.SerializeObject(component, Formatting.Indented);
-            //File.WriteAllText("D:\\component.json", output);
         }
         private void Form_Load(object sender, EventArgs e)
         {
@@ -68,11 +47,23 @@ namespace RestaurantSimulator
 
             NewOrder();
             // read menu price
-            Json<Dictionary<string, long>>.Read(file_price, ref price_dict);
-            FlyFoodFactory.price_dict = price_dict;
+            try
+            {
+                //read price order
+                Json<Dictionary<string, long>>.Read(file_price, ref price_dict);
+                FlyFoodFactory.price_dict = price_dict;
+                //read special order
+                Json<Dictionary<string, List<string>>>.Read(file_special, ref order_special);
+            }
+            catch
+            {
+                MessageBox.Show("Không load được file");
+            }
+        }
 
-            //read special order
-            Json<Dictionary<string, List<string>>>.Read(file_special, ref order_special);
+        internal void Serve(string food)
+        {
+            text_table.Text += food + "\n";
         }
 
         private void NewOrder()
@@ -116,6 +107,7 @@ namespace RestaurantSimulator
         private void Reset(object sender, EventArgs e)
         {
             this.Hide();
+            //this.Refresh();
             new Form_Customer().Show();
         }
 
@@ -138,6 +130,7 @@ namespace RestaurantSimulator
         #region intersection
         private void Order(object sender, EventArgs e)
         {
+            this.Hide();
             Order();
         }
 
@@ -157,7 +150,7 @@ namespace RestaurantSimulator
             //bật bếp
             try
             {
-                new Form_Kitchen(this, this.text_table, this.text_bill, order).Show();
+                new Form_Kitchen(this, order).Show();
             }
             catch
             {

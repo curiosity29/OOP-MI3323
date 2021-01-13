@@ -53,7 +53,7 @@ namespace RestaurantSimulator
 
         private void Close(object sender, EventArgs e)
         {
-            //this.Close();
+            this.Close();
         }
 
         private void Add(object sender, EventArgs e)
