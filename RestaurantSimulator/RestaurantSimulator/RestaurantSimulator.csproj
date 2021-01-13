@@ -65,6 +65,9 @@
     <Compile Include="Components\Taro.cs" />
     <Compile Include="Components\Tea.cs" />
     <Compile Include="Container\component_refrigerator.cs" />
+    <Compile Include="Container\Dish_adapter.cs" />
+    <Compile Include="Container\Dish_serve.cs" />
+    <Compile Include="Container\Recipe_adapter.cs" />
     <Compile Include="Container\Refrigerator.cs" />
     <Compile Include="Form folder\Form_MakeDish.cs">
       <SubType>Form</SubType>
@@ -83,6 +86,12 @@
     </Compile>
     <Compile Include="Form folder\Form_Recipe_2.Designer.cs">
       <DependentUpon>Form_Recipe_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form folder\Forrm_Adapter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form folder\Forrm_Adapter.Designer.cs">
+      <DependentUpon>Forrm_Adapter.cs</DependentUpon>
     </Compile>
     <Compile Include="Json.cs" />
     <Compile Include="Menu\MilkTea.cs" />
@@ -157,6 +166,9 @@
     <EmbeddedResource Include="Form folder\Form_Recipe_2.resx">
       <DependentUpon>Form_Recipe_2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form folder\Forrm_Adapter.resx">
+      <DependentUpon>Forrm_Adapter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -193,6 +205,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="DataSource\adapter.json" />
+    <None Include="DataSource\adapter_component.json" />
     <Content Include="DataSource\Data Dish.txt" />
     <Content Include="Dũng - pass to other.txt" />
     <Content Include="Menu\Data Dish.txt" />

@@ -46,8 +46,8 @@ namespace RestaurantSimulator
             //string jsonString = JsonConvert.SerializeObject(refrigerator.list_component, Formatting.Indented);
             //File.WriteAllText("D:\\read_re_re.json", jsonString);
             dataGridView1.DataSource = refrigerator.list_component;
-            
-            
+
+
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -55,10 +55,10 @@ namespace RestaurantSimulator
             try
             {
                 var selectedProp = dataGridView1.SelectedRows[0].DataBoundItem as Component;
-   
+
 
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }
@@ -76,7 +76,7 @@ namespace RestaurantSimulator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            refrigerator.list_component = (List < component_refrigerator > )dataGridView1.DataSource;
+            refrigerator.list_component = (List<component_refrigerator>)dataGridView1.DataSource;
             string jsonString = JsonConvert.SerializeObject(refrigerator.list_component, Formatting.Indented);
             File.WriteAllText("D:\\read_re_re.json", jsonString);
             dataGridView1.ReadOnly = true;
@@ -92,6 +92,20 @@ namespace RestaurantSimulator
         {
             refrigerator.list_component.RemoveAt(dataGridView1.SelectedRows[0].Index);
             dataGridView1.DataSource = refrigerator.list_component;
+            //private void button3_Click(object sender, EventArgs e)
+            //{
+            //    new Forrm_Adapter(refrigerator.list_component).Show();
+            //}
+
+            //private void button3_Click(object sender, EventArgs e)
+            //{
+            //        new Forrm_Adapter(refrigerator.list_component).Show();
+            //    }
+        }
+
+        private void button_adapter_Click(object sender, EventArgs e)
+        {
+            new Forrm_Adapter(refrigerator.list_component).Show();
         }
     }
 }

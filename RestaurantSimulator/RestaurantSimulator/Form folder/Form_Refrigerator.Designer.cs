@@ -33,6 +33,7 @@ namespace RestaurantSimulator
             this.add = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button_adapter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@ namespace RestaurantSimulator
             // add
             // 
             this.add.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.add.Location = new System.Drawing.Point(490, 170);
+            this.add.Location = new System.Drawing.Point(490, 88);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(154, 58);
             this.add.TabIndex = 1;
@@ -66,7 +67,7 @@ namespace RestaurantSimulator
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(490, 258);
+            this.button2.Location = new System.Drawing.Point(490, 171);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(154, 58);
             this.button2.TabIndex = 3;
@@ -77,7 +78,7 @@ namespace RestaurantSimulator
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(490, 361);
+            this.button1.Location = new System.Drawing.Point(490, 257);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(154, 58);
             this.button1.TabIndex = 4;
@@ -85,11 +86,23 @@ namespace RestaurantSimulator
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button_adapter
+            // 
+            this.button_adapter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_adapter.Location = new System.Drawing.Point(490, 352);
+            this.button_adapter.Name = "button_adapter";
+            this.button_adapter.Size = new System.Drawing.Size(154, 75);
+            this.button_adapter.TabIndex = 5;
+            this.button_adapter.Text = "Adapt component";
+            this.button_adapter.UseVisualStyleBackColor = true;
+            this.button_adapter.Click += new System.EventHandler(this.button_adapter_Click);
+            // 
             // Form_Refrigerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(781, 696);
+            this.Controls.Add(this.button_adapter);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.add);
@@ -109,5 +122,6 @@ namespace RestaurantSimulator
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_adapter;
     }
 }
