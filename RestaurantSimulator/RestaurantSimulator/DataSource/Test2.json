@@ -32,5 +32,25 @@
       }
     ],
     "Name": "Cơm"
+  },
+  {
+    "component_List": [
+      {
+        "visitors": [
+          {
+            "Type": 3
+          },
+          {
+            "Type": 2
+          },
+          {
+            "Type": 4
+          }
+        ],
+        "Name": "Coffee",
+        "Quantity": 1
+      }
+    ],
+    "Name": "coffr"
   }
 ]

@@ -30,8 +30,6 @@
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.text_bill = new System.Windows.Forms.RichTextBox();
             this.text_table = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button_specialMenu = new System.Windows.Forms.Button();
@@ -69,8 +67,6 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.text_bill);
             this.groupBox3.Controls.Add(this.text_table);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.groupBox3.Location = new System.Drawing.Point(51, 462);
@@ -91,29 +87,12 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Table";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(26, 164);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Bill";
-            // 
-            // text_bill
-            // 
-            this.text_bill.Location = new System.Drawing.Point(93, 164);
-            this.text_bill.Name = "text_bill";
-            this.text_bill.Size = new System.Drawing.Size(797, 100);
-            this.text_bill.TabIndex = 1;
-            this.text_bill.Text = "";
-            // 
             // text_table
             // 
+            this.text_table.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.text_table.Location = new System.Drawing.Point(93, 54);
             this.text_table.Name = "text_table";
-            this.text_table.Size = new System.Drawing.Size(797, 79);
+            this.text_table.Size = new System.Drawing.Size(1073, 209);
             this.text_table.TabIndex = 0;
             this.text_table.Text = "";
             // 
@@ -450,8 +429,6 @@
 
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox text_bill;
         private System.Windows.Forms.RichTextBox text_table;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListView listview;
