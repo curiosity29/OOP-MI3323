@@ -146,8 +146,8 @@ namespace RestaurantSimulator
         {
             try
             {
-                recipes1 = Read_recipes_from_Json(@"...\Test2.json");
-                recipes2 = Read_recipes_from_Json(@"...\Test.json");
+                recipes1 = Read_recipes_from_Json(@"..\..\DataSource\Test2.json");
+                recipes2 = Read_recipes_from_Json(@"..\..\DataSource\Test.json");
                 foreach (Recipe r in recipes1)
                 {
                     listbox1.Items.Add(r.Name);
@@ -227,7 +227,7 @@ namespace RestaurantSimulator
             {
                 available_return(recipe1, ref component_refrigerator);
                 string jsonString = JsonConvert.SerializeObject(component_refrigerator, Formatting.Indented);
-                File.WriteAllText("D:\\read_re_re.json", jsonString);
+                File.WriteAllText(@"..\..\DataSource\read_re_re.json", jsonString);
                 MessageBox.Show("The dish has cooked", "INFORM");
             }
             else
@@ -265,7 +265,7 @@ namespace RestaurantSimulator
                 Recipe recipe1 = recipes1[listbox1.SelectedIndex];
                 Recipe recipe2 = recipes2[listbox2.SelectedIndex];
                 //Refrigerator refrigerator = new Refrigerator();
-                string json = File.ReadAllText("D:\\read_re_re.json");
+                string json = File.ReadAllText(@"..\..\DataSource\read_re_re.json");
                 component_refrigerator = JsonConvert.DeserializeObject<List<component_refrigerator>>(json);
                 adapt_dish(recipe1, ref component_refrigerator, recipes1, adapt);
                 adapt_dish(recipe2, ref component_refrigerator, recipes2, adapt);               

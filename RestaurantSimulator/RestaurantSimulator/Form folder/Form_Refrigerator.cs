@@ -41,7 +41,7 @@ namespace RestaurantSimulator
             //        quantity = 50,
             //    }
             //};
-            string json = File.ReadAllText("D:\\read_re_re.json");
+            string json = File.ReadAllText(@"..\..\DataSource\read_re_re.json");
             refrigerator.list_component = JsonConvert.DeserializeObject<List<component_refrigerator>>(json);
             //string jsonString = JsonConvert.SerializeObject(refrigerator.list_component, Formatting.Indented);
             //File.WriteAllText("D:\\read_re_re.json", jsonString);
@@ -78,7 +78,7 @@ namespace RestaurantSimulator
         {
             refrigerator.list_component = (List < component_refrigerator > )dataGridView1.DataSource;
             string jsonString = JsonConvert.SerializeObject(refrigerator.list_component, Formatting.Indented);
-            File.WriteAllText("D:\\read_re_re.json", jsonString);
+            File.WriteAllText(@"..\..\DataSource\read_re_re.json", jsonString);
             dataGridView1.ReadOnly = true;
             this.Close();
         }
