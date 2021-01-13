@@ -354,8 +354,6 @@ namespace Calculator
             Vector2 v = Normalize_Vector(pointO, e.Location, pointO, vectorI, vectorJ);
             textBox_X.Text = v.X.ToString();
             textBox_Y.Text = v.Y.ToString();
-            textBox1.Text = (e.X - pointO.X).ToString();
-            textBox2.Text = (e.Y - pointO.Y).ToString();
         }
 
         private double Calculate_Area(Point p1, Point p2, Point p3, Point p11,
