@@ -203,7 +203,7 @@ namespace RestaurantSimulator
             }
             recipes.Add(recipe);
             string data = JsonConvert.SerializeObject(recipes, Formatting.Indented);
-            File.WriteAllText(@"D:\Test2.json", data);
+            File.WriteAllText(@"..\..\DataSource\Test2.json", data);
             this.Close();
         }
 
