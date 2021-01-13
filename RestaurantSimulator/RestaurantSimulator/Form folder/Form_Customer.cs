@@ -184,8 +184,6 @@ namespace RestaurantSimulator
                             name = addonName,
                             price = price_dict[addonName]
                         };
-        
-
                         ListViewItem lsItem;
 
                         index++;
@@ -201,14 +199,9 @@ namespace RestaurantSimulator
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error, but not crashed :D, and the error: " + ex.Message);
+                MessageBox.Show("Error upon adding item, and the error is: " + ex.Message);
             }
         }
-        private string GetNote()
-        {
-            return richTextBox_note.Text;
-        }
-
         private void ResetListIndex()
         {
             int index = 0;
@@ -218,14 +211,18 @@ namespace RestaurantSimulator
                 lsItem.Text = index.ToString();
             }
         }
-
+        private string GetNote()
+        {
+            return richTextBox_note.Text;
+        }
         private int GetQuantity()
         {
             return (int)numericUpDown1.Value;
         }
         private Dictionary<string, List<string>> GetOrdering()
         {
-            Dictionary<string, List<string>> ordering = new Dictionary<string, List<string>>();
+            Dictionary<string, List<string>> ordering 
+                = new Dictionary<string, List<string>>();
             foreach (CheckedListBox list in Menu_List.Keys)
             {
                 ordering[Menu_List[list]] = new List<string>();

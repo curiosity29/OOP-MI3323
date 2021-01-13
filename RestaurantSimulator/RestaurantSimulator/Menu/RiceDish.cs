@@ -2,7 +2,7 @@
 {
     internal class RiceDish : Dish
     {
-        public RiceDish(DishPart baseDish, Bowl tool) : base(baseDish, tool)
+        public RiceDish(DishPart baseDish, Component tool) : base(baseDish, tool)
         {
 
         }

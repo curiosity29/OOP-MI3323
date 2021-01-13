@@ -137,7 +137,6 @@
     <Compile Include="Operator\Chef.cs" />
     <Compile Include="Components\Potato.cs" />
     <Compile Include="Menu\Dish.cs" />
-    <Compile Include="Menu\FlyFoodFactory.cs" />
     <Compile Include="Form folder\Form_Customer.cs">
       <SubType>Form</SubType>
     </Compile>

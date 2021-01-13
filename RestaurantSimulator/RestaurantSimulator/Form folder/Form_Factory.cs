@@ -11,8 +11,9 @@ namespace RestaurantSimulator
 {
     public partial class Form_Factory : Form
     {
-        BindingList<Dish> list = new BindingList<Dish>();
 
+        BindingList<Dish> list = new BindingList<Dish>();
+        
         #region source factory
 
         public static Dictionary<string, long> price_dict = new Dictionary<string, long>();
@@ -35,13 +36,14 @@ namespace RestaurantSimulator
                     dict.Add("Mì", dish);
                     break;
 
+                #region more
                 case "Cà phê":
                     baseDish = new DishPart
                     {
                         name = "Cà phê",
                         price = price_dict["Cà phê"]
                     };
-                    dish = new Cafe(baseDish, new Bowl());
+                    dish = new Cafe(baseDish, new Cup());
                     dict.Add("Cà phê", dish);
                     break;
 
@@ -51,7 +53,7 @@ namespace RestaurantSimulator
                         name = "Trà sữa",
                         price = price_dict["Trà sữa"]
                     };
-                    dish = new MilkTea(baseDish, new Bowl());
+                    dish = new MilkTea(baseDish, new Cup());
                     dict.Add("Trà sữa", dish);
                     break;
 
@@ -67,6 +69,7 @@ namespace RestaurantSimulator
 
                 default:
                     throw new ArgumentException("Error: unrecognized dish type");
+                #endregion
             }
 
             return dish;
