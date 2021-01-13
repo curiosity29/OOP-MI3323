@@ -1,0 +1,42 @@
+[
+  {
+    "component_List": [
+      {
+        "visitors": [
+          {
+            "Type": 3
+          },
+          {
+            "Type": 1
+          },
+          {
+            "Type": 2
+          }
+        ],
+        "Name": "Fish",
+        "Quantity": 1
+      }
+    ],
+    "Name": "Cá"
+  },
+  {
+    "component_List": [
+      {
+        "visitors": [
+          {
+            "Type": 3
+          },
+          {
+            "Type": 1
+          },
+          {
+            "Type": 2
+          }
+        ],
+        "Name": "Carrot",
+        "Quantity": 1
+      }
+    ],
+    "Name": "Carrot"
+  }
+]

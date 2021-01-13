@@ -163,7 +163,7 @@ namespace RestaurantSimulator
             List<Recipe> recipes = new List<Recipe>();
             try
             {
-                string raw = File.ReadAllText(@"D:\Test.json");
+                string raw = File.ReadAllText(@"..\..\DataSource\Test.json");
                 dynamic list = JsonConvert.DeserializeObject<dynamic>(raw);
                 if (list != null)
                 {
@@ -260,7 +260,7 @@ namespace RestaurantSimulator
             }
             recipes.Add(recipe);
             string data = JsonConvert.SerializeObject(recipes, Formatting.Indented);
-            File.WriteAllText(@"D:\Test.json", data);
+            File.WriteAllText(@"..\..\DataSource\Test.json", data);
             this.Close();
         }
 

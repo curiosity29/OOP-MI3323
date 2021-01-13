@@ -69,6 +69,18 @@
     <Compile Include="Container\Dish_serve.cs" />
     <Compile Include="Container\Recipe_adapter.cs" />
     <Compile Include="Container\Refrigerator.cs" />
+    <Compile Include="Form folder\Form_Factory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form folder\Form_Factory.Designer.cs">
+      <DependentUpon>Form_Factory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form folder\Form_Feature.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form folder\Form_Feature.Designer.cs">
+      <DependentUpon>Form_Feature.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form folder\Form_MakeDish.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +160,12 @@
     <EmbeddedResource Include="Form folder\Form_Customer.resx">
       <DependentUpon>Form_Customer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form folder\Form_Factory.resx">
+      <DependentUpon>Form_Factory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form folder\Form_Feature.resx">
+      <DependentUpon>Form_Feature.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form folder\Form_MakeDish.resx">
       <DependentUpon>Form_MakeDish.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +204,7 @@
     <None Include="DataSource\Menu.json" />
     <None Include="DataSource\Order.json" />
     <None Include="DataSource\Price.json" />
+    <None Include="DataSource\Special.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -204,6 +223,7 @@
     <None Include="Resources\CorgiBoy.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Not-Bug-It-Feature.jpg" />
     <None Include="DataSource\adapter.json" />
     <None Include="DataSource\adapter_component.json" />
     <Content Include="DataSource\Data Dish.txt" />

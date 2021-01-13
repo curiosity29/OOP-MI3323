@@ -1,0 +1,22 @@
+[
+  {
+    "component_List": [
+      {
+        "visitors": [
+          {
+            "Type": 3
+          },
+          {
+            "Type": 2
+          },
+          {
+            "Type": 4
+          }
+        ],
+        "Name": "Noodle",
+        "Quantity": 1
+      }
+    ],
+    "Name": "Mì"
+  }
+]
