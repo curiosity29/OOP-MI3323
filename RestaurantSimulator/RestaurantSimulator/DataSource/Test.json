@@ -32,5 +32,25 @@
       }
     ],
     "Name": "Khoai tây"
+  },
+  {
+    "component_List": [
+      {
+        "visitors": [
+          {
+            "Type": 3
+          },
+          {
+            "Type": 1
+          },
+          {
+            "Type": 2
+          }
+        ],
+        "Name": "Beef",
+        "Quantity": 1
+      }
+    ],
+    "Name": "bò"
   }
 ]

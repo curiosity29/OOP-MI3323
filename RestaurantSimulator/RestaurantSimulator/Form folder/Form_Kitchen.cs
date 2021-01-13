@@ -69,7 +69,7 @@ namespace RestaurantSimulator
             }
             catch (Exception)
             {
-                MessageBox.Show("Đề nghị có món để đầu bếp còn làm");
+                MessageBox.Show("Đã làm xong");
                 this.Close();
                 form_customer.Show();
             }

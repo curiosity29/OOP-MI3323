@@ -12,6 +12,69 @@ namespace RestaurantSimulator
     public partial class Form_Factory : Form
     {
         BindingList<Dish> list = new BindingList<Dish>();
+
+        #region source factory
+
+        public static Dictionary<string, long> price_dict = new Dictionary<string, long>();
+
+        private static Dictionary<string, Dish> dict = new Dictionary<string, Dish>();
+        public static Dish GetDish(string baseName)
+        {
+            if (dict.ContainsKey(baseName)) return dict[baseName];
+            Dish dish;
+            DishPart baseDish;
+            switch (baseName)
+            {
+                case "Mì":
+                    baseDish = new DishPart
+                    {
+                        name = "Mì",
+                        price = price_dict["Mì"]
+                    };
+                    dish = new NoodleDish(baseDish, new Bowl());
+                    dict.Add("Mì", dish);
+                    break;
+
+                case "Cà phê":
+                    baseDish = new DishPart
+                    {
+                        name = "Cà phê",
+                        price = price_dict["Cà phê"]
+                    };
+                    dish = new Cafe(baseDish, new Bowl());
+                    dict.Add("Cà phê", dish);
+                    break;
+
+                case "Trà sữa":
+                    baseDish = new DishPart
+                    {
+                        name = "Trà sữa",
+                        price = price_dict["Trà sữa"]
+                    };
+                    dish = new MilkTea(baseDish, new Bowl());
+                    dict.Add("Trà sữa", dish);
+                    break;
+
+                case "Cơm":
+                    baseDish = new DishPart
+                    {
+                        name = "Cơm",
+                        price = price_dict["Cơm"]
+                    };
+                    dish = new RiceDish(baseDish, new Bowl());
+                    dict.Add("Cơm", dish);
+                    break;
+
+                default:
+                    throw new ArgumentException("Error: unrecognized dish type");
+            }
+
+            return dish;
+        }
+
+
+        #endregion
+
         public Form_Factory()
         {
             InitializeComponent();
@@ -19,7 +82,6 @@ namespace RestaurantSimulator
 
         private void Form_Factory_Load(object sender, EventArgs e)
         {
-            var dict = FlyFoodFactory.Dict;
             foreach(KeyValuePair<string,Dish> pair in dict)
             {
                 list.Add(pair.Value);
@@ -27,47 +89,25 @@ namespace RestaurantSimulator
             dataGridView1.DataSource = list;
         }
 
-        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            try
-            {
-                var selectedProp = dataGridView1.SelectedRows[0].DataBoundItem as Dish;
-
-
-            }
-            catch (Exception)
-            {
-
-            }
-        }
-
-        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void Close(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void Add(object sender, EventArgs e)
-        {
-            dataGridView1.ReadOnly = false;
-        }
-
         private void Remove(object sender, EventArgs e)
         {
-            var row = dataGridView1.SelectedRows[0];
-            var dish = row.DataBoundItem as Dish;
+            try
+            {
+                var row = dataGridView1.SelectedRows[0];
+                var dish = row.DataBoundItem as Dish;
 
-            list.RemoveAt(row.Index);
-            FlyFoodFactory.Dict.Remove(dish.baseDish.name);
+                list.RemoveAt(row.Index);
+                dict.Remove(dish.baseDish.name);
+            }
+            catch(Exception)
+            {
+                // no item to remove
+            }
         }
     }
 }

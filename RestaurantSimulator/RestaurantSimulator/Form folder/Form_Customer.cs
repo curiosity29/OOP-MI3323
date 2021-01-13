@@ -51,7 +51,7 @@ namespace RestaurantSimulator
             {
                 //read price order
                 Json<Dictionary<string, long>>.Read(file_price, ref price_dict);
-                FlyFoodFactory.price_dict = price_dict;
+                Form_Factory.price_dict = price_dict;
                 //read special order
                 Json<Dictionary<string, List<string>>>.Read(file_special, ref order_special);
             }
@@ -139,6 +139,8 @@ namespace RestaurantSimulator
 
         private void Order()
         {
+
+            // make order from item in listview
             foreach (ListViewItem item in listview.Items)
             {
                 order[item.SubItems[1].Text].Add(item.SubItems[2].Text);
@@ -158,6 +160,8 @@ namespace RestaurantSimulator
             }
 
             NewOrder();
+
+            this.Hide();
         }
 
         #region method
@@ -171,7 +175,7 @@ namespace RestaurantSimulator
                 {
                     if (ordering[basename].Count == 0) continue;
 
-                    dish = FlyFoodFactory.GetDish(basename);
+                    dish = Form_Factory.GetDish(basename);
                     foreach (string addonName in ordering[basename])
                     {
                         // modify flyweight
