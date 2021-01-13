@@ -165,8 +165,15 @@ namespace RestaurantSimulator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            recipes1.RemoveAt(listbox1.SelectedIndex);
-            listbox1.Items.RemoveAt(listbox1.SelectedIndex);
+            try
+            {
+                recipes1.RemoveAt(listbox1.SelectedIndex);
+                listbox1.Items.RemoveAt(listbox1.SelectedIndex);
+            }
+            catch
+            {
+                //
+            }
         }
         public bool check_available(Recipe recipe, ref List<component_refrigerator> component_refrigerator)
         {
@@ -273,8 +280,15 @@ namespace RestaurantSimulator
 
         private void button2_Click(object sender, EventArgs e)
         {
-            recipes2.RemoveAt(listbox2.SelectedIndex);
-            listbox2.Items.RemoveAt(listbox2.SelectedIndex);
+            try
+            {
+                recipes2.RemoveAt(listbox2.SelectedIndex);
+                listbox2.Items.RemoveAt(listbox2.SelectedIndex);
+            }
+            catch
+            {
+                //
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
