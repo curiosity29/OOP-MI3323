@@ -17,6 +17,7 @@ namespace RestaurantSimulator
 
         List<component_refrigerator> component_refrigerator;
         public bool OK = false;
+        public string Cooked_dish;
         List<Recipe> recipes1;
         List<Recipe> recipes2;
         Dictionary<string, string> adapt_component;
@@ -254,9 +255,10 @@ namespace RestaurantSimulator
                 //Refrigerator refrigerator = new Refrigerator();
                 bool a1  = adapt_dish(recipe1, ref component_refrigerator);
                 bool a2 = adapt_dish(recipe2, ref component_refrigerator);
-                OK = true;
                 if(a1 && a2)
                 {
+                    OK = true;
+                    Cooked_dish = (string)listbox1.SelectedItem + " " + (string)listbox2.SelectedItem;
                     MessageBox.Show("The dish has cooked","INFORM");
                     this.Close();
                 }
