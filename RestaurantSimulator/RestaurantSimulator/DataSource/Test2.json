@@ -1,5 +1,37 @@
 [
   {
+    "component_List": [],
+    "Name": "..."
+  },
+  {
+    "component_List": [
+      {
+        "visitors": [
+          {
+            "Type": 4
+          }
+        ],
+        "Name": "Coffee",
+        "Quantity": 1
+      }
+    ],
+    "Name": "cà phê"
+  },
+  {
+    "component_List": [
+      {
+        "visitors": [
+          {
+            "Type": 4
+          }
+        ],
+        "Name": "Tea",
+        "Quantity": 1
+      }
+    ],
+    "Name": "trà"
+  },
+  {
     "component_List": [
       {
         "visitors": [
@@ -14,7 +46,7 @@
         "Quantity": 1
       }
     ],
-    "Name": "Mì"
+    "Name": "mì xào"
   },
   {
     "component_List": [
@@ -24,33 +56,13 @@
             "Type": 3
           },
           {
-            "Type": 2
+            "Type": 4
           }
         ],
         "Name": "Rice",
         "Quantity": 1
       }
     ],
-    "Name": "Cơm"
-  },
-  {
-    "component_List": [
-      {
-        "visitors": [
-          {
-            "Type": 3
-          },
-          {
-            "Type": 2
-          },
-          {
-            "Type": 4
-          }
-        ],
-        "Name": "Coffee",
-        "Quantity": 1
-      }
-    ],
-    "Name": "coffr"
+    "Name": "cơm"
   }
 ]

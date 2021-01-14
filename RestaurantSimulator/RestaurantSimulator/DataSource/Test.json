@@ -8,16 +8,14 @@
           },
           {
             "Type": 1
+          },
+          {
+            "Type": 2
           }
         ],
-        "Name": "Carrot",
+        "Name": "Beef",
         "Quantity": 1
-      }
-    ],
-    "Name": "Cà rốt"
-  },
-  {
-    "component_List": [
+      },
       {
         "visitors": [
           {
@@ -25,13 +23,16 @@
           },
           {
             "Type": 1
+          },
+          {
+            "Type": 2
           }
         ],
         "Name": "Potato",
         "Quantity": 1
       }
     ],
-    "Name": "Khoai tây"
+    "Name": "bò xào khoai tây"
   },
   {
     "component_List": [
@@ -47,10 +48,95 @@
             "Type": 2
           }
         ],
-        "Name": "Beef",
+        "Name": "Carrot",
         "Quantity": 1
       }
     ],
-    "Name": "bò"
+    "Name": "chiên cà rốt"
+  },
+  {
+    "component_List": [
+      {
+        "visitors": [
+          {
+            "Type": 3
+          },
+          {
+            "Type": 1
+          },
+          {
+            "Type": 2
+          }
+        ],
+        "Name": "Fish",
+        "Quantity": 1
+      },
+      {
+        "visitors": [
+          {
+            "Type": 3
+          },
+          {
+            "Type": 1
+          },
+          {
+            "Type": 2
+          }
+        ],
+        "Name": "Carrot",
+        "Quantity": 1
+      }
+    ],
+    "Name": "chiên cá với cà rốt"
+  },
+  {
+    "component_List": [],
+    "Name": "..."
+  },
+  {
+    "component_List": [
+      {
+        "visitors": [
+          {
+            "Type": 4
+          }
+        ],
+        "Name": "Milk",
+        "Quantity": 1
+      }
+    ],
+    "Name": "sữa"
+  },
+  {
+    "component_List": [
+      {
+        "visitors": [
+          {
+            "Type": 3
+          },
+          {
+            "Type": 4
+          }
+        ],
+        "Name": "Fish",
+        "Quantity": 1
+      },
+      {
+        "visitors": [
+          {
+            "Type": 3
+          },
+          {
+            "Type": 1
+          },
+          {
+            "Type": 4
+          }
+        ],
+        "Name": "Potato",
+        "Quantity": 1
+      }
+    ],
+    "Name": "cá kho khoai tây"
   }
 ]
