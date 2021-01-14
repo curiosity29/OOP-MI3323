@@ -16,14 +16,8 @@ namespace RestaurantSimulator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            try
-            {
+
                 Application.Run(new Form_Customer());
-            }
-            catch(Exception)
-            {
-                new Form_Feature().Show();
-            }
 
         }
     }

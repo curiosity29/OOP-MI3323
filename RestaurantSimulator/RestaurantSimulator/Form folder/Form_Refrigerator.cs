@@ -15,6 +15,7 @@ namespace RestaurantSimulator
     public partial class Form_Refrigerator : Form
     {
         Refrigerator refrigerator;
+        BindingList<component_refrigerator> list ;
         public Form_Refrigerator()
         {
             InitializeComponent();
@@ -24,28 +25,13 @@ namespace RestaurantSimulator
         {
             refrigerator = new Refrigerator();
             refrigerator.list_component = new List<component_refrigerator>();
-            //{
-            //    new component_refrigerator()
-            //    {
-            //        Name = "cà rốt",
-            //        quantity = 50,
-            //    }
-            //    , new component_refrigerator()
-            //    {
-            //        Name = "cà chua",
-            //        quantity = 50,
-            //    }
-            //    , new component_refrigerator()
-            //    {
-            //        Name = "khoai tây",
-            //        quantity = 50,
-            //    }
-            //};
+            
             string json = File.ReadAllText(@"..\..\DataSource\read_re_re.json");
             refrigerator.list_component = JsonConvert.DeserializeObject<List<component_refrigerator>>(json);
-            //string jsonString = JsonConvert.SerializeObject(refrigerator.list_component, Formatting.Indented);
-            //File.WriteAllText("D:\\read_re_re.json", jsonString);
-            dataGridView1.DataSource = refrigerator.list_component;
+           
+            list = new BindingList<component_refrigerator>(refrigerator.list_component);
+           
+            dataGridView1.DataSource = list;
 
 
         }
@@ -76,7 +62,7 @@ namespace RestaurantSimulator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            refrigerator.list_component = (List<component_refrigerator>)dataGridView1.DataSource;
+            refrigerator.list_component = list.ToList();
             string jsonString = JsonConvert.SerializeObject(refrigerator.list_component, Formatting.Indented);
             File.WriteAllText(@"..\..\DataSource\read_re_re.json", jsonString);
             dataGridView1.ReadOnly = true;
@@ -90,23 +76,22 @@ namespace RestaurantSimulator
 
         private void Remove(object sender, EventArgs e)
         {
-            refrigerator.list_component.RemoveAt(dataGridView1.SelectedRows[0].Index);
-            dataGridView1.DataSource = refrigerator.list_component;
-            //private void button3_Click(object sender, EventArgs e)
-            //{
-            //    new Forrm_Adapter(refrigerator.list_component).Show();
-            //}
+            try
+            {
+                var row = dataGridView1.SelectedRows[0];
+                var component = row.DataBoundItem as component_refrigerator;
+                list.RemoveAt(row.Index);
 
-            //private void button3_Click(object sender, EventArgs e)
-            //{
-            //        new Forrm_Adapter(refrigerator.list_component).Show();
-            //    }
+            }
+            catch
+            {
+                
+            }
+
+
         }
 
-        //private void button_adapter_Click(object sender, EventArgs e)
-        //{
-        //    new Forrm_Adapter(refrigerator.list_component).Show();
-        //}
+       
 
         private void button3_Click(object sender, EventArgs e)
         {
