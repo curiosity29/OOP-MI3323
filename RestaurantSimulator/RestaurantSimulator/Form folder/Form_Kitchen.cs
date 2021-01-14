@@ -13,6 +13,7 @@ namespace RestaurantSimulator
     public partial class Form_Kitchen : Form
     {
         bool OK = false;
+        string Cooked_dish;
         Form_Customer form_customer;
         Dictionary<string, List<string>> order;
         public Form_Kitchen(Form_Customer form_customer, Dictionary<string, List<string>> order)
@@ -58,7 +59,7 @@ namespace RestaurantSimulator
             {
                 if(OK)
                 {
-                    form_customer.Serve(text_holding.Text + "\n");
+                    form_customer.Serve(Cooked_dish + "\n");
                     text_holding.Text = Serve_next();
                     OK = false;
                 }
@@ -79,8 +80,11 @@ namespace RestaurantSimulator
         private void MakeDish(object sender, EventArgs e)
         {
             Form_MakeDish frm = new Form_MakeDish();
+            this.Hide();
             frm.ShowDialog();
             OK = frm.OK;
+            Cooked_dish = frm.Cooked_dish;
+            this.Show();
         }
 
         private void button8_Click(object sender, EventArgs e)

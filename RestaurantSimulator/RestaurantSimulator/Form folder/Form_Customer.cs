@@ -63,7 +63,7 @@ namespace RestaurantSimulator
 
         internal void Serve(string food)
         {
-            text_table.Text += food + "\n";
+            m_txt_table.Text += food + "\n";
         }
 
         private void NewOrder()
@@ -152,16 +152,19 @@ namespace RestaurantSimulator
             //bật bếp
             try
             {
-                new Form_Kitchen(this, order).Show();
+                this.Hide();
+                new Form_Kitchen(this, order).ShowDialog();
+                this.Show();
             }
             catch
             {
+                this.Hide();
                 new Form_Feature().Show();
+                this.Show();
             }
 
             NewOrder();
 
-            this.Hide();
         }
 
         #region method
