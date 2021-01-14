@@ -91,36 +91,23 @@ namespace RestaurantSimulator
         }
         private void Modify_Item(object sender, EventArgs e)
         {
-            try
-            {
-                var item = listview.SelectedItems[0];
-                new Form_ModifyItem(item).Show();
-            }
-            catch
-            {
-                //nothing selected
-            }
+            var item = listview.SelectedItems[0];
+            new Form_ModifyItem(item).Show();
         }
 
 
         private void Listview_remove(object sender, EventArgs e)
         {
-            try
-            {
-                var item = listview.SelectedItems[0];
-                item.Remove();
-                ResetListIndex();
-                int quantity = int.Parse(item.SubItems[3].Text);
-            }
-            catch
-            {
-                //nothing selected
-            }
+            var item = listview.SelectedItems[0];
+            item.Remove();
+            ResetListIndex();
+            int quantity = int.Parse(item.SubItems[3].Text);
         }
 
         private void Reset(object sender, EventArgs e)
         {
             this.Hide();
+            //this.Refresh();
             new Form_Customer().Show();
         }
 
@@ -152,35 +139,32 @@ namespace RestaurantSimulator
 
         private void Order()
         {
+
+            // make order from item in listview
+            foreach (ListViewItem item in listview.Items)
+            {
+                order[item.SubItems[1].Text].Add(item.SubItems[2].Text);
+            }
+
+            //lưu file order
+            Json<Dictionary<string, List<string>>>.Write(file_order, order);
+
+            //bật bếp
             try
             {
-                // make order from item in listview
-                foreach (ListViewItem item in listview.Items)
-                {
-                    order[item.SubItems[1].Text].Add(item.SubItems[2].Text);
-                }
-
-                //lưu file order
-                Json<Dictionary<string, List<string>>>.Write(file_order, order);
-
-                //bật bếp
-                try
-                {
-                    new Form_Kitchen(this, order).Show();
-                }
-                catch
-                {
-                    new Form_Feature().Show();
-                }
-
-                NewOrder();
-
                 this.Hide();
+                new Form_Kitchen(this, order).ShowDialog();
+                this.Show();
             }
             catch
             {
-                MessageBox.Show("invalid order");
+                this.Hide();
+                new Form_Feature().Show();
+                this.Show();
             }
+
+            NewOrder();
+
         }
 
         #region method
@@ -240,24 +224,17 @@ namespace RestaurantSimulator
         }
         private Dictionary<string, List<string>> GetOrdering()
         {
-                Dictionary<string, List<string>> ordering 
-                    = new Dictionary<string, List<string>>();
-            try
+            Dictionary<string, List<string>> ordering 
+                = new Dictionary<string, List<string>>();
+            foreach (CheckedListBox list in Menu_List.Keys)
             {
-                foreach (CheckedListBox list in Menu_List.Keys)
+                ordering[Menu_List[list]] = new List<string>();
+                foreach (object obj in list.CheckedItems)
                 {
-                    ordering[Menu_List[list]] = new List<string>();
-                    foreach (object obj in list.CheckedItems)
-                    {
-                        ordering[Menu_List[list]].Add(obj.ToString());
-                    }
+                    ordering[Menu_List[list]].Add(obj.ToString());
                 }
             }
-            catch
-            {
-                //
-            }
-                return ordering;
+            return ordering;
         }
 
         #endregion
