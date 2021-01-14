@@ -77,7 +77,6 @@ namespace RestaurantSimulator
             };
         }
         #endregion
-        
 
 
         #region control sequence
@@ -91,17 +90,34 @@ namespace RestaurantSimulator
         }
         private void Modify_Item(object sender, EventArgs e)
         {
-            var item = listview.SelectedItems[0];
-            new Form_ModifyItem(item).Show();
+            try
+            {
+
+                var item = listview.SelectedItems[0];
+                new Form_ModifyItem(item).Show();
+            }
+            catch
+            {
+                //
+            }
         }
 
 
         private void Listview_remove(object sender, EventArgs e)
         {
-            var item = listview.SelectedItems[0];
-            item.Remove();
-            ResetListIndex();
-            int quantity = int.Parse(item.SubItems[3].Text);
+
+            try
+            {
+                var item = listview.SelectedItems[0];
+                item.Remove();
+                ResetListIndex();
+                int quantity = int.Parse(item.SubItems[3].Text);
+
+            }
+            catch
+            {
+                //
+            }
         }
 
         private void Reset(object sender, EventArgs e)
@@ -137,6 +153,8 @@ namespace RestaurantSimulator
 
         #endregion
 
+
+        #region method
         private void Order()
         {
 
@@ -166,8 +184,6 @@ namespace RestaurantSimulator
             NewOrder();
 
         }
-
-        #region method
 
         private void AddOrder(Dictionary<string, List<string>> ordering, int index, int quantity, string note)
         {
