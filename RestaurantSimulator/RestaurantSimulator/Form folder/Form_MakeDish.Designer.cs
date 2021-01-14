@@ -35,7 +35,7 @@ namespace RestaurantSimulator
             this.listbox2 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.cook = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -102,17 +102,17 @@ namespace RestaurantSimulator
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // cook
             // 
-            this.button3.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(701, 334);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(201, 93);
-            this.button3.TabIndex = 52;
-            this.button3.Text = "Cook";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.cook.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.cook.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cook.Location = new System.Drawing.Point(701, 334);
+            this.cook.Name = "cook";
+            this.cook.Size = new System.Drawing.Size(201, 93);
+            this.cook.TabIndex = 52;
+            this.cook.Text = "Cook";
+            this.cook.UseVisualStyleBackColor = true;
+            this.cook.Click += new System.EventHandler(this.cook_click);
             // 
             // button4
             // 
@@ -143,7 +143,7 @@ namespace RestaurantSimulator
             this.ClientSize = new System.Drawing.Size(1180, 742);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.cook);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listbox2);
@@ -166,7 +166,7 @@ namespace RestaurantSimulator
         private System.Windows.Forms.ListBox listbox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button cook;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
     }

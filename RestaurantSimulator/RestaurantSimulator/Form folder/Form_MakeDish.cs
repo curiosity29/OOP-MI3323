@@ -241,7 +241,7 @@ namespace RestaurantSimulator
                 return false;
             }
         }
-        private void button3_Click(object sender, EventArgs e)
+        private void cook_click(object sender, EventArgs e)
         {
             try
             {
