@@ -30,7 +30,7 @@
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.text_table = new System.Windows.Forms.RichTextBox();
+            this.m_txt_table = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button_specialMenu = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -67,7 +67,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.text_table);
+            this.groupBox3.Controls.Add(this.m_txt_table);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.groupBox3.Location = new System.Drawing.Point(51, 462);
             this.groupBox3.Name = "groupBox3";
@@ -87,14 +87,14 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Table";
             // 
-            // text_table
+            // m_txt_table
             // 
-            this.text_table.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.text_table.Location = new System.Drawing.Point(93, 54);
-            this.text_table.Name = "text_table";
-            this.text_table.Size = new System.Drawing.Size(1073, 209);
-            this.text_table.TabIndex = 0;
-            this.text_table.Text = "";
+            this.m_txt_table.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.m_txt_table.Location = new System.Drawing.Point(93, 54);
+            this.m_txt_table.Name = "m_txt_table";
+            this.m_txt_table.Size = new System.Drawing.Size(1073, 209);
+            this.m_txt_table.TabIndex = 0;
+            this.m_txt_table.Text = "";
             // 
             // groupBox2
             // 
@@ -429,7 +429,7 @@
 
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox text_table;
+        private System.Windows.Forms.RichTextBox m_txt_table;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListView listview;
         private System.Windows.Forms.Button button1;

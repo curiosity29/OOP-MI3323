@@ -1,141 +1,89 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="RestaurantSimulator.AddOn" Collapsed="true">
-    <Position X="11.25" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Component\AddOn.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RestaurantSimulator.Carrot" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="5" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Component\Carrot.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RestaurantSimulator.Chef">
-    <Position X="0.5" Y="3.25" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAABEAAAAAAAAgAACAAAAAAgAAgAAAAAAAAA=</HashCode>
-      <FileName>Operator\Chef.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="RestaurantSimulator.Dish">
-    <Position X="0.5" Y="0.5" Width="1.75" />
+    <Position X="4.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAAAAwAAAAABAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Dish\Dish.cs</FileName>
+      <HashCode>AAAAAAAAAQAAgIAAAAAAAIAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Menu\Dish.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="RestaurantSimulator.FlyFoodFactory">
-    <Position X="7.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>IAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Menu\FlyFoodFactory.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RestaurantSimulator.Manager">
-    <Position X="12.75" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAEAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Operator\Manager.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RestaurantSimulator.Recipe">
-    <Position X="0.5" Y="6.5" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Method\Recipe.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RestaurantSimulator.Form_Refrigerator">
-    <Position X="12.75" Y="5.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAABACEAAAAAAACAAAACAAgAAAAAAAAAAAAAAII=</HashCode>
-      <FileName>Form_Refrigerator.cs</FileName>
-      <NewMemberFileName>Container\Refrigerator.cs</NewMemberFileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RestaurantSimulator.WashVisitor" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="9.75" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Method\WashVisitor.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.242" />
-  </Class>
-  <Class Name="RestaurantSimulator.Potato" Collapsed="true">
-    <Position X="5" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Component\Potato.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RestaurantSimulator.Method.ChopVisitor" Collapsed="true">
-    <Position X="9.75" Y="5.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Method\ChopVisitor.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="RestaurantSimulator.Cafe" Collapsed="true">
-    <Position X="3" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Menu\Cafe.cs</FileName>
-    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="baseDish" />
+      <Field Name="tool" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="RestaurantSimulator.NoodleDish" Collapsed="true">
-    <Position X="3" Y="0.5" Width="1.5" />
+    <Position X="4.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Menu\NoodleDish.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RestaurantSimulator.A_diagram.Bowl" Collapsed="true">
-    <Position X="5" Y="5.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Component\Bowl.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RestaurantSimulator.Fish" Collapsed="true">
-    <Position X="5" Y="6.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Component\Fish.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RestaurantSimulator.FryVisitor" Collapsed="true">
-    <Position X="9.75" Y="6.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Method\FryVisitor.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="RestaurantSimulator.FishDish" Collapsed="true">
-    <Position X="5" Y="1.25" Width="1.5" />
+  <Class Name="RestaurantSimulator.RiceDish" Collapsed="true">
+    <Position X="6.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Menu\FishDish.cs</FileName>
+      <FileName>Menu\RiceDish.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RestaurantSimulator.Component" Collapsed="true">
-    <Position X="2.75" Y="3.25" Width="1.5" />
+  <Class Name="RestaurantSimulator.Cafe" Collapsed="true">
+    <Position X="1.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIAAAAAEAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Component\Component.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Menu\Cafe.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="RestaurantSimulator.IVisitor" Collapsed="true">
-    <Position X="9.75" Y="3.25" Width="1.5" />
+  <Class Name="RestaurantSimulator.Form_Factory">
+    <Position X="6.75" Y="2.25" Width="1.5" />
+    <Members>
+      <Field Name="button1" Hidden="true" />
+      <Field Name="button2" Hidden="true" />
+      <Method Name="Close" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="dataGridView1" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="Form_Factory" Hidden="true" />
+      <Method Name="Form_Factory_Load" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="list" Hidden="true" />
+    </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Component\IVisitor.cs</FileName>
+      <HashCode>ICACAgAAACAAAAAAAACABAACAAwYAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Form folder\Form_Factory.cs</FileName>
     </TypeIdentifier>
-  </Interface>
+    <ShowAsCollectionAssociation>
+      <Field Name="dict" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="RestaurantSimulator.DishPart">
+    <Position X="1.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Menu\DishPart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RestaurantSimulator.Component">
+    <Position X="1.75" Y="3.75" Width="1.5" />
+    <Members>
+      <Field Name="visitors" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Components\Component.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RestaurantSimulator.Chef">
+    <Position X="6.25" Y="10.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAACAAAACAAQAAAgAAgAAUAAAAAA=</HashCode>
+      <FileName>Operator\Chef.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="chef" />
+      <Property Name="THeChef" />
+    </ShowAsAssociation>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
